@@ -1,17 +1,17 @@
 .profile-pic {
   position: relative;
-  max-width:130px;
-  max-height:130px;
+  max-width: 130px;
+  max-height: 130px;
   width: auto;
   height: auto;
   overflow: hidden;
   /* display: inline-block; */
-  
-  
+
+
   /* background-size: cover;  */
-  margin: -31px; 
-  margin-left:-7px;
-  border: 6px solid rgba(0, 77, 64, 0.4); 
+  margin: -31px;
+  margin-left: -7px;
+  border: 6px solid rgba(0, 77, 64, 0.4);
   border-radius: 50% !important;
 }
 
@@ -24,11 +24,12 @@
   /* visibility: hidden; */
   position: fixed;
   /* margin-inline-end: auto;  */
-  bottom: 0; 
+  bottom: 0;
   right: 0;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
 .social {
   margin: 0 auto;
   width: auto;
@@ -115,10 +116,11 @@
   -webkit-border-radius: 5px;
 }
 
-.contactme:hover{
+.contactme:hover {
   color: #00796b;
   background-color: white;
 }
+
 /* main body */
 
 /* body-color */
@@ -243,7 +245,8 @@ ul.side-nav.fixed a {
   padding: 10px 0 12px;
 }
 
-ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
+ul.table-of-contents li.logo a.active,
+ul.table-of-contents li.logo a:hover {
   border: none;
   font-weight: 200;
 }
@@ -269,12 +272,14 @@ ul.side-nav.fixed li.logo a {
   line-height: 100%;
 }
 
-ul.table-of-contents li:not(.logo) a.active, ul.table-of-contents li:not(.logo) a:hover {
+ul.table-of-contents li:not(.logo) a.active,
+ul.table-of-contents li:not(.logo) a:hover {
   background-color: #fafafa;
   border-left: 3px solid;
 }
 
-ul.side-nav.fixed.table-of-contents li:not(.logo) a span, ul#slide-out li:not(.logo) a span {
+ul.side-nav.fixed.table-of-contents li:not(.logo) a span,
+ul#slide-out li:not(.logo) a span {
   color: #333 !important;
 }
 
@@ -591,34 +596,42 @@ small {
     padding-left: 0px;
     padding-top: 64px;
   }
+
   ul.side-nav a {
     line-height: 100%;
     padding: 0;
     width: 100%;
   }
+
   nav {
     background: #fff;
     height: 64px;
     position: absolute;
   }
-  nav a.button-collapse, nav a.button-collapse i {
+
+  nav a.button-collapse,
+  nav a.button-collapse i {
     color: #009688;
     height: 56px;
     line-height: 56px;
   }
+
   h3 {
     padding: 20px 30px;
     margin-bottom: 40px;
   }
+
   .container {
     margin: 0 auto;
   }
+
   nav.hide-on-large.only.trigger {
     display: block;
     position: fixed;
     top: 0;
     z-index: 2;
   }
+
   .name-title {
     display: block;
     height: 100%;
@@ -627,25 +640,33 @@ small {
     width: 100%;
     position: absolute;
   }
-  .name-title>span, .name-title>a {
+
+  .name-title>span,
+  .name-title>a {
     position: relative;
     line-height: 20px;
   }
+
   .name-title a {
     font-size: 22px;
     display: block;
   }
+
   .name-title span {
     display: block;
     font-size: 14px;
   }
-  h3, .container {
+
+  h3,
+  .container {
     position: relative;
     top: 64px;
   }
+
   section#intro {
     margin-bottom: -64px;
   }
+
   .card .role {
     position: relative;
     right: initial;
@@ -659,36 +680,154 @@ small {
     line-height: 200%;
     margin: 30px 0 0;
   }
+
   #intro.section .container *:not(span) {
     padding: 0;
   }
+
   .card .card-content .card-title {
     font-size: 20px;
     line-height: 24px;
   }
+
   #experience span.card-title {
     text-align: center;
     display: block;
   }
+
   #experience span.card-title a {
     margin: 0;
   }
+
   i.mdi-navigation-close.right {
     position: relative;
     bottom: 15px;
   }
+
   #contact a:not(.btn-floating) {
     text-align: center;
     display: block;
     left: initial;
     bottom: initial;
   }
+
   #contact a.btn-floating.btn-large {
     display: block;
     text-align: center;
     margin: 0 auto;
   }
+
   #intro.section {
     background-position-x: 30%;
   }
+}
+
+
+/* 以下为添加样式 */
+
+/* ========== 作品卡片：悬停翻转 + 点击展开详情 ========== */
+
+/* 卡片容器：去掉宽度过渡 */
+.project-card-wrapper {
+  /* 不拉伸，只做显隐 */
+}
+
+/* 展开状态：直接占满整行，无过渡 */
+.project-card-wrapper.expanded {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+}
+
+/* 未展开的卡片在展开时隐藏 */
+.project-card-wrapper.hidden-by-expand {
+  display: none;
+}
+
+/* 普通卡片视图 */
+.card-normal {
+  display: block;
+}
+
+.project-card-wrapper.expanded .card-normal {
+  display: none;
+}
+
+/* ========== 详情面板：淡入 + 上浮动画 ========== */
+.project-detail-panel {
+  display: none;
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+
+  /* 初始状态：透明 + 下移 */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.project-card-wrapper.expanded .project-detail-panel {
+  display: block;
+}
+
+/* 等浏览器渲染一帧后再触发动画 */
+.project-card-wrapper.expanded .project-detail-panel.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 详情面板内容 */
+.project-detail-panel h4 {
+  color: #004d40;
+  font-size: 22px;
+  margin-bottom: 12px;
+  padding-right: 40px;
+}
+
+.project-detail-panel .meta {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.project-detail-panel h5 {
+  color: #008073;
+  margin: 20px 0 10px;
+  font-size: 16px;
+}
+
+.project-detail-panel p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* 关闭按钮 */
+.project-detail-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  border: none;
+  background: none;
+  line-height: 1;
+}
+
+.project-detail-close:hover {
+  color: #333;
+}
+
+/* ========== 悬停自动翻转 ========== */
+.project-card-wrapper .card.hoverable-card .card-reveal {
+  transition: top 0.35s ease;
+}
+
+.project-card-wrapper .card.hoverable-card:hover .card-reveal {
+  top: 0 !important;
 }
