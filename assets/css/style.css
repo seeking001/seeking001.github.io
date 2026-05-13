@@ -1,3 +1,218 @@
+/* ============================================================
+ * 个人简历网站 - 主样式表
+ * 基于 Materialize 0.95.3 框架
+ * 作者：孙平
+ * 描述：整理归类的样式文件，按功能模块分组，便于阅读和维护
+ * ============================================================ */
+
+
+/* ============================================================
+ * 一、外部字体导入
+ * ============================================================ */
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+
+/* ============================================================
+ * 二、全局基础样式
+ * ============================================================ */
+
+/* 页面主体：文字颜色和字号 */
+body {
+  color: #333;
+  font-size: 18px;
+}
+
+/* 全局链接颜色 */
+a {
+  color: #004d40;
+}
+
+/* 引用块样式 */
+blockquote {
+  border-left: 5px solid #795548;
+  color: #795548;
+  font-size: 125%;
+  font-weight: 400;
+  margin: 20px 0;
+  padding-left: 1.5rem;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* 隐藏所有 <small> 标签（全局性较强，请注意影响范围） */
+small {
+  display: none;
+}
+
+/* 文字居中工具类 */
+.text-center {
+  text-align: center;
+}
+
+/* 灰色文字工具类 */
+.grey-text {
+  color: #666 !important;
+}
+
+/* 图片标题：跟随图片，背景色与图两端对齐，文字居中 */
+.img-caption {
+  display: block;
+  background-color: #eee;
+  color: #666;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 18px;
+}
+
+
+/* ============================================================
+ * 三、主题色工具类
+ * ============================================================ */
+
+/* 青绿色文字（teal darken-4 左右） */
+.teal-text {
+  color: #008073 !important;
+}
+
+/* 青绿色背景 */
+.teal {
+  background-color: #008073 !important;
+}
+
+
+/* ============================================================
+ * 四、布局结构
+ * ============================================================ */
+
+/* 主内容区：左侧留出侧边导航的宽度（桌面端190px） */
+main {
+  background: url(../../assets/img/bg.png) repeat;
+  padding-left: 190px;
+}
+
+/* 内容区块通用设置 */
+.section {
+  padding-bottom: 30px;
+  padding-top: 0;
+  position: relative;
+}
+
+/* 全屏高度区块 */
+.full-height {
+  height: 100vh;
+}
+
+/* 容器宽度微调 */
+.container {
+  width: 95%;
+}
+
+/* 区块标题样式 */
+h3 {
+  font-weight: 200;
+  margin-bottom: 60px;
+  margin-top: 0;
+  padding: 30px 40px;
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+ * 五、顶部导航栏（桌面端隐藏，移动端显示）
+ * ============================================================ */
+
+nav {
+  background: white;
+  box-shadow: none;
+  height: 0;
+}
+
+nav i {
+  padding: 0 15px;
+  position: relative;
+  top: 5px;
+}
+
+
+/* ============================================================
+ * 六、固定侧边导航栏（桌面端）
+ * ============================================================ */
+
+/* 侧边导航容器 */
+ul.side-nav {
+  width: 190px;
+}
+
+ul.side-nav li {
+  padding: 0;
+}
+
+/* 侧边导航链接样式 */
+ul.side-nav.fixed a {
+  box-sizing: content-box;
+  color: rgb(16, 202, 56);
+  /* 亮绿色，可能被 .teal-text 覆盖 */
+  display: block;
+  line-height: 100%;
+  padding: 10px 0 12px;
+}
+
+/* 侧边导航 Logo 区域 */
+ul.side-nav.fixed li.logo {
+  background-color: #fafafa;
+  border-bottom: 1px solid #ddd;
+  box-sizing: content-box;
+  min-height: 90px;
+  padding: 30px 30px 40px;
+}
+
+ul.side-nav.fixed li.logo a {
+  font-weight: 200;
+  line-height: 100%;
+}
+
+/* Logo 区域的文字（副标题） */
+li.logo span {
+  display: block;
+  font-size: 14px;
+}
+
+/* Logo 中 h1 的样式重置 */
+.brand-logo h1 {
+  font-size: inherit;
+  line-height: inherit;
+  margin: inherit;
+  font-weight: inherit;
+}
+
+/* Logo 链接的激活和悬停状态 */
+ul.table-of-contents li.logo a.active,
+ul.table-of-contents li.logo a:hover {
+  border: none;
+  font-weight: 200;
+}
+
+/* 普通导航项的激活和悬停状态 */
+ul.table-of-contents li:not(.logo) a.active,
+ul.table-of-contents li:not(.logo) a:hover {
+  background-color: #fafafa;
+  border-left: 3px solid;
+}
+
+/* 侧边导航文字颜色 */
+ul.side-nav.fixed.table-of-contents li:not(.logo) a span,
+ul#slide-out li:not(.logo) a span {
+  color: #333 !important;
+}
+
+
+/* ============================================================
+ * 七、个人头像
+ * ============================================================ */
+
 .profile-pic {
   position: relative;
   max-width: 130px;
@@ -5,12 +220,10 @@
   width: auto;
   height: auto;
   overflow: hidden;
-  /* display: inline-block; */
-
-
-  /* background-size: cover;  */
   margin: -31px;
+  /* 负外边距用于微调头像在侧边栏中的位置 */
   margin-left: -7px;
+  /* 覆盖左侧外边距，进一步微调 */
   border: 6px solid rgba(0, 77, 64, 0.4);
   border-radius: 50% !important;
 }
@@ -20,23 +233,66 @@
   height: auto;
 }
 
-.tracker {
-  /* visibility: hidden; */
-  position: fixed;
-  /* margin-inline-end: auto;  */
-  bottom: 0;
-  right: 0;
+
+/* ============================================================
+ * 八、Hero 首页区域
+ * ============================================================ */
+
+/* 首页背景（纯色替代了原来的背景图） */
+#intro.section {
+  background: #a7ffeb repeat;
+  position: relative;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+/* 首页文字容器定位 */
+#intro.section .container {
+  color: white;
+  font-weight: 200;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
 
+/* 首页文字样式（排除 span 标签，避免影响打字效果） */
+#intro.section .container *:not(span) {
+  font-weight: 300;
+  line-height: 150%;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 首页下划线装饰 */
+#intro.section .underline {
+  border-bottom: 5px solid #24305e;
+}
+
+/* 首页 teal 高亮文字的内边距 */
+#intro.section .teal {
+  padding: 0 10px;
+}
+
+/* 首页半透明遮罩层 */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
+/* ============================================================
+ * 九、社交图标按钮
+ * ============================================================ */
+
+/* 社交图标容器 */
 .social {
   margin: 0 auto;
   width: auto;
   text-align: inherit;
-  /* padding: 10px; */
 }
 
+/* 圆形图标按钮通用样式 */
 .icon-btn {
   margin-left: auto;
   width: 50px;
@@ -51,6 +307,7 @@
   margin: 4px;
 }
 
+/* 各平台默认颜色 */
 .github {
   color: black;
 }
@@ -63,11 +320,13 @@
   color: grey;
 }
 
+/* 图标按钮悬停：放大 + 变白 */
 .icon-btn:hover {
   transform: scale(1.10);
   color: #FFFFFF;
 }
 
+/* 各平台悬停背景色 */
 .linkedin:hover {
   background-color: #0077b5;
 }
@@ -80,8 +339,12 @@
   background-color: black;
 }
 
-/* Buttons - Read Me, Contact Us */
 
+/* ============================================================
+ * 十、操作按钮（了解更多 / 联系我 / 下载等）
+ * ============================================================ */
+
+/* "了解更多" 按钮：白底青绿字 */
 .readme {
   position: relative;
   padding: 11px 35px;
@@ -96,11 +359,7 @@
   -webkit-border-radius: 5px;
 }
 
-/* .readme:hover{
-  color: white;
-  background-color: #00796b;
-} */
-
+/* "联系我" / "下载" 按钮：透明底白字 */
 .contactme {
   position: relative;
   padding: 11px 35px;
@@ -116,95 +375,192 @@
   -webkit-border-radius: 5px;
 }
 
+/* "联系我" 按钮悬停：白底青绿字 */
 .contactme:hover {
   color: #00796b;
   background-color: white;
 }
 
-/* main body */
 
-/* body-color */
+/* ============================================================
+ * 十一、Materialize 波纹效果微调
+ * ============================================================ */
 
-body {
+.waves-effect.waves-blue .waves-ripple {
+  background-color: rgba(33, 150, 243, 0.2);
+}
+
+
+/* ============================================================
+ * 十二、卡片通用样式
+ * ============================================================ */
+
+/* 卡片底部外边距 */
+.card {
+  margin-bottom: 20px;
+}
+
+.card .card-content .project-title {
+  line-height: 2.5rem;
+}
+
+/* 证书标题 */
+.card .certificate-title {
+  display: block;
+  background-color: #eee;
   color: #333;
-  font-size: 18px;
-}
-
-/* body {
-  color: black;
-  font-size: 18px;
-} */
-
-/* main a -- links */
-
-/* a {
-  color: #009688;
-} */
-
-a {
-  color: #004d40;
-}
-
-/* main blockqoute */
-
-/* blockquote {
-  border-left: 5px solid #795548;
-  color: #795548;
-  font-size: 125%;
-  font-weight: 400;
-  margin: 20px 0;
-  padding-left: 1.5rem;
-} */
-
-blockquote {
-  border-left: 5px solid #795548;
-  color: #795548;
-  font-size: 125%;
-  font-weight: 400;
-  margin: 20px 0;
-  padding-left: 1.5rem;
-}
-
-blockquote * {
-  font-size: inherit;
-  line-height: inherit;
-}
-
-.text-center {
   text-align: center;
+  padding: 5px 0;
+  font-size: 22px;
+  font-weight: 500;
 }
 
-/* main nav */
-
-nav {
-  background: white;
-  box-shadow: none;
-  height: 0;
+.card .certificate-name {
+  display: block;
+  border: 1px solid #eee;
+  color: teal;
+  text-align: center;
+  font-size: 18px;
 }
 
-/* nav {
-  background: rgb(149, 126, 212);
-  box-shadow: none;
-  height: 0;
-} */
+/* 作品标题 */
+.card .project-title {
+  font-size: 24px;
+}
 
-nav i {
-  padding: 0 15px;
+/* 卡片内 h5 / h6 */
+.card h5 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.card h6 {
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+
+/* 卡片内容区内边距 */
+.card .card-content {
+  padding-bottom: 20px;
+}
+
+.card-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* 卡片内容区的图片加浅灰色边框 */
+.card img {
+  border: 1px solid #eee;
+}
+
+/* 卡片内角色标签（绝对定位在右上角） */
+.card .role {
+  font-size: 1.25rem;
+  position: absolute;
+  right: 38px;
+  top: 35px;
+}
+
+/* 卡片内链接样式 */
+.card li a {
+  margin-right: 0;
+  color: #333;
+  border-bottom: 2px solid #ffab40;
+}
+
+.card li a:hover {
+  color: #333;
+  font-weight: 500;
+}
+
+/* 卡片内右箭头图标 */
+.card i.right {
+  margin-left: 10px;
+}
+
+/* 卡片内嵌套列表（更小更浅） */
+.card ul li li {
+  color: #666;
+  font-size: 13px;
+}
+
+/* 大卡片与中等卡片的图片高度 */
+.card.large .card-image {
+  height: 230px;
+}
+
+.card.large .card-content {
+  height: auto;
+}
+
+.card.large .card-content p {
+  color: inherit;
+  margin: 0;
+  padding: 30px 0;
+}
+
+.card.medium .card-image {
+  height: 240px;
+}
+
+/* 卡片底部操作区 */
+.card-action span {
+  font-size: 85%;
+  color: #666;
+}
+
+.card-action a.btn-floating {
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+ * 十三、链接下划线悬停效果
+ * ============================================================ */
+
+a.hoverline {
+  border-bottom: 3px solid transparent !important;
+  padding: 3px 3px 0 3px;
+  transition: 0.25s all;
+  -moz-transition: 0.25s all;
+  -webkit-transition: 0.25s all;
+}
+
+a.hoverline:hover {
+  border-bottom: 3px solid #004d40 !important;
+}
+
+
+/* ============================================================
+ * 十六、联系区域样式
+ * ============================================================ */
+
+#contact a:not(.btn-floating) {
+  bottom: 6px;
+  left: 20px;
   position: relative;
-  top: 5px;
 }
 
-/* main */
 
-/* main {
-  background: url(../../assets/img/bg.png) repeat;
-  padding-left: 190px;
-} */
+/* ============================================================
+ * 十七、外部链接图标微调
+ * ============================================================ */
 
-main {
-  background: url(../../assets/img/bg.png) repeat;
-  padding-left: 190px;
+.fa-external-link:before {
+  left: 3px;
+  position: relative;
+  top: 2px;
 }
+
+
+/* ============================================================
+ * 十八、描述列表样式
+ * ============================================================ */
 
 dl {
   margin-top: 0.5rem;
@@ -221,530 +577,42 @@ dt {
   margin-left: 0.5rem;
 }
 
-ul.side-nav {
-  width: 190px;
-}
 
-ul.side-nav li {
-  padding: 0;
-}
-
-/* ul.side-nav.fixed a {
-  box-sizing: content-box;
-  color: rgb(48, 122, 207);
-  display: block;
-  line-height: 100%;
-  padding: 10px 0 12px;
-} */
-
-ul.side-nav.fixed a {
-  box-sizing: content-box;
-  color: rgb(16, 202, 56);
-  display: block;
-  line-height: 100%;
-  padding: 10px 0 12px;
-}
-
-ul.table-of-contents li.logo a.active,
-ul.table-of-contents li.logo a:hover {
-  border: none;
-  font-weight: 200;
-}
-
-/* ul.side-nav.fixed li.logo {
-  background-color: #fafafa;
-  border-bottom: 1px solid #ddd;
-  box-sizing: content-box;
-  min-height: 90px;
-  padding: 30px 30px 40px;
-} */
-
-ul.side-nav.fixed li.logo {
-  background-color: #fafafa;
-  border-bottom: 1px solid #ddd;
-  box-sizing: content-box;
-  min-height: 90px;
-  padding: 30px 30px 40px;
-}
-
-ul.side-nav.fixed li.logo a {
-  font-weight: 200;
-  line-height: 100%;
-}
-
-ul.table-of-contents li:not(.logo) a.active,
-ul.table-of-contents li:not(.logo) a:hover {
-  background-color: #fafafa;
-  border-left: 3px solid;
-}
-
-ul.side-nav.fixed.table-of-contents li:not(.logo) a span,
-ul#slide-out li:not(.logo) a span {
-  color: #333 !important;
-}
-
-li.logo span {
-  display: block;
-  font-size: 14px;
-}
-
-.brand-logo h1 {
-  font-size: inherit;
-  line-height: inherit;
-  margin: inherit;
-  font-weight: inherit;
-}
-
-.container {
-  width: 95%;
-}
-
-h3 {
-  font-weight: 200;
-  margin-bottom: 60px;
-  margin-top: 0;
-  padding: 30px 40px;
-  text-transform: uppercase;
-}
-
-.section {
-  padding-bottom: 30px;
-  padding-top: 0;
-  position: relative;
-}
-
-.full-height {
-  height: 100vh;
-}
-
-/* Original */
-
-/* #intro.section {
-  background: url(../../assets/img/white-ai-wallpaper.jpg) no-repeat top center/cover;
-  position: relative;
-} */
-
-#intro.section {
-  background: #a7ffeb repeat;
-  position: relative;
-}
-
-#intro.section .container {
-  color: white;
-  font-weight: 200;
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
-/* #intro.section .container *:not(span) {
-  font-weight: 300;
-  line-height: 150%;
-  padding: 0 30px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-} */
-
-#intro.section .container *:not(span) {
-  font-weight: 300;
-  /* font-weight: 400; */
-  line-height: 150%;
-  /* padding: 0 0px; */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-#intro.section .underline {
-  border-bottom: 5px solid #24305e;
-}
-
-#intro.section .teal {
-  padding: 0 10px;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.waves-effect.waves-blue .waves-ripple {
-  /* The alpha value allows the text and background color
-   of the button to still show through. */
-  background-color: rgba(33, 150, 243, 0.2);
-}
-
-.card {
-  margin-bottom: 60px;
-}
-
-.card .role {
-  font-size: 1.25rem;
-  position: absolute;
-  right: 38px;
-  top: 35px;
-}
-
-.card li a {
-  margin-right: 0;
-  color: #333;
-  border-bottom: 2px solid #ffab40;
-}
-
-.card li a:hover {
-  color: #333;
-  font-weight: 500;
-}
-
-.card .card-content {
-  padding-bottom: 30px;
-}
-
-.card .card-content p {
-  padding: 5px 0 0;
-}
-
-.card h5 {
-  font-size: 1.5rem;
-  margin-bottom: -0.5rem;
-  margin-top: 2rem;
-}
-
-.card h6 {
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin-top: 2rem;
-  text-transform: uppercase;
-}
-
-#experience .card-action {
-  background-color: rgba(0, 0, 0, 0.02);
-  border: none;
-}
-
-#experience .card .col.s12.m2 a {
-  display: block;
-}
-
-#experience .card .col.s12.m2 a img {
-  max-height: 60px;
-}
-
-.card-action span {
-  font-size: 85%;
-  color: #666;
-}
-
-.card ul {
-  margin-bottom: 0;
-}
-
-.card ul li {
-  line-height: 200%;
-  list-style-type: disc;
-  margin-left: 24px;
-}
-
-.card ul li li {
-  color: #666;
-  font-size: 13px;
-}
-
-.card .card-title {
-  font-size: 24px;
-}
-
-.card .card-content .card-title {
-  line-height: 2.5rem;
-}
-
-.card i.right {
-  margin-left: 10px;
-}
-
-a.hoverline {
-  border-bottom: 3px solid transparent !important;
-  padding: 3px 3px 0 3px;
-  transition: 0.25s all;
-  -moz-transition: 0.25s all;
-  -webkit-transition: 0.25s all;
-}
-
-/* main a.hoverline */
-
-/* a.hoverline:hover {
-  border-bottom: 3px solid #24305e !important;
-} */
-
-a.hoverline:hover {
-  border-bottom: 3px solid #004d40 !important;
-}
-
-#skills .card.large {
-  height: 360px;
-}
-
-#skills h4 {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-}
-
-#skills .col img.responsive-img {
-  margin: 0 auto;
-  max-height: 100px;
-  padding-bottom: 10px;
-  text-align: center;
-  vertical-align: middle;
-  display: table-cell;
-}
-
-.card.large .card-content p {
-  color: inherit;
-  margin: 0;
-  padding: 30px 0;
-}
-
-#experience .card-content .row {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-}
-
-.card.large .card-image {
-  height: 230px;
-}
-
-.card.large .card-content {
-  height: auto;
-}
-
-.card.medium .card-image {
-  height: 240px;
-}
-
-.card-action a.btn-floating {
-  margin-bottom: 0;
-}
-
-#contact a:not(.btn-floating) {
-  bottom: 6px;
-  left: 20px;
-  position: relative;
-}
-
-#experience .col.s12.m2 {
-  text-align: center;
-}
-
-.fa-external-link:before {
-  left: 3px;
-  position: relative;
-  top: 2px;
-}
-
-small {
-  display: none;
-}
-
-.grey-text {
-  color: #666 !important;
-}
-
-/* main .teal-text */
-
-.teal-text {
-  color: #008073 !important;
-}
-
-/* .teal-text {
-  color: #0b5e86 !important;
-} */
-
-/* .teal */
-
-.teal {
-  background-color: #008073 !important;
-}
-
-/* .teal {
-  background-color: #00695c !important;
-} */
-
-@media (min-width: 1200px) {
-  #experience .container {
-    width: 860px;
-  }
-}
-
-@media (max-width: 1360px) {
-  .card ul li {
-    font-size: 14px;
-    line-height: 200%;
-    margin-left: 20px;
-  }
-}
-
-@media (max-width: 1160px) {
-  .card ul li {
-    line-height: 150%;
-  }
-}
-
-@media (max-width: 992px) {
-  main {
-    padding-left: 0px;
-    padding-top: 64px;
-  }
-
-  ul.side-nav a {
-    line-height: 100%;
-    padding: 0;
-    width: 100%;
-  }
-
-  nav {
-    background: #fff;
-    height: 64px;
-    position: absolute;
-  }
-
-  nav a.button-collapse,
-  nav a.button-collapse i {
-    color: #009688;
-    height: 56px;
-    line-height: 56px;
-  }
-
-  h3 {
-    padding: 20px 30px;
-    margin-bottom: 40px;
-  }
-
-  .container {
-    margin: 0 auto;
-  }
-
-  nav.hide-on-large.only.trigger {
-    display: block;
-    position: fixed;
-    top: 0;
-    z-index: 2;
-  }
-
-  .name-title {
-    display: block;
-    height: 100%;
-    padding-top: 15px;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-  }
-
-  .name-title>span,
-  .name-title>a {
-    position: relative;
-    line-height: 20px;
-  }
-
-  .name-title a {
-    font-size: 22px;
-    display: block;
-  }
-
-  .name-title span {
-    display: block;
-    font-size: 14px;
-  }
-
-  h3,
-  .container {
-    position: relative;
-    top: 64px;
-  }
-
-  section#intro {
-    margin-bottom: -64px;
-  }
-
-  .card .role {
-    position: relative;
-    right: initial;
-    top: initial;
-  }
-}
-
-@media (max-width: 600px) {
-  h2 {
-    font-size: 22px;
-    line-height: 200%;
-    margin: 30px 0 0;
-  }
-
-  #intro.section .container *:not(span) {
-    padding: 0;
-  }
-
-  .card .card-content .card-title {
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  #experience span.card-title {
-    text-align: center;
-    display: block;
-  }
-
-  #experience span.card-title a {
-    margin: 0;
-  }
-
-  i.mdi-navigation-close.right {
-    position: relative;
-    bottom: 15px;
-  }
-
-  #contact a:not(.btn-floating) {
-    text-align: center;
-    display: block;
-    left: initial;
-    bottom: initial;
-  }
-
-  #contact a.btn-floating.btn-large {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  #intro.section {
-    background-position-x: 30%;
-  }
+/* ============================================================
+ * 十九、页面跟踪器（固定定位在右下角）
+ * ============================================================ */
+
+.tracker {
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 
-/* 以下为添加样式 */
+/* ============================================================
+ * 二十、作品卡片交互样式
+ *      包含：悬停翻转 + 点击展开详情面板
+ * ============================================================ */
 
-/* ========== 作品卡片：悬停翻转 + 点击展开详情 ========== */
-
-/* 卡片容器：去掉宽度过渡 */
+/* ---------- 卡片容器 ---------- */
 .project-card-wrapper {
-  /* 不拉伸，只做显隐 */
+  /* 不设置宽度过渡，由展开类直接控制 */
+  ;
 }
 
-/* 展开状态：直接占满整行，无过渡 */
+/* 展开状态：占满整行 */
 .project-card-wrapper.expanded {
   width: 100% !important;
   max-width: 100% !important;
   flex: 0 0 100% !important;
 }
 
-/* 未展开的卡片在展开时隐藏 */
+/* 同组其他卡片在展开时隐藏 */
 .project-card-wrapper.hidden-by-expand {
   display: none;
 }
 
-/* 普通卡片视图 */
+/* 普通卡片视图：展开后隐藏 */
 .card-normal {
   display: block;
 }
@@ -753,7 +621,7 @@ small {
   display: none;
 }
 
-/* ========== 详情面板：淡入 + 上浮动画 ========== */
+/* ---------- 详情面板 ---------- */
 .project-detail-panel {
   display: none;
   background: #fff;
@@ -762,7 +630,7 @@ small {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   position: relative;
 
-  /* 初始状态：透明 + 下移 */
+  /* 初始状态：透明 + 略微下移，等待动画触发 */
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.35s ease, transform 0.35s ease;
@@ -772,13 +640,13 @@ small {
   display: block;
 }
 
-/* 等浏览器渲染一帧后再触发动画 */
+/* 动画触发：淡入 + 上浮 */
 .project-card-wrapper.expanded .project-detail-panel.animate-in {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 详情面板内容 */
+/* 详情面板内部元素 */
 .project-detail-panel h4 {
   color: #004d40;
   font-size: 22px;
@@ -823,7 +691,7 @@ small {
   color: #333;
 }
 
-/* ========== 悬停自动翻转 ========== */
+/* ---------- 悬停自动翻转 ---------- */
 .project-card-wrapper .card.hoverable-card .card-reveal {
   transition: top 0.35s ease;
 }
@@ -832,8 +700,7 @@ small {
   top: 0 !important;
 }
 
-
-/* 作品卡片按钮组 */
+/* ---------- 作品卡片按钮组 ---------- */
 .project-card-btns {
   display: flex;
   justify-content: center;
@@ -842,7 +709,11 @@ small {
   gap: 4px;
 }
 
-/* 中间圆形按钮呼吸效果 */
+
+/* ============================================================
+ * 二十一、呼吸动画（中间圆形演示按钮）
+ * ============================================================ */
+
 .btn-round-home {
   animation: breathe 2.5s ease-in-out infinite;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -850,6 +721,7 @@ small {
 
 .btn-round-home:hover {
   animation: none;
+  /* 悬停时停止呼吸，切换为放大效果 */
   transform: scale(1.1);
   box-shadow: 0 3px 10px rgba(0, 150, 136, 0.8);
 }
@@ -866,8 +738,168 @@ small {
   }
 }
 
-/* 手机端：三个按钮各占一行 */
-@media only screen and (max-width: 600px) {
+
+/* ============================================================
+ * 二十二、响应式设计
+ * ============================================================ */
+
+/* ---- 宽屏优化（≥1200px）---- */
+@media (min-width: 1200px) {
+  #experience .container {
+    width: 860px;
+  }
+}
+
+/* ---- 中等屏幕（≤1360px）---- */
+@media (max-width: 1360px) {
+  .card ul li {
+    font-size: 14px;
+    line-height: 200%;
+    margin-left: 20px;
+  }
+}
+
+/* ---- 较小屏幕（≤1160px）---- */
+@media (max-width: 1160px) {
+  .card ul li {
+    line-height: 150%;
+  }
+}
+
+/* ---- 平板及以下（≤992px）：侧边导航变为顶部导航 ---- */
+@media (max-width: 992px) {
+  main {
+    padding-left: 0px;
+    padding-top: 64px;
+  }
+
+  ul.side-nav a {
+    line-height: 100%;
+    padding: 0;
+    width: 100%;
+  }
+
+  nav {
+    background: #fff;
+    height: 64px;
+    position: absolute;
+  }
+
+  nav a.button-collapse,
+  nav a.button-collapse i {
+    color: #009688;
+    height: 56px;
+    line-height: 56px;
+  }
+
+  h3 {
+    padding: 20px 30px;
+    margin-bottom: 40px;
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+
+  nav.hide-on-large.only.trigger {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+
+  /* 移动端顶部导航中的姓名标题 */
+  .name-title {
+    display: block;
+    height: 100%;
+    padding-top: 15px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+  }
+
+  .name-title>span,
+  .name-title>a {
+    position: relative;
+    line-height: 20px;
+  }
+
+  .name-title a {
+    font-size: 22px;
+    display: block;
+  }
+
+  .name-title span {
+    display: block;
+    font-size: 14px;
+  }
+
+  h3,
+  .container {
+    position: relative;
+    top: 64px;
+  }
+
+  section#intro {
+    margin-bottom: -64px;
+  }
+
+  .card .role {
+    position: relative;
+    right: initial;
+    top: initial;
+  }
+}
+
+/* ---- 手机端（≤600px）---- */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 22px;
+    line-height: 200%;
+    margin: 30px 0 0;
+  }
+
+  #intro.section .container *:not(span) {
+    padding: 0;
+  }
+
+  .card .card-content .project-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  #experience span.project-title {
+    text-align: center;
+    display: block;
+  }
+
+  #experience span.project-title a {
+    margin: 0;
+  }
+
+  i.mdi-navigation-close.right {
+    position: relative;
+    bottom: 15px;
+  }
+
+  #contact a:not(.btn-floating) {
+    text-align: center;
+    display: block;
+    left: initial;
+    bottom: initial;
+  }
+
+  #contact a.btn-floating.btn-large {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  #intro.section {
+    background-position-x: 30%;
+  }
+
+  /* 作品卡片按钮在手机端各占一行 */
   .project-card-btns {
     flex-wrap: wrap;
     gap: 8px;
