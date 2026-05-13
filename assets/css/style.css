@@ -831,3 +831,55 @@ small {
 .project-card-wrapper .card.hoverable-card:hover .card-reveal {
   top: 0 !important;
 }
+
+
+/* 作品卡片按钮组 */
+.project-card-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+
+/* 中间圆形按钮呼吸效果 */
+.btn-round-home {
+  animation: breathe 2.5s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-round-home:hover {
+  animation: none;
+  transform: scale(1.1);
+  box-shadow: 0 3px 10px rgba(0, 150, 136, 0.8);
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 15px rgba(0, 150, 136, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 6px 25px rgba(0, 150, 136, 0.7);
+  }
+}
+
+/* 手机端：三个按钮各占一行 */
+@media only screen and (max-width: 600px) {
+  .project-card-btns {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .project-card-btns .btn:not(.btn-round-home) {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .btn-round-home {
+    width: 50px;
+    height: 50px;
+  }
+}
