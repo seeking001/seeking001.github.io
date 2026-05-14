@@ -7,17 +7,12 @@
 
 
 /* ============================================================
- * 一、外部字体导入
- * ============================================================ */
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
-
-
-/* ============================================================
- * 二、全局基础样式
+ * 一、全局基础样式
  * ============================================================ */
 
 /* 页面主体：文字颜色和字号 */
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   font-size: 18px;
 }
@@ -43,9 +38,9 @@ blockquote * {
 }
 
 /* 隐藏所有 <small> 标签（全局性较强，请注意影响范围） */
-small {
+/* small {
   display: none;
-}
+} */
 
 /* 文字居中工具类 */
 .text-center {
@@ -136,76 +131,62 @@ nav i {
   top: 5px;
 }
 
+/* 兼容 Materialize 1.0.0 移动端导航 */
+nav .name-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 64px;
+  font-size: 1.2rem;
+}
+
 
 /* ============================================================
  * 六、固定侧边导航栏（桌面端）
+ *    Materialize 1.0.0 原生支持 sidenav-fixed，只需微调
  * ============================================================ */
 
-/* 侧边导航容器 */
-ul.side-nav {
+/* 侧边导航宽度（Materialize 默认 300px，改为 190px） */
+ul.sidenav.sidenav-fixed {
   width: 190px;
 }
 
-ul.side-nav li {
+/* 导航项内边距微调 */
+ul.sidenav.sidenav-fixed li a {
+  padding: 12px 16px;
+}
+
+/* Logo 区域 */
+ul.sidenav.sidenav-fixed li.logo {
+  background-color: #fafafa;
+  border-bottom: 1px solid #ddd;
+  min-height: 140px;
+  padding: 25px 0 20px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+ul.sidenav.sidenav-fixed li.logo a {
+  display: inline-block;
   padding: 0;
 }
 
-/* 侧边导航链接样式 */
-ul.side-nav.fixed a {
-  box-sizing: content-box;
-  color: rgb(16, 202, 56);
-  /* 亮绿色，可能被 .teal-text 覆盖 */
-  display: block;
-  line-height: 100%;
-  padding: 10px 0 12px;
+ul.sidenav.sidenav-fixed li.logo a:hover {
+  background-color: transparent;
 }
 
-/* 侧边导航 Logo 区域 */
-ul.side-nav.fixed li.logo {
+/* 导航激活和悬停状态 */
+ul.sidenav.sidenav-fixed li a.active,
+ul.sidenav.sidenav-fixed li a:hover {
   background-color: #fafafa;
-  border-bottom: 1px solid #ddd;
-  box-sizing: content-box;
-  min-height: 90px;
-  padding: 30px 30px 40px;
+  border-left: 3px solid #008073;
 }
 
-ul.side-nav.fixed li.logo a {
-  font-weight: 200;
-  line-height: 100%;
-}
-
-/* Logo 区域的文字（副标题） */
-li.logo span {
-  display: block;
-  font-size: 14px;
-}
-
-/* Logo 中 h1 的样式重置 */
-.brand-logo h1 {
-  font-size: inherit;
-  line-height: inherit;
-  margin: inherit;
-  font-weight: inherit;
-}
-
-/* Logo 链接的激活和悬停状态 */
-ul.table-of-contents li.logo a.active,
-ul.table-of-contents li.logo a:hover {
-  border: none;
-  font-weight: 200;
-}
-
-/* 普通导航项的激活和悬停状态 */
-ul.table-of-contents li:not(.logo) a.active,
-ul.table-of-contents li:not(.logo) a:hover {
-  background-color: #fafafa;
-  border-left: 3px solid;
-}
-
-/* 侧边导航文字颜色 */
-ul.side-nav.fixed.table-of-contents li:not(.logo) a span,
-ul#slide-out li:not(.logo) a span {
-  color: #333 !important;
+/* Logo 不显示激活边框 */
+ul.sidenav.sidenav-fixed li.logo a.active,
+ul.sidenav.sidenav-fixed li.logo a:hover {
+  border-left: none;
 }
 
 
@@ -401,7 +382,9 @@ ul#slide-out li:not(.logo) a span {
 }
 
 .card .card-content .project-title {
-  line-height: 2.5rem;
+  font-size: 18px;
+  line-height: 1.5rem;
+  font-weight: 500;
 }
 
 /* 证书标题 */
@@ -421,11 +404,6 @@ ul#slide-out li:not(.logo) a span {
   color: teal;
   text-align: center;
   font-size: 18px;
-}
-
-/* 作品标题 */
-.card .project-title {
-  font-size: 22px;
 }
 
 /* 卡片内 h5 / h6 */
@@ -771,7 +749,7 @@ dt {
     padding-top: 64px;
   }
 
-  ul.side-nav a {
+  ul.sidenav a {
     line-height: 100%;
     padding: 0;
     width: 100%;
@@ -783,8 +761,8 @@ dt {
     position: absolute;
   }
 
-  nav a.button-collapse,
-  nav a.button-collapse i {
+  nav a.sidenav-trigger,
+  nav a.sidenav-trigger i {
     color: #009688;
     height: 56px;
     line-height: 56px;
@@ -861,11 +839,6 @@ dt {
     padding: 0;
   }
 
-  .card .card-content .project-title {
-    font-size: 20px;
-    line-height: 24px;
-  }
-
   #experience span.project-title {
     text-align: center;
     display: block;
@@ -873,11 +846,6 @@ dt {
 
   #experience span.project-title a {
     margin: 0;
-  }
-
-  i.mdi-navigation-close.right {
-    position: relative;
-    bottom: 15px;
   }
 
   #contact a:not(.btn-floating) {

@@ -8,10 +8,10 @@
   <!-- 针对旧版IE浏览器的兼容性设置 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Materialize CSS 框架：提供基本样式和组件，从CDN加载（需要联网才能使用） -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <!-- Font Awesome 图标库：提供各种矢量小图标（如GitHub、LinkedIn等Logo） -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- 本地 Materialize 样式 -->
+  <link rel="stylesheet" href="/assets/vendor/materialize/materialize.min.css" />
+  <!-- 本地 Font Awesome 图标库 -->
+  <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css" />
   <!-- 自定义样式文件 -->
   <link rel="stylesheet" href="/assets/css/style.css" />
   <!-- 网页标题 -->
@@ -57,42 +57,43 @@
 
   <!-- ==================== 导航区域 ==================== -->
 
-  <!-- 导航栏 类型1: 在中等屏幕（平板）及以上显示的固定侧边导航 -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
+  <!-- 导航栏 类型1: 桌面端固定侧边导航（使用 Materialize 1.0.0 原生类） -->
+  <ul id="desktop-nav" class="sidenav sidenav-fixed section table-of-contents">
 
-      <!-- Logo/个人头像：点击后回到首页Hero区 -->
-      <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <img src="/assets/img/personal_icon.jpg" class="circle img-responsive profile-pic" alt="avatar">
-        </a>
-      </li>
+    <!-- Logo/个人头像 -->
+    <li class="logo">
+      <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro" class="brand-logo">
+        <img src="/assets/img/personal_icon.jpg" class="circle img-responsive profile-pic" alt="avatar">
+      </a>
+    </li>
 
-      <!-- 导航链接：每个链接跳转到页面对应的区块 -->
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>简介</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Certificates section" href="#certificates"
-          class="waves-effect waves-dark teal-text"><i class="mdi-social-school small"></i><span>证书</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>作品</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>联系</span></a>
-      </li>
-    </ul>
-  </nav>
+    <!-- 导航链接 -->
+    <li>
+      <a href="#about" class="waves-effect teal-text">
+        <i class="fa fa-user"></i><span>简介</span>
+      </a>
+    </li>
+    <li>
+      <a href="#certificates" class="waves-effect teal-text">
+        <i class="fa fa-graduation-cap"></i><span>证书</span>
+      </a>
+    </li>
+    <li>
+      <a href="#projects" class="waves-effect teal-text">
+        <i class="fa fa-book"></i><span>作品</span>
+      </a>
+    </li>
+    <li>
+      <a href="#contact" class="waves-effect teal-text">
+        <i class="fa fa-envelope"></i><span>联系</span>
+      </a>
+    </li>
+  </ul>
 
   <!-- 导航栏 类型2: 在小屏幕（手机）上显示的上方固定导航条 -->
   <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
-      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-target="slide-out" class="sidenav-trigger"><i
+        class="fa fa-bars"></i></a>
     <div class="name-title">
       <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">孙平</a><span
         class="black-text">数字城市开发者</span>
@@ -100,35 +101,24 @@
   </nav>
 
   <!-- 导航栏 类型3: 小屏幕点击按钮后，从侧边滑出的菜单 -->
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Certificates section" href="#Certificates"
-          class="waves-effect waves-dark teal-text"><i class="mdi-social-school small"></i><span>Certificates</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Open Varad's Resume in a new tab"
-          href="https://drive.google.com/file/d/1B6MZ1z0-7NsefC3Lm_q-uhib28MTqpE9/view?usp=sharing" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
+  <ul id="slide-out" class="sidenav">
+    <li class="bold">
+      <a aria-label="Navigate to the About section" href="#about" class="waves-effect teal-text"><i
+          class="fa fa-user small"></i><span>About</span></a>
+    </li>
+    <li class="bold">
+      <a aria-label="Navigate to the Certificates section" href="#Certificates" class="waves-effect teal-text"><i
+          class="fa fa-graduation-cap small"></i><span>Certificates</span></a>
+    </li>
+    <li class="bold">
+      <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect teal-text"><i
+          class="fa fa-book small"></i><span>Projects</span></a>
+    </li>
+    <li class="bold">
+      <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect teal-text"><i
+          class="fa fa-envelope small"></i><span>Contact</span></a>
+    </li>
+  </ul>
 
   <!-- ==================== 主内容区 ==================== -->
   <main>
@@ -385,7 +375,7 @@
                   </div>
                   <div class="card-content">
                     <span class="project-title teal-text">宝安区域环评“智能选址”项目的核心逻辑复现<i
-                        class="mdi-navigation-more-vert right"></i></span>
+                        class="fa fa-ellipsis-v right activator"></i></span>
                     <p>基于参与项目的个人研究复现</p>
                   </div>
                   <!-- 卡片翻转后显示的内容 -->
@@ -465,7 +455,7 @@
                   </div>
                   <div class="card-content">
                     <span class="project-title teal-text">龙华区公共服务设施规划管理系统的技术转化复现<i
-                        class="mdi-navigation-more-vert right"></i></span>
+                        class="fa fa-ellipsis-v right activator"></i></span>
                     <p>基于城市规划项目的技术转化复现</p>
                   </div>
                   <!-- 卡片翻转后显示的内容 -->
@@ -835,9 +825,9 @@
                       <img alt="宝安分区规划" src="/assets/img/projects/龙华公共设施_封面.png" />
                     </div>
                     <div class="card-content">
-                      <span class="project-title activator teal-text hoverline">
+                      <span class="project-title teal-text">
                         龙华区公共设施专项规划
-                        <i class="mdi-navigation-more-vert right"></i>
+                        <i class="fa fa-ellipsis-v right activator"></i>
                       </span>
                       <p>2013-2015年 &nbsp;|&nbsp; 经费230万元</p>
                     </div>
@@ -1123,23 +1113,33 @@
     });
   </script>
 
-  <!-- jQuery库：Materialize CSS 的组件依赖jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- 本地 Materialize JavaScript -->
+  <script src="/assets/vendor/materialize/materialize.min.js"></script>
 
-  <!-- Materialize JS：提供侧边栏、滚动监听等交互功能 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
   <script>
-    // Materialize 初始化代码
-    $(document).ready(function () {
-      // 初始化滚动监听（scrollspy），让侧边导航能根据滚动位置高亮
-      $(".scrollspy").scrollSpy()
-      // 初始化手机端的侧滑菜单（sideNav）
-      $(".button-collapse").sideNav({
-        menuWidth: 190,    // 菜单宽度
-        edge: "left",      // 从左边滑出
-        closeOnClick: true // 点击菜单项后自动关闭
-      })
-    })
+    document.addEventListener('DOMContentLoaded', function () {
+      // 初始化移动端侧边栏
+      var mobileSidenav = document.querySelector('#slide-out');
+      if (mobileSidenav) {
+        M.Sidenav.init(mobileSidenav, {
+          edge: 'left',
+          draggable: false
+        });
+      }
+
+      // 初始化滚动监听
+      var scrollspyElems = document.querySelectorAll('.scrollspy');
+      M.ScrollSpy.init(scrollspyElems, {
+        scrollOffset: 0
+      });
+
+      // 初始化提示工具
+      var tooltipElems = document.querySelectorAll('.tooltipped');
+      M.Tooltip.init(tooltipElems);
+
+      // 初始化波纹效果
+      M.Waves.init();
+    });
   </script>
 
   <!-- ========== 作品卡片：悬停翻转 + 点击展开详情 ========== -->
