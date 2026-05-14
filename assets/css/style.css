@@ -425,12 +425,12 @@ ul#slide-out li:not(.logo) a span {
 
 /* 作品标题 */
 .card .project-title {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 /* 卡片内 h5 / h6 */
 .card h5 {
-  font-size: 1.8rem;
+  font-size: 26px;
   font-weight: 600;
   margin-top: 2rem;
 }
@@ -484,10 +484,17 @@ ul#slide-out li:not(.logo) a span {
 }
 
 /* 卡片内嵌套列表（更小更浅） */
-.card ul li li {
+.card ul li {
+  color: #333;
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+/* 卡片内嵌套列表（更小更浅） */
+/* .card ul li li {
   color: #666;
   font-size: 13px;
-}
+} */
 
 /* 大卡片与中等卡片的图片高度 */
 .card.large .card-image {
@@ -595,10 +602,6 @@ dt {
  * ============================================================ */
 
 /* ---------- 卡片容器 ---------- */
-.project-card-wrapper {
-  /* 不设置宽度过渡，由展开类直接控制 */
-  ;
-}
 
 /* 展开状态：占满整行 */
 .project-card-wrapper.expanded {
@@ -626,6 +629,7 @@ dt {
   display: none;
   background: #fff;
   padding: 30px 35px;
+  margin-bottom: 20px;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   position: relative;
@@ -648,30 +652,23 @@ dt {
 
 /* 详情面板内部元素 */
 .project-detail-panel h4 {
-  color: #004d40;
-  font-size: 22px;
-  margin-bottom: 12px;
-  padding-right: 40px;
+  color: #008073;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* 详情面板中的图片：自适应容器宽度，保持长宽比 */
+.project-detail-panel img {
+  max-width: 100%;
+  height: auto;
 }
 
 .project-detail-panel .meta {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.project-detail-panel h5 {
-  color: #008073;
-  margin: 20px 0 10px;
-  font-size: 16px;
-}
-
-.project-detail-panel p {
-  line-height: 1.8;
-  margin-bottom: 15px;
-  color: #333;
+  color: #aaa;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
 /* 关闭按钮 */
@@ -680,6 +677,7 @@ dt {
   top: 15px;
   right: 20px;
   font-size: 28px;
+  font-weight: 100;
   color: #999;
   cursor: pointer;
   border: none;
@@ -693,7 +691,7 @@ dt {
 
 /* ---------- 悬停自动翻转 ---------- */
 .project-card-wrapper .card.hoverable-card .card-reveal {
-  transition: top 0.35s ease;
+  transition: top 0.5s ease;
 }
 
 .project-card-wrapper .card.hoverable-card:hover .card-reveal {
@@ -722,7 +720,7 @@ dt {
 .btn-round-home:hover {
   animation: none;
   /* 悬停时停止呼吸，切换为放大效果 */
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 3px 10px rgba(0, 150, 136, 0.8);
 }
 
