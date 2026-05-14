@@ -57,36 +57,37 @@
 
   <!-- ==================== 导航区域 ==================== -->
 
-  <!-- 导航栏 类型1: 桌面端固定侧边导航（使用 Materialize 1.0.0 原生类） -->
-  <ul id="desktop-nav" class="sidenav sidenav-fixed section table-of-contents">
+  <!-- 导航栏 类型1: 桌面端固定侧边导航 -->
+  <ul id="desktop-nav" class="sidenav sidenav-fixed section table-of-contents hide-on-small-only">
 
     <!-- Logo/个人头像 -->
     <li class="logo">
-      <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro" class="brand-logo">
-        <img src="/assets/img/personal_icon.jpg" class="circle img-responsive profile-pic" alt="avatar">
+      <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro">
+        <img src="/assets/img/personal_icon.png" class="circle img-responsive profile-pic" alt="avatar">
       </a>
     </li>
 
     <!-- 导航链接 -->
-    <li>
-      <a href="#about" class="waves-effect teal-text">
-        <i class="fa fa-user"></i><span>简介</span>
-      </a>
+    <li class="sidebar">
+      <a href="#about" class="waves-effect teal-text"><i class="material-icons">person</i><span>简介</span></a>
     </li>
-    <li>
+    <li class="sidebar">
       <a href="#certificates" class="waves-effect teal-text">
-        <i class="fa fa-graduation-cap"></i><span>证书</span>
-      </a>
+        <i class="material-icons">fact_check</i><span>证书</span></a>
     </li>
-    <li>
+    </a>
+    </li>
+    <li class="sidebar">
       <a href="#projects" class="waves-effect teal-text">
-        <i class="fa fa-book"></i><span>作品</span>
-      </a>
+        <i class="material-icons">grid_view</i><span>作品</span></a>
     </li>
-    <li>
+    </a>
+    </li>
+    <li class="sidebar">
       <a href="#contact" class="waves-effect teal-text">
-        <i class="fa fa-envelope"></i><span>联系</span>
-      </a>
+        <i class="material-icons">mail</i><span>联系</span></a>
+    </li>
+    </a>
     </li>
   </ul>
 
