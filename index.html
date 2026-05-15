@@ -8,10 +8,10 @@
   <!-- 针对旧版IE浏览器的兼容性设置 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Materialize CSS 框架：提供基本样式和组件，从CDN加载（需要联网才能使用） -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <!-- Font Awesome 图标库：提供各种矢量小图标（如GitHub、LinkedIn等Logo） -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- 本地 Materialize 样式 -->
+  <link rel="stylesheet" href="/assets/vendor/materialize/materialize.min.css" />
+  <!-- 本地 Font Awesome 图标库 -->
+  <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css" />
   <!-- 自定义样式文件 -->
   <link rel="stylesheet" href="/assets/css/style.css" />
   <!-- 网页标题 -->
@@ -57,42 +57,44 @@
 
   <!-- ==================== 导航区域 ==================== -->
 
-  <!-- 导航栏 类型1: 在中等屏幕（平板）及以上显示的固定侧边导航 -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
+  <!-- 导航栏 类型1: 桌面端固定侧边导航 -->
+  <ul id="desktop-nav" class="sidenav sidenav-fixed section table-of-contents hide-on-small-only">
 
-      <!-- Logo/个人头像：点击后回到首页Hero区 -->
-      <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <img src="/assets/img/personal_icon.jpg" class="circle img-responsive profile-pic" alt="avatar">
-        </a>
-      </li>
+    <!-- Logo/个人头像 -->
+    <li class="logo">
+      <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro">
+        <img src="/assets/img/personal_icon.png" class="circle img-responsive profile-pic" alt="avatar">
+      </a>
+    </li>
 
-      <!-- 导航链接：每个链接跳转到页面对应的区块 -->
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>简介</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Certificates section" href="#certificates"
-          class="waves-effect waves-dark teal-text"><i class="mdi-social-school small"></i><span>证书</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>作品</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>联系</span></a>
-      </li>
-    </ul>
-  </nav>
+    <!-- 导航链接 -->
+    <li class="sidebar">
+      <a href="#about" class="waves-effect teal-text"><i class="material-icons">person</i><span>简介</span></a>
+    </li>
+    <li class="sidebar">
+      <a href="#certificates" class="waves-effect teal-text">
+        <i class="material-icons">fact_check</i><span>证书</span></a>
+    </li>
+    </a>
+    </li>
+    <li class="sidebar">
+      <a href="#projects" class="waves-effect teal-text">
+        <i class="material-icons">grid_view</i><span>作品</span></a>
+    </li>
+    </a>
+    </li>
+    <li class="sidebar">
+      <a href="#contact" class="waves-effect teal-text">
+        <i class="material-icons">mail</i><span>联系</span></a>
+    </li>
+    </a>
+    </li>
+  </ul>
 
   <!-- 导航栏 类型2: 在小屏幕（手机）上显示的上方固定导航条 -->
   <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
-      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-target="slide-out" class="sidenav-trigger"><i
+        class="fa fa-bars"></i></a>
     <div class="name-title">
       <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">孙平</a><span
         class="black-text">数字城市开发者</span>
@@ -100,35 +102,24 @@
   </nav>
 
   <!-- 导航栏 类型3: 小屏幕点击按钮后，从侧边滑出的菜单 -->
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Certificates section" href="#Certificates"
-          class="waves-effect waves-dark teal-text"><i class="mdi-social-school small"></i><span>Certificates</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Open Varad's Resume in a new tab"
-          href="https://drive.google.com/file/d/1B6MZ1z0-7NsefC3Lm_q-uhib28MTqpE9/view?usp=sharing" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
+  <ul id="slide-out" class="sidenav">
+    <li class="bold">
+      <a aria-label="Navigate to the About section" href="#about" class="waves-effect teal-text"><i
+          class="fa fa-user small"></i><span>About</span></a>
+    </li>
+    <li class="bold">
+      <a aria-label="Navigate to the Certificates section" href="#Certificates" class="waves-effect teal-text"><i
+          class="fa fa-graduation-cap small"></i><span>Certificates</span></a>
+    </li>
+    <li class="bold">
+      <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect teal-text"><i
+          class="fa fa-book small"></i><span>Projects</span></a>
+    </li>
+    <li class="bold">
+      <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect teal-text"><i
+          class="fa fa-envelope small"></i><span>Contact</span></a>
+    </li>
+  </ul>
 
   <!-- ==================== 主内容区 ==================== -->
   <main>
@@ -140,48 +131,45 @@
         <div class="col-md-9">
           <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
             <div class="caption">
-              <!-- 标题：你的名字 -->
-              <h2>你好，我叫 <span class="teal">Sun Ping</span></h2>
-              <!-- 这里的动态打字效果文字，通过下面的Typed.js实现，你需要修改下方的脚本内容 -->
+              <!-- 标题 -->
+              <h2>你好，我叫 <span class="teal">孙平</span></h2>
+              <!-- 动态打字效果，通过下面的Typed.js实现 -->
               <h5 style="color:#fff">我是一名 <span class="typing" style="font-weight: 300; color:#004d40"></span></h5>
-              <!-- 副标题：简短概括你是谁，可以做什么，要突出你最大的亮点 -->
+              <!-- 副标题 -->
               <h5>
-                专注于GIS开发与数字城市规划领域，拥有5年GIS开发实战经验与13年城市规划积淀。<br>
-                致力于构建业务与技术之间的转化桥梁，通过数字技术杠杆撬动城市规划的模式创新。
+                专注于<b style="background-color: #007d70;"> GIS开发 </b>与<b style="background-color: #007d70;"> 城市规划
+                </b>领域，拥有3年GIS开发实战经验与13年城市规划积淀。<br>
+                致力于构建业务与技术之间的<b style="background-color: #007d70;"> 转化桥梁 </b>，通过技术杠杆撬动城市规划模式创新。
               </h5>
             </div>
-            <!-- 社交链接：放上你的GitHub, LinkedIn等链接 -->
+
+            <!-- 社交链接：放上你的GitHub等链接 -->
             <div class="social">
-              <a href="http://linkedin.com/in/sunping" target="_blank">
-                <button class="icon-btn linkedin">
-                  <i class="fa fa-linkedin"></i>
-                </button>
-              </a>
               <a href="https://github.com/seeking001/" target="_blank">
                 <button class="icon-btn github">
                   <i class="fa fa-github"></i>
                 </button>
               </a>
             </div>
+
+            <!-- 求职意向：可以写明你期望的GIS开发职位类型 -->
+            <h5 style="font-size: 20px;">
+              <b
+                style="color: #007d70; background-color: white; padding: 3px 5px; border-radius: 5px; border: 1px solid white;">求职意向：GIS开发工程师、数字城市开发者、智慧城市规划师等。</b>
+            </h5>
+
             <!-- 按钮：引导访客阅读更多或联系你 -->
             <div class='buttons'>
               <a href="#about" class="readme">了解更多</a>
               <a href="#contact" class="contactme">请联系我</a>
               <!-- 简历下载链接 -->
-              <a aria-label="Open Varad's resume in a new tab"
-                href="https://seeking001.github.io/assets/resume/Varad_Bhogayata_Resume.pdf" target="_blank"
-                class="waves-effect waves-dark teal-text"><i
-                  class="mdi-file-folder-open small"></i><span>个人简历</span></a>
+              <a href="https://seeking001.github.io/assets/resume/Varad_Bhogayata_Resume.pdf" target="_blank"
+                class="contactme">下载简历</a>
               <!-- 作品集下载链接 -->
-              <a aria-label="Open Varad's resume in a new tab"
-                href="https://seeking001.github.io/assets/resume/个人作品集.pdf" target="_blank"
-                class="waves-effect waves-dark teal-text"><i
-                  class="mdi-file-folder-open small"></i><span>个人作品</span></a>
+              <a href="https://seeking001.github.io/assets/resume/个人作品集.pdf" target="_blank" class="contactme">下载作品</a>
+
             </div>
-            <!-- 求职意向：可以写明你期望的GIS开发职位类型 -->
-            <h6>
-              <b>求职意向：</b>GIS开发工程师、数字城市开发者、智慧城市解决方案架构师等相关职位。
-            </h6>
+
           </div>
         </div>
       </div>
@@ -198,14 +186,16 @@
           <div class="col s12 m4">
             <div class="card">
               <div class="card-content">
-                <h4 class="brown-text light">个人简介</h4>
+                <div class="card-header">
+                  <h4 class="teal-text center-align">个人简介</h4>
+                </div>
                 <ul>
-                  <li><b>性别： </b>男</li>
-                  <li><b>出生年月： </b>1989.08</li>
-                  <li><b>籍贯： </b>湖北洪湖</li>
-                  <li><b>学历： </b>大学本科</li>
-                  <li><b>毕业院校： </b>长安大学</li>
-                  <li><b>专业： </b>城市规划</li>
+                  <li><b style="font-size: 20px;">性别： </b>男</li>
+                  <li><b style="font-size: 20px;">出生年月： </b>1989年08月</li>
+                  <li><b style="font-size: 20px;">籍贯： </b>湖北洪湖</li>
+                  <li><b style="font-size: 20px;">学历： </b>大学本科</li>
+                  <li><b style="font-size: 20px;">毕业院校： </b>长安大学</li>
+                  <li><b style="font-size: 20px;">专业： </b>城市规划</li>
                   <!-- <div class="col s12 m12">
                     <img src="/assets/img/about/毕业证.jpg" alt="毕业证" style="width: 100%;">
                     <img src="/assets/img/about/学位证.jpg" alt="学位证" style="width: 100%;">
@@ -215,40 +205,48 @@
             </div>
           </div>
 
-          <!-- 工作经历 -->
-          <div class="col s12 m4">
+
+
+          <!-- 技能清单 -->
+          <div class=" col s12 m8">
             <div class="card">
               <div class="card-content">
-                <h4 class="brown-text light">工作经历</h4>
+                <div class="card-header">
+                  <h4 class="teal-text center-align">技能清单</h4>
+                </div>
                 <ul>
                   <li>
-                    <h5>2012.07-2021.09</h5>
-                    <p><b>深圳市宝安规划设计院</b> 项目负责人</p>
-                    <p>以城市规划业务为主，以工程咨询、土地研究、公共政策等业务为辅。</p>
+                    <h5>城市规划：具备全过程推进项目和带团队的业务能力</h5>
+                    ArcGIS、QGIS、规划一张图系统、CAD、SketchUp、Adobe Photoshop、Adobe
+                    Illustrator、Office办公软件等。
                   </li>
                   <li>
-                    <h5>2021.10-至今</h5>
-                    <p><b>深圳市宝安设计集团有限公司</b> 主任工程师</p>
-                    <p>主攻区域环评改革、智慧平台研发、全过程咨询、低空经济研究等新型业务，兼顾城市规划、工程咨询等传统业务。</p>
-                    <img src="/assets/img/about/职务聘任_主任工程师.png" alt="主任工程师">
+                    <h5>GIS开发：具备需求设计、技术选型和数据处理的全栈开发能力</h5>
+                    HTML+CSS+JavaScript、Vue3+Pinia+Ajax、OpenLayers、Cesium、PostGIS、GeoServer、Python、Node.js、Docker、Git等。
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- 技能清单 -->
-          <div class=" col s12 m4">
+          <!-- 工作经历 -->
+          <div class="col s12 m12">
             <div class="card">
               <div class="card-content">
-                <h4 class="brown-text light">技能清单</h4>
-                <ul>
-                  <li><b>城市规划：</b>ArcGIS、QGIS、规划一张图系统、CAD、SketchUp、Adobe Photoshop、Adobe
-                    Illustrator、Office三件套。</li>
+                <div class="card-header">
+                  <h4 class="teal-text center-align">工作经历</h4>
+                </div>
+                <ul style="width: 85%; float: left;">
                   <li>
-                    <b>GIS开发：</b>HTML+CSS+JavaScript、Vue3+Pinia+Ajax、OpenLayers、Cesium、PostGIS、GeoServer、Python、Node.js、Docker、Git。
+                    <h5>2012.07-2021.09 &nbsp;|&nbsp; 深圳市宝安规划设计院 &nbsp;|&nbsp; 项目负责人</h5>
+                    以城市规划业务为主，以工程咨询、土地研究、公共政策等业务为辅。
+                  </li>
+                  <li>
+                    <h5>2021.10-至今 &nbsp;|&nbsp; 深圳市宝安设计集团有限公司 &nbsp;|&nbsp; 主任工程师</h5>
+                    主攻区域环评改革、智慧平台研发、全过程咨询、低空经济研究等新型业务，兼顾城市规划、工程咨询等传统业务。
                   </li>
                 </ul>
+                <img class="right" style="width: 15%;" src="/assets/img/about/职务聘任_主任工程师.png" alt="主任工程师">
               </div>
             </div>
           </div>
@@ -267,23 +265,23 @@
           <div class="col s12 m12 l12">
             <div class="card">
               <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.asu.edu/" target="_blank"
-                      class="teal-text hoverline">职业资格</a></span>
+                <div class="card-header">
+                  <h4 class="teal-text center-align">职业资格</h4>
+                </div>
                 <div class="col s12 m3">
-                  注册规划师
+                  <span class="certificate-title">注册规划师</span>
                   <img alt="" src="/assets/img/certificates/注册规划师.jpg" class="responsive-img" />
                 </div>
                 <div class="col s12 m3">
-                  注册咨询工程师
+                  <span class="certificate-title">注册咨询工程师</span>
                   <img alt="" src="/assets/img/certificates/注册咨询工程师.jpg" class="responsive-img" />
                 </div>
                 <div class="col s12 m3">
-                  GIS工程师
+                  <span class="certificate-title">GIS工程师</span>
                   <img alt="" src="/assets/img/certificates/GIS工程师.jpg" class="responsive-img" />
                 </div>
                 <div class="col s12 m3">
-                  中级职业资格
+                  <span class="certificate-title">中级职业资格</span>
                   <img alt="" src="/assets/img/certificates/中级职业资格.jpg" class="responsive-img" />
                 </div>
               </div>
@@ -294,53 +292,61 @@
           <div class="col s12 m12 l12">
             <div class="card">
               <div class="card-content">
-                <p>
-                  <span class="card-title"><a
-                      href="https://ahduni.edu.in/academics/schools-centres/school-of-engineering-and-applied-science/"
-                      target="_blank" class="teal-text hoverline">获奖证书</a></span>
-                </p>
+                <div class="card-header">
+                  <h4 class="teal-text center-align">获奖证书</h4>
+                </div>
                 <div class="col s12 m3">
-                  <h4>深圳市城乡规划二等奖</h4>
-                  <b>《沙井街道“5333”严管示范区工程整治项目规划》</b>
+                  <span class="certificate-title">深圳市城乡规划二等奖</span>
+                  <span class="certificate-name">《沙井街道“5333”严管示范区工程整治项目规划》</span>
                   <img alt="" src="/assets/img/certificates/沙井街道“5333”严管示范区工程整治项目规划(二等奖).jpg" class="responsive-img" />
                 </div>
                 <div class="col s12 m3">
-                  <h4>深圳市城乡规划三等奖</h4>
-                  <b>《龙华新区近期建设和土地利用规划2016年度实施计划》</b>
+                  <span class="certificate-title">深圳市城乡规划三等奖</span>
+                  <span class="certificate-name">《龙华新区近期建设和土地利用规划2016年度实施计划》</span>
                   <img alt="" src="/assets/img/certificates/龙华新区近期建设和土地利用规划2016年度实施计划(三等奖).jpg"
                     class="responsive-img" />
                 </div>
                 <div class="col s12 m3">
-                  <h4>深圳市城乡规划三等奖</h4>
-                  <b>《宝安区湿地资源保护和建设规划》</b>
+                  <span class="certificate-title">深圳市城乡规划三等奖</span>
+                  <span class="certificate-name">《宝安区湿地资源保护和建设规划》</span>
                   <img alt="" src="/assets/img/certificates/宝安区湿地资源保护和建设规划(三等奖).jpg" class="responsive-img" />
                 </div>
                 <div class="col s12 m3">
-                  <h4>深圳市城乡规划三等奖</h4>
-                  <b>《宝安区“十三五”人才住房和保障性住房筹集实施规划》</b>
+                  <span class="certificate-title">深圳市城乡规划三等奖</span>
+                  <span class="certificate-name">《宝安区“十三五”人才住房和保障性住房筹集实施规划》</span>
                   <img alt="" src="/assets/img/certificates/宝安区“十三五”人才住房和保障性住房筹集实施规划研究(三等奖).jpg"
                     class="responsive-img" />
                 </div>
                 <div class="col s12 m3">
-                  <h4>深圳市城乡规划三等奖</h4>
-                  <b>《燕罗国际智能制造生态城历史保护与古村活化利用专题》</b>
+                  <span class="certificate-title">深圳市城乡规划三等奖</span>
+                  <span class="certificate-name">《燕罗国际智能制造生态城历史保护与古村活化利用专题》</span>
                   <img alt="" src="/assets/img/certificates/燕罗国际智能制造生态城历史保护与古村活化利用专题研究(三等奖).jpg"
                     class="responsive-img" />
                 </div>
                 <div class="col s12 m3">
-                  <h4>深圳市城乡规划三等奖</h4>
-                  <b>《妈湾电厂产业提容项目规划设计》</b>
+                  <span class="certificate-title">深圳市城乡规划三等奖</span>
+                  <span class="certificate-name">《妈湾电厂产业提容项目规划设计》</span>
                   <img alt="" src="/assets/img/certificates/妈湾电厂产业提容项目规划设计(三等奖).jpg" class="responsive-img" />
                 </div>
                 <div class="col s12 m3">
-                  <h4>广东省城市规划三等奖 深圳市城乡规划二等奖</h4>
-                  <b>《宝安区黄田社区土地整备利益统筹项目（二期）土地整备规划研究》</b>
+                  <span class="certificate-title">深圳市城乡规划三等奖</span>
+                  <span class="certificate-name">《福永街道龙王庙工业区整治提升方案》</span>
+                  <img alt="" src="/assets/img/certificates/福永街道龙王庙工业区整治提升方案(三等奖).jpg" class="responsive-img" />
+                </div>
+                <div class="col s12 m3">
+                  <span class="certificate-title">深圳市城乡规划三等奖</span>
+                  <span class="certificate-name">《新桥东片区更新单元周边交通及配套设施规划研究》</span>
+                  <img alt="" src="/assets/img/certificates/新桥东片区更新单元周边交通及配套设施规划研究(表扬奖).jpg" class="responsive-img" />
+                </div>
+                <div class="col s12 m3">
+                  <span class="certificate-title">广东省城市规划三等奖<br>深圳市城乡规划二等奖</span>
+                  <span class="certificate-name">《宝安区黄田社区土地整备利益统筹项目（二期）》</span>
                   <img alt="" src="/assets/img/certificates/个人-宝安区黄田社区土地整备利益统筹项目（二期）土地整备规划研究.jpg"
                     class="responsive-img" />
                 </div>
                 <div class="col s12 m3">
-                  <h4>数据要素X大赛广东赛区优秀奖</h4>
-                  <b>《区域空间生态环境评价赋能绿色发展》</b>
+                  <span class="certificate-title">数据要素X大赛<br>广东赛区优秀奖</span>
+                  <span class="certificate-name">《区域空间生态环境评价赋能绿色发展》</span>
                   <img alt="" src="/assets/img/certificates/公司-数据要素X荣誉证书.jpg" class="responsive-img" />
                 </div>
               </div>
@@ -361,376 +367,312 @@
           <div class="col s12 m12 l12">
             <div class="card">
               <div class="card-content">
-                <p>
-                  <span class="card-title"><a class="teal-text hoverline">个人复现类</a></span>
-                </p>
-              </div>
-              <!-- 个人复现作品1 -->
-              <div class="col s12 m12 l6  project-card-wrapper" data-group="group1">
-                <!-- 正常卡片 -->
-                <div class="card medium card-normal hoverable-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img alt="智能选址" src="/assets/img/projects/个人复现_区域环评选址_智能选址map页.png" />
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title teal-text">宝安区域环评“智能选址”项目的核心逻辑复现<i
-                        class="mdi-navigation-more-vert right"></i></span>
-                    <p>基于参与项目的个人研究复现</p>
-                  </div>
-                  <!-- 卡片翻转后显示的内容 -->
-                  <div class="card-reveal">
-                    <h5>作品概况</h5>
-                    <ul>
-                      <li><b>总结项目经验，提炼复用方法</b><br>以个人研究的方式复现了宝安区域环评“智能选址”项目的核心逻辑，提炼出可复用的技术方法和实现思路。</li>
-                      <li><b>打通技术壁垒</b><br>通过复现过程，解决了技术实现中的关键问题。</li>
-                    </ul>
+                <div class="card-header">
+                  <h4 class="teal-text center-align">个人复现类</h4>
+                </div>
 
-                    <!-- 三个操作按钮 -->
-                    <div class="card-action center-align project-card-btns" style="margin-top: 20px;">
-                      <a class="waves-effect waves-light btn blue-grey white-text expand-trigger"
-                        style="border-radius: 10px; padding: 0 15px; margin: 15px;">
-                        <i class="fa fa-external-link left"></i>完整介绍
-                      </a>
-                      <!-- 在线演示：中间圆形，突出 -->
-                      <a href="https://galvanic-music.herokuapp.com/" target="_blank"
-                        class="waves-effect waves-light btn teal white-text btn-round-home" style="
-                            width: 54px;
-                            height: 54px;
-                            border-radius: 50%;
-                            padding: 0;
-                            margin: 0 8px;
-                            display: inline-flex;
-                            align-items: center;
-                            justify-content: center;
-                            box-shadow: 0 4px 15px rgba(0,150,136,0.4);
-                          ">
-                        <i class="fa fa-play" style="font-size: 20px; margin-left: 2px;"></i>
-                      </a>
-                      <a href="https://github.com/seeking001/fac_webgis_project" target="_blank"
-                        class="waves-effect waves-light btn blue-grey white-text"
-                        style="border-radius: 10px; padding: 0 15px; margin: 15px;">
-                        <i class="fa fa-github left"></i>源码链接
-                      </a>
+                <!-- 个人复现作品1 -->
+                <div class="col s12 m12 l6  project-card-wrapper" data-group="personal">
+                  <!-- 正常卡片 -->
+                  <div class="card medium card-normal hoverable-card">
+                    <!-- 封面图 -->
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img alt="cover" src="/assets/img/projects/个人复现_区域环评选址_cover.png" />
+                    </div>
+                    <!-- 标题 -->
+                    <div class="card-content">
+                      <div class="project-title teal-text">宝安区域环评“智能选址”项目的核心逻辑复现<i
+                          class="material-icons right activator">more_vert</i></div>
+                      <div class="project-subhead">基于参与项目的个人研究复现</div>
+                    </div>
+
+                    <!-- 卡片翻转后显示的内容 -->
+                    <div class="card-reveal">
+                      <h5>作品概况</h5>
+                      <ul>
+                        <li><b>总结项目经验，提炼复用方法</b><br>以个人研究的方式复现了宝安区域环评“智能选址”项目的核心逻辑，提炼出可复用的技术方法和实现思路。
+                        </li>
+                        <li><b>打通技术壁垒</b><br>通过复现过程，解决了技术实现中的关键问题。</li>
+                      </ul>
+
+                      <!-- 三个操作按钮 -->
+                      <div class="card-action center-align project-card-btns">
+                        <a class="waves-effect waves-light btn blue-grey white-text expand-trigger project-btn">
+                          <i class="fa fa-external-link left"></i>完整介绍
+                        </a>
+                        <!-- 在线演示：中间圆形，突出 -->
+                        <a href="https://galvanic-music.herokuapp.com/" target="_blank"
+                          class="waves-effect waves-light btn teal white-text btn-round-home">
+                          <i class="fa fa-play" style="font-size: 20px; margin-left: 2px;"></i>
+                        </a>
+                        <a href="https://github.com/seeking001/env_webgis_project" target="_blank"
+                          class="waves-effect waves-light btn blue-grey white-text project-btn">
+                          <i class="fa fa-github left"></i>源码链接
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 查看完整介绍_展开详情 -->
+                  <div class="project-detail-panel row">
+                    <button class="project-detail-close">&times;</button>
+                    <h4>宝安区域环评“智能选址”项目的核心逻辑复现</h4>
+                    <div class="meta">
+                      <b>制作时间：</b>2024-2025年 &nbsp;|&nbsp;
+                      <b>制作目的：</b>总结项目经验，提炼复用方法 &nbsp;|&nbsp;
+                      <b>制作方式：</b>个人独立完成
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">一、需求逻辑</span>
+                      <img alt="" src="/assets/img/projects/个人复现_区域环评选址_page01.png" />
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">二、技术架构</span>
+                      <img alt="" src="/assets/img/projects/个人复现_区域环评选址_page02.png" />
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">三、技术实现</span>
+                      <img alt="" src="/assets/img/projects/个人复现_区域环评选址_page03.png" />
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">四、效果展示</span>
+                      <img alt="" src="/assets/img/projects/个人复现_区域环评选址_page04.png" />
                     </div>
                   </div>
                 </div>
 
-                <!-- 查看完整介绍_展开详情 -->
-                <div class="project-detail-panel">
-                  <button class="project-detail-close">&times;</button>
-                  <h4>宝安区域环评“智能选址”项目的核心逻辑复现</h4>
-                  <div class="meta">
-                    <b>制作时间：</b>2024-2025年 &nbsp;|&nbsp;
-                    <b>制作目的：</b>总结项目经验，提炼复用方法，打通技术壁垒 &nbsp;|&nbsp;
-                    <b>制作方式：</b>个人独立完成
-                  </div>
-                  <h5>复现内容</h5>
-                  <ul>
-                    <li><b>核心版块：</b>围绕“智能选址” 展开。智能选址是原项目四大功能板块中的核心功能，集中体现了多专业融合特点。</li>
-                    <li><b>前端：</b>服务平台Home页、智能选址Map页。</li>
-                    <li><b>后端：</b>选址功能逻辑、数据控制管理。</li>
-                    <li><b>数据库：</b>空间矢量数据、环保专题数据。</li>
-                  </ul>
-                  <div class="col s12 m12 l6">
-                    <img alt="" src="/assets/img/projects/个人复现_区域环评选址_服务平台home页.png" />
-                    <span>服务平台Home页</span>
-                  </div>
-                  <div class="col s12 m12 l6">
-                    <img alt="" src="/assets/img/projects/个人复现_区域环评选址_智能选址map页.png" />
-                    <span>智能选址Map页</span>
-                  </div>
-                </div>
-              </div>
+                <!-- 个人复现作品2 -->
+                <div class="col s12 m12 l6  project-card-wrapper" data-group="personal">
+                  <!-- 正常卡片 -->
+                  <div class="card medium card-normal hoverable-card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img alt="cover" src="/assets/img/projects/个人复现_龙华公共设施_cover.png" />
+                    </div>
+                    <div class="card-content">
+                      <div class="project-title teal-text">龙华区公共服务设施规划管理系统的技术转化复现<i
+                          class="fa fa-ellipsis-v right activator"></i></div>
+                      <div class="project-subhead">基于城市规划项目的技术转化复现</div>
+                    </div>
+                    <!-- 卡片翻转后显示的内容 -->
+                    <div class="card-reveal">
+                      <h5>作品概况</h5>
+                      <ul>
+                        <li><b>运用数字技术，打磨规划工具</b><br>借用WebGIS技术，将复杂的规划数据转化为直观、易用的可视化平台。</li>
+                        <li><b>架起城市规划和数据之间的桥梁</b><br>通过数据整合与可视化展示，实现城市规划与空间数据的深度融合。</li>
+                      </ul>
 
-              <!-- 个人复现作品2 -->
-              <div class="col s12 m12 l6  project-card-wrapper" data-group="group1">
-                <!-- 正常卡片 -->
-                <div class="card medium card-normal hoverable-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img alt="智能选址" src="/assets/img/projects/个人复现_龙华公共设施_封面.png" />
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title teal-text">龙华区公共服务设施规划管理系统的技术转化复现<i
-                        class="mdi-navigation-more-vert right"></i></span>
-                    <p>基于城市规划项目的技术转化复现</p>
-                  </div>
-                  <!-- 卡片翻转后显示的内容 -->
-                  <div class="card-reveal">
-                    <h5>作品概况</h5>
-                    <ul>
-                      <li><b>运用数字技术，打磨规划工具</b><br>借用WebGIS技术，将复杂的规划数据转化为直观、易用的可视化平台。</li>
-                      <li><b>架起城市规划和数据之间的桥梁</b><br>通过数据整合与可视化展示，实现城市规划与空间数据的深度融合。</li>
-                    </ul>
-
-                    <!-- 三个操作按钮 -->
-                    <div class="card-action center-align project-card-btns" style="margin-top: 20px;">
-                      <a class="waves-effect waves-light btn blue-grey white-text expand-trigger"
-                        style="border-radius: 10px; padding: 0 15px; margin: 15px;">
-                        <i class="fa fa-external-link left"></i>完整介绍
-                      </a>
-                      <!-- 在线演示：中间圆形，突出 -->
-                      <a href="https://galvanic-music.herokuapp.com/" target="_blank"
-                        class="waves-effect waves-light btn teal white-text btn-round-home" style="
-                            width: 54px;
-                            height: 54px;
-                            border-radius: 50%;
-                            padding: 0;
-                            margin: 0 8px;
-                            display: inline-flex;
-                            align-items: center;
-                            justify-content: center;
-                            box-shadow: 0 4px 15px rgba(0,150,136,0.4);
-                          ">
-                        <i class="fa fa-play" style="font-size: 20px; margin-left: 2px;"></i>
-                      </a>
-                      <a href="https://github.com/seeking001/fac_webgis_project" target="_blank"
-                        class="waves-effect waves-light btn blue-grey white-text"
-                        style="border-radius: 10px; padding: 0 15px; margin: 15px;">
-                        <i class="fa fa-github left"></i>源码链接
-                      </a>
+                      <!-- 三个操作按钮 -->
+                      <div class="card-action center-align project-card-btns">
+                        <a class="waves-effect waves-light btn blue-grey white-text expand-trigger project-btn">
+                          <i class="fa fa-external-link left"></i>完整介绍
+                        </a>
+                        <!-- 在线演示：中间圆形，突出 -->
+                        <a href="https://galvanic-music.herokuapp.com/" target="_blank"
+                          class="waves-effect waves-light btn teal white-text btn-round-home project-btn">
+                          <i class="fa fa-play" style="font-size: 20px; margin-left: 2px;"></i>
+                        </a>
+                        <a href="https://github.com/seeking001/fac_webgis_project" target="_blank"
+                          class="waves-effect waves-light btn blue-grey white-text project-btn">
+                          <i class="fa fa-github left"></i>源码链接
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- 查看完整介绍_展开详情 -->
-                <div class="project-detail-panel">
-                  <button class="project-detail-close">&times;</button>
-                  <h4>龙华区公共服务设施规划管理系统的技术转化复现</h4>
-                  <div class="meta">
-                    <b>制作时间：</b>2025-2026年 &nbsp;|&nbsp;
-                    <b>制作目的：</b>探索新型工具，提高工作效率 &nbsp;|&nbsp;
-                    <b>制作方式：</b>独立完成
-                  </div>
-                  <h5>需求分析</h5>
-                  <p>涉及处理项目库、实施台账等批量化研究对象时，借助数据管理系统可以提高工作和管理效率。从功能和信息角度分析如下：</p>
-                  <p>（一）功能角度：包括直观展示、信息管理、查询分析、编辑修改等；</p>
-                  <p>（二）信息角度：包括区位条件、周边影响、现状建设、土地权属、规划功能、规划管控等。</p>
-                  <div class="col s12 m12 l6">
-                    <img alt="" src="/assets/img/projects/个人复现_龙华公共设施_需求分析.png" />
-                    <span>需求分析示意图</span>
-                  </div>
-                  <div class="col s12 m12 l6">
-                    <img alt="" src="/assets/img/projects/个人复现_龙华公共设施_功能框架设计.png" />
-                    <span>功能框架设计</span>
-                  </div>
-                  <div>
-                    <h5>技术架构特点</h5>
-                    <ul>
-                      <li><b>前后端分离：</b>Vue3前端 + Node.js后端</li>
-                      <li><b>空间数据支撑：</b>GeoServer + OpenLayers + Cesium</li>
-                      <li><b>容器化部署：</b>Docker Compose一体化环境</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h5>技术选型分析</h5>
-                    <ul>
-                      <li><b>前端框架：Vue3</b><br>渐进式、组合式API、生态成熟</li>
-                      <li><b>地图引擎：OpenLayers + Cesium</b><br>开源免费、支持多种数据源、专业GIS功能、三维可视化</li>
-                      <li><b>后端基础：Node.js + Express</b><br>JavaScript统一栈、高并发处理、轻量灵活、中间件生态</li>
-                      <li><b>容器化：Docker</b><br>环境一致性、快速部署、资源隔离</li>
-                      <li><b>地图服务：GeoServer</b><br>OGC标准支持、样式丰富、配置灵活</li>
-                      <li><b>数据库：PostgreSQL + PostGIS</b><br>ACID完备、JSON支持、性能优秀、OGC标准、空间函数丰富</li>
-                    </ul>
-                    <div><img alt="" src="/assets/img/projects/个人复现_龙华公共设施_技术选型分析示意图.png" />
-                      <span>技术选型分析示意图</span>
+                  <!-- 查看完整介绍_展开详情 -->
+                  <div class="project-detail-panel row">
+                    <button class="project-detail-close">&times;</button>
+                    <h4>龙华区公共服务设施规划管理系统的技术转化复现</h4>
+                    <div class="meta">
+                      <b>制作时间：</b>2025-2026年 &nbsp;|&nbsp;
+                      <b>制作目的：</b>探索新型工具，提高工作效率 &nbsp;|&nbsp;
+                      <b>制作方式：</b>独立完成
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">一、需求逻辑</span>
+                      <img alt="" src="/assets/img/projects/个人复现_龙华公共设施_page01.png" />
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">二、技术架构</span>
+                      <img alt="" src="/assets/img/projects/个人复现_龙华公共设施_page02.png" />
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">三、技术实现</span>
+                      <img alt="" src="/assets/img/projects/个人复现_龙华公共设施_page03.png" />
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">四、效果展示</span>
+                      <img alt="" src="/assets/img/projects/个人复现_龙华公共设施_page04.png" />
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-
-
 
           <!-- ========== 第二类项目：跨界合作类 ========== -->
           <div class="col s12 m12 l12">
             <div class="card">
               <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.asu.edu/" target="_blank"
-                      class="teal-text hoverline">跨界合作类</a></span>
-                </p>
-              </div>
+                <div class="card-header">
+                  <h4 class="teal-text center-align">跨界合作类</h4>
+                </div>
 
-              <!-- 跨界合作作品1 -->
-              <div class="col s12 m6 l4 project-card-wrapper" data-group="group1">
+                <!-- 跨界合作作品1 -->
+                <div class="col s12 m6 l4 project-card-wrapper" data-group="cross">
 
-                <!-- 正常卡片 -->
-                <div class="card medium card-normal hoverable-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img alt="沙井" src="/assets/img/projects/跨界合作_区域环评选址_封面.png" />
+                  <!-- 正常卡片 -->
+                  <div class="card medium card-normal hoverable-card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img alt="cover" src="/assets/img/projects/跨界合作_区域环评选址_cover.png" />
+                    </div>
+                    <div class="card-content">
+                      <div class="project-title teal-text">
+                        宝安区域环评“智能选址”服务平台
+                      </div>
+                      <div class="project-subhead">2022年-2024年 | 规划+环保+GIS开发</div>
+                    </div>
+                    <!-- 卡片翻转后显示的内容 -->
+                    <div class="card-reveal">
+                      <h5>我的角色</h5>
+                      <ul>
+                        <li><b>定位： </b>将环保业务以空间形式转化为webgis平台的技术桥梁。</li>
+                        <li><b>职责： </b>担任智能选址版块的技术方案负责人。主要负责提出技术要求、设计功能逻辑、提供基础数据、搭建系统框架、验证成果等。</li>
+                      </ul>
+                      <div class="card-action center-align">
+                        <a class="waves-effect waves-light btn blue-grey white-text expand-trigger project-btn">
+                          <i class="fa fa-external-link left"></i>完整介绍
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="card-content">
-                    <span class="card-title teal-text">
-                      宝安区域环评“智能选址”服务平台
-                    </span>
-                    <p>2022年-2024年 | 规划+环保+GIS开发</p>
-                  </div>
-                  <!-- 卡片翻转后显示的内容 -->
-                  <div class="card-reveal">
-                    <h5>我的角色</h5>
-                    <ul>
-                      <li><b>定位： </b>将环保业务以空间形式转化为webgis平台的技术桥梁。</li>
-                      <li><b>职责： </b>担任智能选址版块的技术方案负责人。主要负责提出技术要求、设计功能逻辑、提供基础数据、搭建系统框架、验证成果等。</li>
-                    </ul>
-                    <div class="card-action center-align">
-                      <a class="waves-effect waves-light btn teal white-text expand-trigger"
-                        style="border-radius: 10px; padding: 0 12px; margin: 5px;">
-                        <i class="fa fa-external-link left"></i>完整介绍
-                      </a>
+
+                  <!-- 查看完整介绍_展开详情 -->
+                  <div class="project-detail-panel row">
+                    <button class="project-detail-close">&times;</button>
+                    <h4>宝安区域环评“智能选址”服务平台</h4>
+                    <div class="meta">
+                      <b>获奖情况： </b>全国智慧环保创新案例 &nbsp;|&nbsp; 深圳市区级营商环境改革优秀案例&nbsp;|&nbsp;
+                      深圳首批法治政府建设优秀项目库 &nbsp;|&nbsp;
+                      数据要素X大赛——广东分赛绿色低碳赛道优秀奖
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">一、项目概况</span>
+                      <img alt="" src="/assets/img/projects/跨界合作_区域环评选址_page01.png" />
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">二、技术分析</span>
+                      <img alt="" src="/assets/img/projects/跨界合作_区域环评选址_page02.png" />
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">三、功能展示</span>
+                      <img alt="" src="/assets/img/projects/跨界合作_区域环评选址_page03.png" />
                     </div>
                   </div>
                 </div>
 
-                <!-- 查看完整介绍_展开详情 -->
-                <div class="project-detail-panel">
-                  <button class="project-detail-close">&times;</button>
-                  <h4>宝安区域环评“智能选址”服务平台</h4>
-                  <div class="meta">
-                    <b>获奖情况： </b>全国智慧环保创新案例 &nbsp;|&nbsp; 深圳市区级营商环境改革优秀案例&nbsp;|&nbsp; 深圳首批法治政府建设优秀项目库 &nbsp;|&nbsp;
-                    数据要素X大赛——广东分赛绿色低碳赛道优秀奖
-                  </div>
-                  <div class="col s12 m6 l3">
-                    <img alt="" src="/assets/img/projects/跨界合作_区域环评选址_奖1.png" />
-                    <img alt="" src="/assets/img/projects/跨界合作_区域环评选址_奖2.png" />
-                    <img alt="" src="/assets/img/projects/跨界合作_区域环评选址_奖3.png" />
-                  </div>
-                  <h5>项目背景</h5>
-                  <p>中央赋予深圳先行示范改革——沙井片区成为深圳首批试点和印发的区域环评改革项目——为了推动数字化落地，打造了“智慧选址”服务平台。</p>
-                  <h5>主要内容</h5>
-                  <p>基于深圳市CIM数字底座和宝安区时空信息平台，建立了国内首个“智能选址”区域环评服务系统，从环评审批的角度为企业提供“选址、查询、登记、咨询”等服务，实现企业“线上一站式”办理环评手续。</p>
-                  <div class="col s12 m6 l3">
-                    <div>
-                      <img alt="" src="/assets/img/projects/跨界合作_区域环评选址_区域环评“智能选址”服务平台总体框架.png" />
-                      <span>区域环评“智能选址”服务平台总体框架</span>
+                <!-- 跨界合作作品2 -->
+                <div class="col s12 m6 l4 project-card-wrapper" data-group="cross">
+
+                  <!-- 正常卡片 -->
+                  <div class="card medium card-normal hoverable-card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img alt="cover" src="/assets/img/projects/跨界合作_宝安数字底座_cover.png" />
+                    </div>
+                    <div class="card-content">
+                      <div class="project-title teal-text">
+                        宝安区时空信息数字底座
+                      </div>
+                      <div class="project-subhead">2021-2023年 | GIS开发/规划策划/工程设计/工程建造/运营维护</div>
+                    </div>
+                    <!-- 卡片翻转后显示的内容 -->
+                    <div class="card-reveal">
+                      <h5>我的角色</h5>
+                      <ul>
+                        <li><b>定位： </b>城市规划业务转化为webgis平台的技术桥梁。</li>
+                        <li><b>职责： </b>担任规划版块技术方案负责人。主要负责数据整理与格式转化、业务需求与原型设计、评审技术方案等。</li>
+                      </ul>
+                      <div class="card-action center-align">
+                        <a class="waves-effect waves-light btn blue-grey white-text expand-trigger project-btn">
+                          <i class="fa fa-external-link left"></i>完整介绍
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              <!-- 跨界合作作品2 -->
-              <div class="col s12 m6 l4 project-card-wrapper" data-group="group1">
-
-                <!-- 正常卡片 -->
-                <div class="card medium card-normal hoverable-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img alt="沙井" src="/assets/img/projects/跨界合作_宝安数字底座_封面.png" />
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title teal-text">
-                      宝安区时空信息数字底座
-                    </span>
-                    <p>2021-2023年 | GIS开发/规划策划/工程设计/工程建造/运营维护</p>
-                  </div>
-                  <!-- 卡片翻转后显示的内容 -->
-                  <div class="card-reveal">
-                    <h5>我的角色</h5>
-                    <ul>
-                      <li><b>定位： </b>城市规划业务转化为webgis平台的技术桥梁。</li>
-                      <li><b>职责： </b>担任规划版块技术方案负责人。主要负责数据整理与格式转化、业务需求与原型设计、评审技术方案等。</li>
-                    </ul>
-                    <div class="card-action center-align">
-                      <a class="waves-effect waves-light btn teal white-text expand-trigger"
-                        style="border-radius: 10px; padding: 0 12px; margin: 5px;">
-                        <i class="fa fa-external-link left"></i>完整介绍
-                      </a>
+                  <!-- 查看完整介绍_展开详情 -->
+                  <div class="project-detail-panel row">
+                    <button class="project-detail-close">&times;</button>
+                    <h4>宝安区时空信息数字底座</h4>
+                    <div class="meta">
+                      <b>编制时间：</b>2021-2023年 &nbsp;|&nbsp;
+                      <b>涉及专业：</b>GIS开发/规划策划/工程设计/工程建造/运营维护 &nbsp;|&nbsp;
+                      <b>我的角色：</b>规划版块技术方案负责人
                     </div>
-                  </div>
-                </div>
-
-                <!-- 查看完整介绍_展开详情 -->
-                <div class="project-detail-panel">
-                  <button class="project-detail-close">&times;</button>
-                  <h4>宝安区时空信息数字底座</h4>
-                  <div class="meta">
-                    <b>编制时间：</b>2021-2023年 &nbsp;|&nbsp;
-                    <b>涉及专业：</b>GIS开发/规划策划/工程设计/工程建造/运营维护 &nbsp;|&nbsp;
-                    <b>我的角色：</b>规划版块技术方案负责人
-                  </div>
-                  <h5>项目背景</h5>
-                  <p>宝安设计集团以“数字全咨”为目标，以宝安区时空信息数字底座为核心，将“策划规划+工程设计+工程建造+运营维护”整合为全过程咨询服务体系。</p>
-                  <div class="col s12 m6 l3">
-                    <div><img alt="" src="/assets/img/projects/跨界合作_宝安数字底座_专业架构.png" />
-                      <span>专业架构示意图</span>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">一、项目概况</span>
+                      <img alt="" src="/assets/img/projects/跨界合作_宝安数字底座_page01.png" />
                     </div>
-                  </div>
-                  <h5>工作目标</h5>
-                  <p>基于深城交TransPaaS数据平台，建立宝安区范围内全要素数据覆盖、可交互功能界面、多场景业务应用的二三维一体化云平台。</p>
-                  <div class="col s12 m6 l3">
-                    <div><img alt="" src="/assets/img/projects/跨界合作_宝安数字底座_工作目标.png" />
-                      <span>工作目标示意图</span>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">二、技术分析</span>
+                      <img alt="" src="/assets/img/projects/跨界合作_宝安数字底座_page02.png" />
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 跨界合作作品3 -->
-              <div class="col s12 m6 l4 project-card-wrapper" data-group="group1">
-
-                <!-- 正常卡片 -->
-                <div class="card medium card-normal hoverable-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img alt="沙井" src="/assets/img/projects/跨界合作_宝安产业大脑_封面.png" />
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title teal-text">
-                      宝安区产业空间数字大脑
-                    </span>
-                    <p>2023-2025年 | 规划/产业/GIS开发</p>
-                  </div>
-                  <!-- 卡片翻转后显示的内容 -->
-                  <div class="card-reveal">
-                    <h5>我的角色</h5>
-                    <ul>
-                      <li><b>定位： </b>产业空间可视化与手续流程化的技术支持。</li>
-                      <li><b>职责： </b>担任产业空间版块的技术顾问。主要负责模拟业务逻辑、参与原型设计、整理产业空间数据、辅助优化系统框架。</li>
-                    </ul>
-                    <div class="card-action center-align">
-                      <a class="waves-effect waves-light btn teal white-text expand-trigger"
-                        style="border-radius: 10px; padding: 0 12px; margin: 5px;">
-                        <i class="fa fa-external-link left"></i>完整介绍
-                      </a>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">三、功能展示</span>
+                      <img alt="" src="/assets/img/projects/跨界合作_宝安数字底座_page03.png" />
                     </div>
                   </div>
                 </div>
 
-                <!-- 查看完整介绍_展开详情 -->
-                <div class="project-detail-panel">
-                  <button class="project-detail-close">&times;</button>
-                  <h4>宝安区产业空间数字大脑</h4>
-                  <div class="meta">
-                    <b>编制时间：</b>2023-2025年 &nbsp;|&nbsp;
-                    <b>涉及专业：</b>规划/产业/GIS开发 &nbsp;|&nbsp;
-                    <b>我的角色：</b>产业空间版块的技术顾问
-                  </div>
-                  <h5>工作内容</h5>
-                  <ul>
-                    <li><b>产业空间信息服务平台</b><br>专注于产业空间资源精细化管理和高效匹配。<br>侧重于优化资源配置和提高空间使用效率。</li>
-                    <li><b>虚拟园区</b><br>提供企业一站式综合服务，包括政策咨询和活动组织。<br>侧重于响应企业诉求和优化营商环境。</li>
-                    <li><b>采集系统</b><br>工业园区信息管理系统，收集和维护园区基础信息。<br>侧重于园区采集信息的完整性和准确性。</li>
-                    <li><b>网格平台</b><br>社区信息管理系统，提高社区精细化管理水平。<br>侧重于强化社区治理和促进社区和谐。</li>
-                  </ul>
-                  <h5>技术架构</h5>
-                  <ul>
-                    <li><b>多源数据层： </b>基于宝安区CIM数据，关联融合多类调研数据共同组成。</li>
-                    <li><b>基础功能层： </b>划分四大数据功能版块。</li>
-                    <li><b>业务应用层： </b>紧扣政府工作需求和企业业务需求。</li>
-                    <li><b>决策支持层： </b>围绕政府决策支持和业务管理工作。</li>
-                  </ul>
-                  <div class="col s12 m6 l3">
-                    <div><img alt="" src="/assets/img/projects/跨界合作_宝安产业大脑_技术架构.png" />
-                      <span>技术架构示意图</span>
+                <!-- 跨界合作作品3 -->
+                <div class="col s12 m6 l4 project-card-wrapper" data-group="cross">
+
+                  <!-- 正常卡片 -->
+                  <div class="card medium card-normal hoverable-card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img alt="cover" src="/assets/img/projects/跨界合作_宝安产业大脑_cover.png" />
+                    </div>
+                    <div class="card-content">
+                      <div class="project-title teal-text">
+                        宝安区产业空间数字大脑
+                      </div>
+                      <div class="project-subhead">2023-2025年 | 规划/产业/GIS开发</div>
+                    </div>
+                    <!-- 卡片翻转后显示的内容 -->
+                    <div class="card-reveal">
+                      <h5>我的角色</h5>
+                      <ul>
+                        <li><b>定位： </b>产业空间可视化与手续流程化的技术支持。</li>
+                        <li><b>职责： </b>担任产业空间版块的技术顾问。主要负责模拟业务逻辑、参与原型设计、整理产业空间数据、辅助优化系统框架。</li>
+                      </ul>
+                      <div class="card-action center-align">
+                        <a class="waves-effect waves-light btn blue-grey white-text expand-trigger project-btn">
+                          <i class="fa fa-external-link left"></i>完整介绍
+                        </a>
+                      </div>
                     </div>
                   </div>
-                  <h5>数据总览</h5>
-                  <ul>
-                    <li><b>五层分级统筹： </b>将海量数据分为土地、园区、房建、产业、企业五个层级，分别对应土地手续、园区管理、建筑运营、产业经济、企业服务不同领域，便于分类统筹管理和高效决策分析。</li>
-                    <li><b>五大应用场景： </b>搭建总体概览、产业招商、用地选址、用房匹配、运营监测5大产业空间业务场景。</li>
-                  </ul>
-                  <div class="col s12 m6 l3">
-                    <div><img alt="" src="/assets/img/projects/跨界合作_宝安产业大脑_数据总览.png" />
-                      <span>数据总览示意图</span>
+
+                  <!-- 查看完整介绍_展开详情 -->
+                  <div class="project-detail-panel row">
+                    <button class="project-detail-close">&times;</button>
+                    <h4>宝安区产业空间数字大脑</h4>
+                    <div class="meta">
+                      <b>编制时间：</b>2023-2025年 &nbsp;|&nbsp;
+                      <b>涉及专业：</b>规划/产业/GIS开发 &nbsp;|&nbsp;
+                      <b>我的角色：</b>产业空间版块的技术顾问
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">一、项目概况</span>
+                      <img alt="" src="/assets/img/projects/跨界合作_宝安产业大脑_page01.png" />
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">二、技术分析</span>
+                      <img alt="" src="/assets/img/projects/跨界合作_宝安产业大脑_page02.png" />
+                    </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">三、功能展示</span>
+                      <img alt="" src="/assets/img/projects/跨界合作_宝安产业大脑_page03.png" />
                     </div>
                   </div>
                 </div>
@@ -742,36 +684,33 @@
           <div class="col s12 m12 l12">
             <div class="card">
               <div class="card-content">
-                <p>
-                  <span class="card-title">
-                    <a class="teal-text hoverline">传统规划类</a>
-                  </span>
-                </p>
+                <div class="card-header">
+                  <h4 class="teal-text center-align">传统规划类</h4>
+                </div>
 
                 <!-- 传统规划作品1 -->
-                <div class="col s12 m6 l4 project-card-wrapper" data-group="group1">
+                <div class="col s12 m6 l4 project-card-wrapper" data-group="planning">
 
                   <!-- 正常卡片 -->
                   <div class="card medium card-normal hoverable-card">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <img alt="沙井" src="/assets/img/projects/沙井区域环评_评价单元划定图.png" />
+                      <img alt="cover" src="/assets/img/projects/传统规划_沙井区域环评_cover.png" />
                     </div>
                     <div class="card-content">
-                      <span class="card-title teal-text">
+                      <div class="project-title teal-text">
                         沙井街道暨国际会展城区域空间生态环境评价
-                      </span>
-                      <p>2021-2023年 | 经费820.2万</p>
+                      </div>
+                      <div class="project-subhead">2021-2023年 &nbsp;|&nbsp; 经费820.2万</div>
                     </div>
                     <!-- 卡片翻转后显示的内容 -->
                     <div class="card-reveal">
                       <h5>思考与启示</h5>
                       <ul>
-                        <li><b>以WebGIS融合多专业数据</b><br>通过WebGIS技术融合多专业数据，转化为可视化智慧平台。</li>
-                        <li><b>跨专业合作</b><br>规划、环保、编程等多专业合作，突破认知壁垒。</li>
+                        <li><b>以WebGIS融合多专业数据</b><br>通过GIS技术融合生态环保、城市规划等多专业数据，转化为直观简易的智慧平台。</li>
+                        <li><b>跨专业合作涌现创新方法</b><br>以空间模型呈现业务数据，协调处理自然空间与城市空间的环境影响和污染防控。</li>
                       </ul>
                       <div class="card-action center-align">
-                        <a class="waves-effect waves-light btn teal white-text expand-trigger"
-                          style="border-radius: 10px; padding: 0 12px; margin: 5px;">
+                        <a class="waves-effect waves-light btn blue-grey white-text expand-trigger project-btn">
                           <i class="fa fa-external-link left"></i>完整介绍
                         </a>
                       </div>
@@ -779,69 +718,46 @@
                   </div>
 
                   <!-- 展开详情 -->
-                  <div class="project-detail-panel">
+                  <div class="project-detail-panel row">
                     <button class="project-detail-close">&times;</button>
                     <h4>沙井街道暨国际会展城区域空间生态环境评价</h4>
                     <div class="meta">
                       <b>编制时间：</b>2021-2023年 &nbsp;|&nbsp;
                       <b>项目规模：</b>总经费820.2万元，研究范围44.05km² &nbsp;|&nbsp;
-                      <b>我的角色：</b>规划专业第一负责人
+                      <b>我的角色：</b>规划专业第一负责人，统筹城市规划工作推进和人员管理，负责汇报和沟通。
                     </div>
-                    <h5>项目概况</h5>
-                    <p>在中央赋予深圳先行示范改革的基础上，区域环评改革工作在宝安区率先启动。本项目成为深圳改革试点的示范，成为全市其它区域改革推广的标杆。</p>
-                    <div class="col s12 m6 l3">
-                      <div><img alt="" src="/assets/img/projects/沙井区域环评_地形地貌分析图.png" />
-                        <span>地形地貌分析图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/沙井区域环评_污染源热力分析图.png" />
-                        <span>污染源热力分析图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/沙井区域环评_工业园区分布图.png" />
-                        <span>工业园区分布图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/沙井区域环评_植被覆盖分析图.png" />
-                        <span>植被覆盖分析图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/沙井区域环评_评价单元划定图.png" />
-                        <span>评价单元划定图</span>
-                      </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">项目概况</span>
+                      <img alt="" src="/assets/img/projects/传统规划_沙井区域环评_page01.png" />
                     </div>
-                    <h5>思考与启示</h5>
-                    <p>
-                      <b>以WebGIS融合多专业数据，化庞杂为实效</b><br>全套成果960页篇幅（单元划定报告+环境评价报告+环境管理清单），内容庞杂，使用门槛过高。本项目通过WebGIS技术融合生态环保、城市规划等多专业数据，转化为可视化、易操作的智慧平台，降低了使用门槛，提高了环保效益和社会价值。
-                    </p>
-                    <p>
-                      <b>跨专业合作涌现创新方法，效率高且效果好</b><br>本项目注重以空间形态呈现生态环保数据，协调处理自然空间与城市空间的环境影响和污染防控，并以WebGIS实现可视化和交互分析。规划、环保、编程等多专业合作促使我突破"隔行如隔山"的认知壁垒，激发跨行业思维和动力。
-                    </p>
+
                   </div>
                 </div>
 
                 <!-- 传统规划作品2 -->
-                <div class="col s12 m6 l4 project-card-wrapper" data-group="group1">
+                <div class="col s12 m6 l4 project-card-wrapper" data-group="planning">
 
                   <!-- 正常卡片 -->
                   <div class="card medium card-normal hoverable-card">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <img alt="宝安分区规划" src="/assets/img/projects/龙华公共设施_区位分析图.png" />
+                      <img alt="cover" src="/assets/img/projects/传统规划_龙华公共设施_cover.png" />
                     </div>
                     <div class="card-content">
-                      <span class="card-title activator teal-text hoverline">
+                      <div class="project-title teal-text">
                         龙华区公共设施专项规划
-                        <i class="mdi-navigation-more-vert right"></i>
-                      </span>
-                      <p>2013-2015年 | 经费230万元</p>
+                        <i class="fa fa-ellipsis-v right activator"></i>
+                      </div>
+                      <div class="project-subhead">2013-2015年 &nbsp;|&nbsp; 经费230万元</div>
                     </div>
                     <div class="card-reveal">
                       <h5>思考与启示</h5>
                       <ul>
                         <li>
-                          <b>借助GIS手段，高效处理离散型、关联型、动态型的公共设施空间数据</b><br>该项目涉及148处现状公共设施调研信息和372处规划公共设施指标信息，同时还要考虑与总体规划、法定图则、土地权属的衔接，信息量极大。
-                          本项目采用GIS手段，展示效果直观，管理清晰高效，编辑灵活实用。
+                          <b>借助GIS手段，高效处理离散型、关联型、动态型的公共设施空间数据</b><br>项目涉及148处现状公共设施调研信息和372处规划公共设施指标信息，同时衔接总体规划、法定图则、土地权属等。<br>GIS手段整合多源数据，展示效果直观，管理清晰高效，编辑灵活实用。
                         </li>
                       </ul>
                       <div class="card-action center-align">
-                        <a class="waves-effect waves-light btn teal white-text expand-trigger"
-                          style="border-radius: 10px; padding: 0 12px; margin: 5px;">
+                        <a class="waves-effect waves-light btn blue-grey white-text expand-trigger project-btn">
                           <i class="fa fa-external-link left"></i>完整介绍
                         </a>
                       </div>
@@ -849,54 +765,35 @@
                   </div>
 
                   <!-- 展开详情 -->
-                  <div class="project-detail-panel">
+                  <div class="project-detail-panel row">
                     <button class="project-detail-close">&times;</button>
                     <h4>龙华区公共设施专项规划</h4>
                     <div class="meta">
                       <b>编制时间：</b>2013-2015年 &nbsp;|&nbsp;
                       <b>项目规模：</b>经费230万元 &nbsp;|&nbsp;
-                      <b>我的角色：</b>项目第一负责人
+                      <b>我的角色：</b>项目第一负责人，负责编制报告、绘制图纸、制作汇报PPT、汇报和沟通。
                     </div>
-                    <h5>项目概况</h5>
-                    <p>为解决龙华区成立后面临公共服务滞后的难题，开展本项目以系统化、科学化的规划技术优化公共设施布局和统筹实施工作</p>
-                    <div class="col s12 m6 l3">
-                      <div><img alt="" src="/assets/img/projects/龙华公共设施_技术路线.png" />
-                        <span>技术路线</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/龙华公共设施_区位分析图.png" />
-                        <span>区位分析图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/龙华公共设施_公共设施用地布局图.png" />
-                        <span>公共设施用地布局图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/龙华公共设施_需求强度分析图.png" />
-                        <span>需求强度分析图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/龙华公共设施_公共设施覆盖范围_目标计划图.png" />
-                        <span>公共设施覆盖范围_目标计划图</span>
-                      </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">项目概况</span>
+                      <img alt="" src="/assets/img/projects/传统规划_龙华公共设施_page01.png" />
                     </div>
-                    <h5>思考与启示</h5>
-                    <p>
-                      <b>借助GIS手段，高效处理离散型、关联型、动态型的公共设施空间数据</b><br>该项目涉及148处现状公共设施调研信息和372处规划公共设施指标信息，同时还要考虑与总体规划、法定图则、土地权属的衔接，信息量极大。
-                      本项目采用GIS手段，展示效果直观，管理清晰高效，编辑灵活实用。
-                    </p>
+
                   </div>
                 </div>
 
                 <!-- 传统规划作品3 -->
-                <div class="col s12 m6 l4 project-card-wrapper" data-group="group1">
+                <div class="col s12 m6 l4 project-card-wrapper" data-group="planning">
 
                   <!-- 正常卡片 -->
                   <div class="card medium card-normal hoverable-card">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <img alt="沙井" src="/assets/img/projects/茅洲河概念规划_总平面图.png" style="height:100%;width:100%" />
+                      <img alt="cover" src="/assets/img/projects/传统规划_茅洲河概念规划_cover.png" />
                     </div>
                     <div class="card-content">
-                      <span class="card-title teal-text">
-                        茅洲河一河两岸概念规划研究
-                      </span>
-                      <p>2018-2020年 | 经费350万元</p>
+                      <div class="project-title teal-text">
+                        茅洲河一河两岸概念规划
+                      </div>
+                      <div class="project-subhead">2018-2020年 &nbsp;|&nbsp; 经费350万元</div>
                     </div>
                     <div class="card-reveal">
                       <h5>思考与启示</h5>
@@ -906,8 +803,7 @@
                           空间：区域经济辐射和环境影响会深度改变土地价值。</li>
                       </ul>
                       <div class="card-action center-align">
-                        <a class="waves-effect waves-light btn teal white-text expand-trigger"
-                          style="border-radius: 10px; padding: 0 12px; margin: 5px;">
+                        <a class="waves-effect waves-light btn blue-grey white-text expand-trigger project-btn">
                           <i class="fa fa-external-link left"></i>完整介绍
                         </a>
                       </div>
@@ -915,69 +811,45 @@
                   </div>
 
                   <!-- 展开详情 -->
-                  <div class="project-detail-panel">
+                  <div class="project-detail-panel row">
                     <button class="project-detail-close">&times;</button>
                     <h4>茅洲河一河两岸概念规划研究</h4>
                     <div class="meta">
                       <b>编制时间：</b>2018-2020年 &nbsp;|&nbsp;
                       <b>项目规模：</b>总经费350万元 &nbsp;|&nbsp;
-                      <b>我的角色：</b>项目第一负责人
+                      <b>我的角色：</b>项目第一负责人，负责汇报和沟通、统筹人员安排和技术框架。
                     </div>
-                    <h5>项目概况</h5>
-                    <p>茅洲河治理的显著成效引起各界关注，为激活地区价值，宝安区政府2018年委托该项目。</p>
-                    <div class="col s12 m6 l3">
-                      <div><img alt="" src="/assets/img/projects/茅洲河概念规划_区位分析图1.png" />
-                        <span>区位分析图1</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/茅洲河概念规划_区位分析图2.png" />
-                        <span>区位分析图2</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/茅洲河概念规划_总平面图.png" />
-                        <span>总平面图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/茅洲河概念规划_空间管控示意图.png" />
-                        <span>空间管控示意图</span>
-                        <p><b>发展理念——空间管控三区</b><br>
-                          生态区：核心水域保护区。
-                          协调区：公共利益为主导的缓冲区。
-                          开放区：因环境提升而发展起来的产城融合区和经济激活区。</p>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/茅洲河概念规划_重点产业园区规划图.png" />
-                        <span>重点产业园区规划图</span>
-                      </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">项目概况</span>
+                      <img alt="" src="/assets/img/projects/传统规划_茅洲河概念规划_page01.png" />
                     </div>
-                    <h5>思考与启示</h5>
-                    <p>
-                      <b>以时间和空间两种视角，统筹一河两岸的土地管理</b><br>
-                      时间：历史发展脉络和动态变化是可持续发展的源头；<br>
-                      空间：区域经济辐射和环境影响会深度改变土地价值。</li>
-                    </p>
+
                   </div>
                 </div>
 
                 <!-- 传统规划作品4 -->
-                <div class="col s12 m6 l4 project-card-wrapper" data-group="group1">
+                <div class="col s12 m6 l4 project-card-wrapper" data-group="planning">
 
                   <!-- 正常卡片 -->
                   <div class="card medium card-normal hoverable-card">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <img alt="沙井" src="/assets/img/projects/宝安区碧道建设规划_碧道断面示意图.png" />
+                      <img alt="cover" src="/assets/img/projects/传统规划_宝安碧道规划_cover.png" />
                     </div>
                     <div class="card-content">
-                      <span class="card-title teal-text">
+                      <div class="project-title teal-text">
                         宝安区碧道建设规划
-                      </span>
-                      <p>2018-2020年 | 经费374万元</p>
+                      </div>
+                      <div class="project-subhead">2018-2020年 &nbsp;|&nbsp; 经费374万元</div>
                     </div>
                     <div class="card-reveal">
                       <h5>思考与启示</h5>
                       <ul>
-                        <li><b>以GIS手段搭建总体蓝图与工程项目之间的桥梁，实现高效统筹与管理</b><br>本项目的难点在于涉及宝安区66条河流的巨量的宏观到微观数据的筛选与验证。
-                          我们通过GIS手段系统性归纳和管理每一条河流的现状条件、环保要求、规划管控、建设标准等，直观易懂且高效。</li>
+                        <li>
+                          <b>以GIS手段搭建总体蓝图与工程项目之间的桥梁，实现高效统筹与管理</b><br>项目难点在于涉及宝安区66条河流的巨量的宏观到微观数据的筛选与验证。<br>我们通过GIS手段系统性归纳和管理每一条河流的现状条件、环保要求、规划管控、建设标准等，直观易懂且高效。
+                        </li>
                       </ul>
                       <div class="card-action center-align">
-                        <a class="waves-effect waves-light btn teal white-text expand-trigger"
-                          style="border-radius: 10px; padding: 0 12px; margin: 5px;">
+                        <a class="waves-effect waves-light btn blue-grey white-text expand-trigger project-btn">
                           <i class="fa fa-external-link left"></i>完整介绍
                         </a>
                       </div>
@@ -985,7 +857,7 @@
                   </div>
 
                   <!-- 展开详情 -->
-                  <div class="project-detail-panel">
+                  <div class="project-detail-panel row">
                     <button class="project-detail-close">&times;</button>
                     <h4>宝安区碧道建设规划</h4>
                     <div class="meta">
@@ -993,56 +865,37 @@
                       <b>项目规模：</b>总经费374万元，涉及宝安区66条河流、12个湖库及45.3公里海岸线 &nbsp;|&nbsp;
                       <b>我的角色：</b>项目第一负责人，负责策划、沟通和汇报、统筹人员安排和技术框架。
                     </div>
-                    <h5>项目概况</h5>
-                    <p>响应广东省建设万里碧道号召，为指导全区碧道建设，宝安区政府2018年委托该项目。</p>
-                    <div class="col s12 m6 l3">
-                      <div><img alt="" src="/assets/img/projects/宝安区碧道建设规划_碧道基本理念示意图.png" />
-                        <span>碧道基本理念示意图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/宝安区碧道建设规划_现状水系分布图.png" />
-                        <span>现状水系分布图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/宝安区碧道建设规划_碧道筛选过程示意图.png" />
-                        <span>碧道筛选过程示意图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/宝安区碧道建设规划_碧道规划布局图.png" />
-                        <span>碧道规划布局图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/宝安区碧道建设规划_碧道分期建设图.png" />
-                        <span>碧道分期建设图</span>
-                      </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">项目概况</span>
+                      <img alt="" src="/assets/img/projects/传统规划_宝安碧道规划_page01.png" />
                     </div>
-                    <h5>思考与启示</h5>
-                    <p>
-                      <b>以GIS手段搭建总体蓝图与工程项目之间的桥梁，实现高效统筹与管理</b><br>本项目的难点在于涉及宝安区66条河流的巨量的宏观到微观数据的筛选与验证。
-                      我们通过GIS手段系统性归纳和管理每一条河流的现状条件、环保要求、规划管控、建设标准等，直观易懂且高效。
-                    </p>
+
                   </div>
                 </div>
 
                 <!-- 传统规划作品5 -->
-                <div class="col s12 m6 l4 project-card-wrapper" data-group="group1">
+                <div class="col s12 m6 l4 project-card-wrapper" data-group="planning">
 
                   <!-- 正常卡片 -->
                   <div class="card medium card-normal hoverable-card">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <img alt="沙井" src="/assets/img/projects/新桥东更新_鸟瞰效果图.png" />
+                      <img alt="cover" src="/assets/img/projects/传统规划_新桥东更新规划_cover.png" />
                     </div>
                     <div class="card-content">
-                      <span class="card-title teal-text">
+                      <div class="project-title teal-text">
                         新桥东片区重点城市更新单元规划
-                      </span>
-                      <p>2018-2023年 | 经费2235.2万元</p>
+                      </div>
+                      <div class="project-subhead">2018-2023年 &nbsp;|&nbsp; 经费2235.2万元</div>
                     </div>
                     <div class="card-reveal">
                       <h5>思考与启示</h5>
                       <ul>
-                        <li><b>3D可视化将规划指标转化为空间形态，大幅提高沟通效率</b><br>本项目的难点在于大型城市更新项目的建设指标复杂，而且要兼顾各方管理和利益的平衡。
-                          通过3D可视化，将土地产权、开发强度、基础配套、综合管线、绿地率、停车位等多种指标转化为直观空间形态，成为各主体各专业的沟通桥梁。</li>
+                        <li><b>3D可视化将复杂指标转化为直观可沟通的空间模型</b><br>大型城市更新项目的难点在于的通过复杂指标协调各方利益平衡。<br>
+                          本项通过3D可视化将土地产权、开发强度、基础配套、综合管线等多种指标转化为直观空间模型，打造高效的沟通桥梁。
+                        </li>
                       </ul>
                       <div class="card-action center-align">
-                        <a class="waves-effect waves-light btn teal white-text expand-trigger"
-                          style="border-radius: 10px; padding: 0 12px; margin: 5px;">
+                        <a class="waves-effect waves-light btn blue-grey white-text expand-trigger project-btn">
                           <i class="fa fa-external-link left"></i>完整介绍
                         </a>
                       </div>
@@ -1050,38 +903,19 @@
                   </div>
 
                   <!-- 展开详情 -->
-                  <div class="project-detail-panel">
+                  <div class="project-detail-panel row">
                     <button class="project-detail-close">&times;</button>
                     <h4>新桥东片区重点城市更新单元规划</h4>
                     <div class="meta">
                       <b>编制时间：</b>2018-2023年 &nbsp;|&nbsp;
                       <b>项目规模：</b>总经费2235.2万元，研究范围152.38公顷 &nbsp;|&nbsp;
-                      <b>我的角色：</b>规划专业负责人之一，主要负责交通设施、公共服务设施、法定图则调整等内容
+                      <b>我的角色：</b>规划专业负责人之一，主要负责交通设施、公共服务设施、法定图则调整等内容。
                     </div>
-                    <h5>项目概况</h5>
-                    <p>深圳大型标杆级项目，首批重点城市更新单元。</p>
-                    <div class="col s12 m6 l3">
-                      <div><img alt="" src="/assets/img/projects/新桥东更新_用地规划方案图.png" />
-                        <span>用地规划方案图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/新桥东更新_总平面图.png" />
-                        <span>总平面图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/新桥东更新_鸟瞰效果图.png" />
-                        <span>鸟瞰效果图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/新桥东更新_产业空间分析图.png" />
-                        <span>产业空间分析图</span>
-                      </div>
-                      <div><img alt="" src="/assets/img/projects/新桥东更新_工业上楼空间示意图.png" />
-                        <span>工业上楼空间示意图</span>
-                      </div>
+                    <div class="col s12 m12 l12">
+                      <span class="img-caption">项目概况</span>
+                      <img alt="" src="/assets/img/projects/传统规划_新桥东更新规划_page01.png" />
                     </div>
-                    <h5>思考与启示</h5>
-                    <p>
-                      <b>3D可视化将规划指标转化为空间形态，大幅提高沟通效率</b><br>本项目的难点在于大型城市更新项目的建设指标复杂，而且要兼顾各方管理和利益的平衡。
-                      通过3D可视化，将土地产权、开发强度、基础配套、综合管线、绿地率、停车位等多种指标转化为直观空间形态，成为各主体各专业的沟通桥梁。
-                    </p>
+
                   </div>
                 </div>
 
@@ -1097,31 +931,24 @@
     <section id="contact" class="section scrollspy full-height">
       <h3 class="page-title white-text teal">联系</h3>
       <div class="container">
-        <p>
+        <div class="contact-info">
           <a aria-label="Call Varad" data-position="top" data-tooltip="Call Varad"
             class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i><a
               aria-label="Call Varad">13424191550</a></a>
-        </p>
-        <p>
+        </div>
+        <div class="contact-info">
           <a aria-label="Email Varad" href="mailto:vbhogayata@gmail.com" target="_blank" data-position="top"
             data-tooltip="Email Varad" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
               class="fa fa-envelope"></i><a aria-label="Email Varad" href="mailto:313185240@qq.com"
               class="hoverline">313185240@qq.com</a></a>
-        </p>
-        <p>
+        </div>
+        <div class="contact-info">
           <a aria-label="View Varad on GitHub" href="http://github.com/seeking001" target="_blank" data-position="top"
             data-tooltip="View Varad on GitHub"
             class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
               aria-label="Varad on Github" href="http://github.com/seeking001" class="hoverline"
               target="_blank">github.com/seeking001</a></a>
-        </p>
-        <p>
-          <a aria-label="View Varad on LinkedIn" href="http://linkedin.com/in/seeking001" target="_blank"
-            data-position="top" data-tooltip="View Varad on LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-linkedin"></i><a aria-label="Varad on LinkedIn" href="http://linkedin.com/in/seeking001"
-              class="hoverline" target="_blank">linkedin.com/in/seeking001</a></a>
-        </p>
+        </div>
       </div>
     </section>
 
@@ -1141,29 +968,36 @@
     });
   </script>
 
-  <!-- jQuery库：Materialize CSS 的组件依赖jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- 本地 Materialize JavaScript -->
+  <script src="/assets/vendor/materialize/materialize.min.js"></script>
 
-  <!-- Materialize JS：提供侧边栏、滚动监听等交互功能 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
   <script>
-    // Materialize 初始化代码
-    $(document).ready(function () {
-      // 初始化滚动监听（scrollspy），让侧边导航能根据滚动位置高亮
-      $(".scrollspy").scrollSpy()
-      // 初始化手机端的侧滑菜单（sideNav）
-      $(".button-collapse").sideNav({
-        menuWidth: 190,    // 菜单宽度
-        edge: "left",      // 从左边滑出
-        closeOnClick: true // 点击菜单项后自动关闭
-      })
-    })
+    document.addEventListener('DOMContentLoaded', function () {
+      // 初始化移动端侧边栏
+      var mobileSidenav = document.querySelector('#slide-out');
+      if (mobileSidenav) {
+        M.Sidenav.init(mobileSidenav, {
+          edge: 'left',
+          draggable: false
+        });
+      }
+
+      // 初始化滚动监听
+      var scrollspyElems = document.querySelectorAll('.scrollspy');
+      M.ScrollSpy.init(scrollspyElems, {
+        scrollOffset: 0
+      });
+
+      // 初始化提示工具
+      var tooltipElems = document.querySelectorAll('.tooltipped');
+      M.Tooltip.init(tooltipElems);
+    });
   </script>
 
   <!-- ========== 作品卡片：悬停翻转 + 点击展开详情 ========== -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // 为所有 "查看完整介绍" 按钮绑定事件
+      // "完整介绍" 按钮绑定事件
       document.querySelectorAll('.expand-trigger').forEach(function (btn) {
         btn.addEventListener('click', function (e) {
           e.stopPropagation();

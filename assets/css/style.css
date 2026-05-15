@@ -1,18 +1,256 @@
-.profile-pic {
+/* ============================================================
+ * 个人简历网站 - 主样式表
+ * 基于 Materialize 0.95.3 框架
+ * 作者：孙平
+ * 描述：整理归类的样式文件，按功能模块分组，便于阅读和维护
+ * ============================================================ */
+
+/* ============================================================
+ * 一、materialize样式
+ * ============================================================ */
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/vendor/materialize/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+/* ============================================================
+ * 一、全局基础样式
+ * ============================================================ */
+
+/* 页面主体：文字颜色和字号 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  font-size: 18px;
+}
+
+/* 全局链接颜色 */
+a {
+  color: #004d40;
+}
+
+/* 引用块样式 */
+blockquote {
+  border-left: 5px solid #795548;
+  color: #795548;
+  font-size: 125%;
+  font-weight: 400;
+  margin: 20px 0;
+  padding-left: 1.5rem;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* 隐藏所有 <small> 标签（全局性较强，请注意影响范围） */
+/* small {
+  display: none;
+} */
+
+/* 文字居中工具类 */
+.text-center {
+  text-align: center;
+}
+
+/* 灰色文字工具类 */
+.grey-text {
+  color: #666 !important;
+}
+
+/* 图片标题：跟随图片，背景色与图两端对齐，文字居中 */
+.img-caption {
+  display: block;
+  background-color: #eee;
+  color: #666;
+  text-align: center;
+  padding: 3px 0;
+  margin: 18px 0 2px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+ * 三、主题色工具类
+ * ============================================================ */
+
+/* 青绿色文字（teal darken-4 左右） */
+.teal-text {
+  color: #008073 !important;
+}
+
+/* 青绿色背景 */
+.teal {
+  background-color: #008073 !important;
+}
+
+
+/* ============================================================
+ * 四、布局结构
+ * ============================================================ */
+
+/* 主内容区：左侧留出侧边导航的宽度（桌面端190px） */
+main {
+  background: url(../../assets/img/bg.png) repeat;
+  padding-left: 190px;
+}
+
+/* 内容区块通用设置 */
+.section {
+  padding-bottom: 30px;
+  padding-top: 0;
   position: relative;
-  max-width: 130px;
-  max-height: 130px;
+}
+
+/* 全屏高度区块 */
+.full-height {
+  height: 100vh;
+}
+
+/* 容器宽度微调 */
+.container {
+  width: 95%;
+}
+
+/* 区块标题样式 */
+h3 {
+  font-weight: 100;
+  margin-bottom: 60px;
+  margin-top: 0;
+  padding: 20px 70px;
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+ * 五、顶部导航栏（桌面端隐藏，移动端显示）
+ * ============================================================ */
+
+nav {
+  background: white;
+  box-shadow: none;
+  height: 0;
+}
+
+nav i {
+  padding: 0 15px;
+  position: relative;
+  top: 5px;
+}
+
+/* 兼容 Materialize 1.0.0 移动端导航 */
+nav .name-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 64px;
+  font-size: 1.2rem;
+}
+
+
+/* ============================================================
+ * 六、固定侧边导航栏（桌面端）
+ * ============================================================ */
+
+/* 容器 */
+#desktop-nav.sidenav {
+  width: 190px;
+  height: 100%;
+  /* top: 0; */
+  /* left: 0; */
+  /* padding-bottom: 0; */
+  /* box-shadow: none; */
+  /* background-color: #eee; */
+  /* display: block; */
+}
+
+/* 菜单项 */
+#desktop-nav.sidenav li {
+  padding: 0;
+  /* line-height: normal; */
+  /* height: auto; */
+}
+
+#desktop-nav.sidenav li>a {
+  display: block;
+  height: auto;
+  font-size: 18px;
+  font-weight: 100;
+  border-left: 3px solid transparent;
+}
+
+/* 图标 */
+#desktop-nav.sidenav li>a i {
+  display: inline-block;
+  width: 24px;
+  margin-right: 8px;
+  text-align: center;
+  /* vertical-align: middle; */
+  color: inherit;
+  /* line-height: 1; */
+}
+
+/* 悬停和激活 */
+#desktop-nav.sidenav li>a:hover,
+#desktop-nav.sidenav li>a.active {
+  background-color: #eee;
+  border-left-color: #008073;
+  padding-left: 62px;
+}
+
+/* Logo 区域 */
+#desktop-nav.sidenav li.logo {
+  background-color: #eee;
+  /* border-bottom: 1px solid #eee; */
+  height: auto;
+  /* min-height: 140px; */
+  padding: 22px 0 8px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#desktop-nav.sidenav li.logo>a {
+  display: inline-block;
+  padding: 0;
+  border-left-color: transparent;
+}
+
+
+/* ============================================================
+ * 七、个人头像
+ * ============================================================ */
+.profile-pic {
+  max-width: 150px;
+  max-height: 150px;
   width: auto;
   height: auto;
-  overflow: hidden;
-  /* display: inline-block; */
-
-
-  /* background-size: cover;  */
-  margin: -31px;
-  margin-left: -7px;
-  border: 6px solid rgba(0, 77, 64, 0.4);
-  border-radius: 50% !important;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 100, 64, 0.8);
+  border-radius: 50%;
 }
 
 .profile-pic img {
@@ -20,23 +258,66 @@
   height: auto;
 }
 
-.tracker {
-  /* visibility: hidden; */
-  position: fixed;
-  /* margin-inline-end: auto;  */
-  bottom: 0;
-  right: 0;
+
+/* ============================================================
+ * 八、Hero 首页区域
+ * ============================================================ */
+
+/* 首页背景（纯色替代了原来的背景图） */
+#intro.section {
+  background: #a7ffeb repeat;
+  position: relative;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+/* 首页文字容器定位 */
+#intro.section .container {
+  color: white;
+  font-weight: 200;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
 
+/* 首页文字样式（排除 span 标签，避免影响打字效果） */
+#intro.section .container *:not(span) {
+  font-weight: 300;
+  line-height: 150%;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 首页下划线装饰 */
+#intro.section .underline {
+  border-bottom: 5px solid #24305e;
+}
+
+/* 首页 teal 高亮文字的内边距 */
+#intro.section .teal {
+  padding: 0 10px;
+}
+
+/* 首页半透明遮罩层 */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
+/* ============================================================
+ * 九、社交图标按钮
+ * ============================================================ */
+
+/* 社交图标容器 */
 .social {
   margin: 0 auto;
   width: auto;
   text-align: inherit;
-  /* padding: 10px; */
 }
 
+/* 圆形图标按钮通用样式 */
 .icon-btn {
   margin-left: auto;
   width: 50px;
@@ -51,6 +332,7 @@
   margin: 4px;
 }
 
+/* 各平台默认颜色 */
 .github {
   color: black;
 }
@@ -63,11 +345,13 @@
   color: grey;
 }
 
+/* 图标按钮悬停：放大 + 变白 */
 .icon-btn:hover {
   transform: scale(1.10);
   color: #FFFFFF;
 }
 
+/* 各平台悬停背景色 */
 .linkedin:hover {
   background-color: #0077b5;
 }
@@ -80,8 +364,12 @@
   background-color: black;
 }
 
-/* Buttons - Read Me, Contact Us */
 
+/* ============================================================
+ * 十、操作按钮（了解更多 / 联系我 / 下载等）
+ * ============================================================ */
+
+/* "了解更多" 按钮：白底青绿字 */
 .readme {
   position: relative;
   padding: 11px 35px;
@@ -96,11 +384,7 @@
   -webkit-border-radius: 5px;
 }
 
-/* .readme:hover{
-  color: white;
-  background-color: #00796b;
-} */
-
+/* "联系我" / "下载" 按钮：透明底白字 */
 .contactme {
   position: relative;
   padding: 11px 35px;
@@ -116,95 +400,227 @@
   -webkit-border-radius: 5px;
 }
 
+/* "联系我" 按钮悬停：白底青绿字 */
 .contactme:hover {
   color: #00796b;
   background-color: white;
 }
 
-/* main body */
 
-/* body-color */
+/* ============================================================
+ * 十一、Materialize 波纹效果微调
+ * ============================================================ */
 
-body {
+.waves-effect.waves-blue .waves-ripple {
+  background-color: rgba(33, 150, 243, 0.2);
+}
+
+
+/* ============================================================
+ * 十二、卡片通用样式
+ * ============================================================ */
+
+/* 卡片底部外边距 */
+.card {
+  margin-bottom: 20px;
+}
+
+.card .card-content .project-title {
+  font-size: 22px;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.card .card-content .project-subhead {
+  font-size: 20px;
+  color: #999;
+  margin-top: 5px;
+}
+
+/* 简介区域卡片等高 */
+#about .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#about .row .col {
+  display: flex;
+}
+
+#about .row .col .card {
+  width: 100%;
+}
+
+/* 证书标题 */
+.card .certificate-title {
+  display: block;
+  background-color: #eee;
+  color: #333;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.card .certificate-name {
+  display: block;
+  border: 1px solid #eee;
+  color: teal;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* 卡片内 h5 / h6 */
+.card h5 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.card h6 {
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+/* 卡片内容区内边距 */
+.card .card-content {
+  padding-bottom: 20px;
+}
+
+/* 清除卡片内部浮动，防止塌陷 */
+.card .card-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* 卡片内容区的图片加浅灰色边框 */
+.card img {
+  border: 1px solid #eee;
+}
+
+/* 卡片内角色标签（绝对定位在右上角） */
+.card .role {
+  font-size: 1.25rem;
+  position: absolute;
+  right: 38px;
+  top: 35px;
+}
+
+/* 卡片内链接样式 */
+.card li a {
+  margin-right: 0;
+  color: #333;
+  border-bottom: 2px solid #ffab40;
+}
+
+.card li a:hover {
+  color: #333;
+  font-weight: 500;
+}
+
+/* 卡片内右箭头图标 */
+.card i.right {
+  margin-left: 10px;
+}
+
+/* 卡片内嵌套列表（更小更浅） */
+.card ul li {
   color: #333;
   font-size: 18px;
+  padding-top: 10px;
 }
 
-/* body {
-  color: black;
+/* 卡片内嵌套列表（更小更浅） */
+/* .card ul li li {
+  color: #666;
+  font-size: 13px;
+} */
+
+/* 大卡片与中等卡片的图片高度 */
+.card.large .card-image {
+  height: 230px;
+}
+
+.card.large .card-content {
+  height: auto;
+}
+
+.card.large .card-content p {
+  color: inherit;
+  margin: 0;
+  padding: 30px 0;
+}
+
+.card.medium .card-image {
+  height: 240px;
+}
+
+/* 卡片底部操作区 */
+.card-action span {
+  font-size: 85%;
+  color: #666;
+}
+
+.card-action a.btn-floating {
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+ * 十三、链接下划线悬停效果
+ * ============================================================ */
+
+a.hoverline {
+  border-bottom: 3px solid transparent !important;
+  padding: 3px 3px 0 3px;
+  transition: 0.25s all;
+  -moz-transition: 0.25s all;
+  -webkit-transition: 0.25s all;
+}
+
+a.hoverline:hover {
+  border-bottom: 3px solid #004d40 !important;
+}
+
+
+/* ============================================================
+ * 十六、联系区域样式
+ * ============================================================ */
+
+.contact-info {
+  color: #333;
   font-size: 18px;
-} */
-
-/* main a -- links */
-
-/* a {
-  color: #009688;
-} */
-
-a {
-  color: #004d40;
+  margin-top: 30px;
 }
 
-/* main blockqoute */
-
-/* blockquote {
-  border-left: 5px solid #795548;
-  color: #795548;
-  font-size: 125%;
-  font-weight: 400;
-  margin: 20px 0;
-  padding-left: 1.5rem;
-} */
-
-blockquote {
-  border-left: 5px solid #795548;
-  color: #795548;
-  font-size: 125%;
-  font-weight: 400;
-  margin: 20px 0;
-  padding-left: 1.5rem;
+#contact a:not(.btn-floating) {
+  margin-left: 20px;
 }
 
-blockquote * {
-  font-size: inherit;
-  line-height: inherit;
-}
 
-.text-center {
-  text-align: center;
-}
+/* ============================================================
+ * 十七、外部链接图标微调
+ * ============================================================ */
 
-/* main nav */
-
-nav {
-  background: white;
-  box-shadow: none;
-  height: 0;
-}
-
-/* nav {
-  background: rgb(149, 126, 212);
-  box-shadow: none;
-  height: 0;
-} */
-
-nav i {
-  padding: 0 15px;
+.fa-external-link:before {
+  left: 3px;
   position: relative;
-  top: 5px;
+  top: 2px;
 }
 
-/* main */
 
-/* main {
-  background: url(../../assets/img/bg.png) repeat;
-  padding-left: 190px;
-} */
-
-main {
-  background: url(../../assets/img/bg.png) repeat;
-  padding-left: 190px;
-}
+/* ============================================================
+ * 十八、描述列表样式
+ * ============================================================ */
 
 dl {
   margin-top: 0.5rem;
@@ -221,362 +637,230 @@ dt {
   margin-left: 0.5rem;
 }
 
-ul.side-nav {
-  width: 190px;
+
+/* ============================================================
+ * 十九、页面跟踪器（固定定位在右下角）
+ * ============================================================ */
+
+.tracker {
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
-ul.side-nav li {
-  padding: 0;
-}
 
-/* ul.side-nav.fixed a {
-  box-sizing: content-box;
-  color: rgb(48, 122, 207);
-  display: block;
-  line-height: 100%;
-  padding: 10px 0 12px;
-} */
+/* ============================================================
+ * 二十、作品卡片交互样式
+ *      包含：悬停翻转 + 点击展开详情面板
+ * ============================================================ */
 
-ul.side-nav.fixed a {
-  box-sizing: content-box;
-  color: rgb(16, 202, 56);
-  display: block;
-  line-height: 100%;
-  padding: 10px 0 12px;
-}
+/* ---------- 悬停自动翻转 ---------- */
 
-ul.table-of-contents li.logo a.active,
-ul.table-of-contents li.logo a:hover {
-  border: none;
-  font-weight: 200;
-}
-
-/* ul.side-nav.fixed li.logo {
-  background-color: #fafafa;
-  border-bottom: 1px solid #ddd;
-  box-sizing: content-box;
-  min-height: 90px;
-  padding: 30px 30px 40px;
-} */
-
-ul.side-nav.fixed li.logo {
-  background-color: #fafafa;
-  border-bottom: 1px solid #ddd;
-  box-sizing: content-box;
-  min-height: 90px;
-  padding: 30px 30px 40px;
-}
-
-ul.side-nav.fixed li.logo a {
-  font-weight: 200;
-  line-height: 100%;
-}
-
-ul.table-of-contents li:not(.logo) a.active,
-ul.table-of-contents li:not(.logo) a:hover {
-  background-color: #fafafa;
-  border-left: 3px solid;
-}
-
-ul.side-nav.fixed.table-of-contents li:not(.logo) a span,
-ul#slide-out li:not(.logo) a span {
-  color: #333 !important;
-}
-
-li.logo span {
-  display: block;
-  font-size: 14px;
-}
-
-.brand-logo h1 {
-  font-size: inherit;
-  line-height: inherit;
-  margin: inherit;
-  font-weight: inherit;
-}
-
-.container {
-  width: 95%;
-}
-
-h3 {
-  font-weight: 200;
-  margin-bottom: 60px;
-  margin-top: 0;
-  padding: 30px 40px;
-  text-transform: uppercase;
-}
-
-.section {
-  padding-bottom: 30px;
-  padding-top: 0;
+/* 卡片容器自动隐藏 */
+.card.hoverable-card {
   position: relative;
+  overflow: hidden;
 }
 
-.full-height {
-  height: 100vh;
-}
-
-/* Original */
-
-/* #intro.section {
-  background: url(../../assets/img/white-ai-wallpaper.jpg) no-repeat top center/cover;
-  position: relative;
-} */
-
-#intro.section {
-  background: #a7ffeb repeat;
-  position: relative;
-}
-
-#intro.section .container {
-  color: white;
-  font-weight: 200;
-  left: 0;
+/* 翻转层默认隐藏，在卡片底部之外 */
+.card.hoverable-card .card-reveal {
   position: absolute;
-  top: 0;
-}
-
-/* #intro.section .container *:not(span) {
-  font-weight: 300;
-  line-height: 150%;
-  padding: 0 30px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-} */
-
-#intro.section .container *:not(span) {
-  font-weight: 300;
-  /* font-weight: 400; */
-  line-height: 150%;
-  /* padding: 0 0px; */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-#intro.section .underline {
-  border-bottom: 5px solid #24305e;
-}
-
-#intro.section .teal {
-  padding: 0 10px;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  height: 100%;
+  top: 100%;
   left: 0;
-  position: absolute;
-  top: 0;
   width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 2;
+  overflow-y: auto;
+  transition: top 0.3s ease;
+  padding: 20px;
+  display: block !important;
+  /* 覆盖 Materialize 默认的 display: none */
 }
 
-.waves-effect.waves-blue .waves-ripple {
-  /* The alpha value allows the text and background color
-   of the button to still show through. */
-  background-color: rgba(33, 150, 243, 0.2);
+.card.hoverable-card:hover .card-reveal {
+  top: 0;
 }
 
-.card {
-  margin-bottom: 60px;
+/* ---------- 作品卡片翻转后的3个按钮 ---------- */
+
+/* 按钮组容器 */
+.project-card-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 4px;
+  margin-top: 20px;
 }
 
-.card .role {
-  font-size: 1.25rem;
-  position: absolute;
-  right: 38px;
-  top: 35px;
+/* 通用矩形按钮（完整介绍、源码链接） */
+.project-btn {
+  border-radius: 10px;
+  padding: 0 15px;
+  margin: 15px;
+  font-size: 18px;
 }
 
-.card li a {
-  margin-right: 0;
-  color: #333;
-  border-bottom: 2px solid #ffab40;
+/* 中间圆形演示按钮 */
+.btn-round-home {
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  margin: 0 8px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 150, 136, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card li a:hover {
-  color: #333;
-  font-weight: 500;
+/* 圆形按钮悬停（呼吸动画在二十一单独定义） */
+.btn-round-home:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 10px rgba(0, 150, 136, 0.8);
 }
 
-.card .card-content {
-  padding-bottom: 30px;
+/* ---------- 卡片容器 ---------- */
+
+/* 展开状态：占满整行 */
+.project-card-wrapper.expanded {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
 }
 
-.card .card-content p {
-  padding: 5px 0 0;
-}
-
-.card h5 {
-  font-size: 1.5rem;
-  margin-bottom: -0.5rem;
-  margin-top: 2rem;
-}
-
-.card h6 {
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin-top: 2rem;
-  text-transform: uppercase;
-}
-
-#experience .card-action {
-  background-color: rgba(0, 0, 0, 0.02);
-  border: none;
-}
-
-#experience .card .col.s12.m2 a {
-  display: block;
-}
-
-#experience .card .col.s12.m2 a img {
-  max-height: 60px;
-}
-
-.card-action span {
-  font-size: 85%;
-  color: #666;
-}
-
-.card ul {
-  margin-bottom: 0;
-}
-
-.card ul li {
-  line-height: 200%;
-  list-style-type: disc;
-  margin-left: 24px;
-}
-
-.card ul li li {
-  color: #666;
-  font-size: 13px;
-}
-
-.card .card-title {
-  font-size: 24px;
-}
-
-.card .card-content .card-title {
-  line-height: 2.5rem;
-}
-
-.card i.right {
-  margin-left: 10px;
-}
-
-a.hoverline {
-  border-bottom: 3px solid transparent !important;
-  padding: 3px 3px 0 3px;
-  transition: 0.25s all;
-  -moz-transition: 0.25s all;
-  -webkit-transition: 0.25s all;
-}
-
-/* main a.hoverline */
-
-/* a.hoverline:hover {
-  border-bottom: 3px solid #24305e !important;
-} */
-
-a.hoverline:hover {
-  border-bottom: 3px solid #004d40 !important;
-}
-
-#skills .card.large {
-  height: 360px;
-}
-
-#skills h4 {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-}
-
-#skills .col img.responsive-img {
-  margin: 0 auto;
-  max-height: 100px;
-  padding-bottom: 10px;
-  text-align: center;
-  vertical-align: middle;
-  display: table-cell;
-}
-
-.card.large .card-content p {
-  color: inherit;
-  margin: 0;
-  padding: 30px 0;
-}
-
-#experience .card-content .row {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-}
-
-.card.large .card-image {
-  height: 230px;
-}
-
-.card.large .card-content {
-  height: auto;
-}
-
-.card.medium .card-image {
-  height: 240px;
-}
-
-.card-action a.btn-floating {
-  margin-bottom: 0;
-}
-
-#contact a:not(.btn-floating) {
-  bottom: 6px;
-  left: 20px;
-  position: relative;
-}
-
-#experience .col.s12.m2 {
-  text-align: center;
-}
-
-.fa-external-link:before {
-  left: 3px;
-  position: relative;
-  top: 2px;
-}
-
-small {
+/* 同组其他卡片在展开时隐藏 */
+.project-card-wrapper.hidden-by-expand {
   display: none;
 }
 
-.grey-text {
-  color: #666 !important;
+/* 普通卡片视图：展开后隐藏 */
+.card-normal {
+  display: block;
 }
 
-/* main .teal-text */
-
-.teal-text {
-  color: #008073 !important;
+.project-card-wrapper.expanded .card-normal {
+  display: none;
 }
 
-/* .teal-text {
-  color: #0b5e86 !important;
-} */
+/* ---------- 详情面板 ---------- */
+.project-detail-panel {
+  display: none;
+  background: #fff;
+  padding: 30px 35px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
 
-/* .teal */
-
-.teal {
-  background-color: #008073 !important;
+  /* 初始状态：透明 + 略微下移，等待动画触发 */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* .teal {
-  background-color: #00695c !important;
-} */
+.project-card-wrapper.expanded .project-detail-panel {
+  display: block;
+}
 
+/* 动画触发：淡入 + 上浮 */
+.project-card-wrapper.expanded .project-detail-panel.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 详情面板内部元素 */
+.project-detail-panel h4 {
+  color: #008073;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* 详情面板中的图片：自适应容器宽度，保持长宽比 */
+.project-detail-panel img {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-detail-panel .meta {
+  color: #aaa;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* 关闭按钮 */
+.project-detail-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: 100;
+  color: #999;
+  cursor: pointer;
+  border: none;
+  background: none;
+  line-height: 1;
+}
+
+.project-detail-close:hover {
+  color: #333;
+}
+
+/* ---------- 作品卡片按钮组 ---------- */
+.project-card-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+
+
+/* ============================================================
+ * 二十一、呼吸动画（中间圆形演示按钮）
+ * ============================================================ */
+
+.btn-round-home {
+  animation: breathe 2.5s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-round-home:hover {
+  animation: none;
+  /* 悬停时停止呼吸，切换为放大效果 */
+  transform: scale(1.05);
+  box-shadow: 0 3px 10px rgba(0, 150, 136, 0.8);
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 15px rgba(0, 150, 136, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 6px 25px rgba(0, 150, 136, 0.7);
+  }
+}
+
+
+/* ============================================================
+ * 二十二、响应式设计
+ * ============================================================ */
+
+/* ---- 宽屏优化（≥1200px）---- */
 @media (min-width: 1200px) {
   #experience .container {
     width: 860px;
   }
 }
 
+/* ---- 中等屏幕（≤1360px）---- */
 @media (max-width: 1360px) {
   .card ul li {
     font-size: 14px;
@@ -585,19 +869,21 @@ small {
   }
 }
 
+/* ---- 较小屏幕（≤1160px）---- */
 @media (max-width: 1160px) {
   .card ul li {
     line-height: 150%;
   }
 }
 
+/* ---- 平板及以下（≤992px）：侧边导航变为顶部导航 ---- */
 @media (max-width: 992px) {
   main {
     padding-left: 0px;
     padding-top: 64px;
   }
 
-  ul.side-nav a {
+  ul.sidenav a {
     line-height: 100%;
     padding: 0;
     width: 100%;
@@ -609,8 +895,8 @@ small {
     position: absolute;
   }
 
-  nav a.button-collapse,
-  nav a.button-collapse i {
+  nav a.sidenav-trigger,
+  nav a.sidenav-trigger i {
     color: #009688;
     height: 56px;
     line-height: 56px;
@@ -632,6 +918,7 @@ small {
     z-index: 2;
   }
 
+  /* 移动端顶部导航中的姓名标题 */
   .name-title {
     display: block;
     height: 100%;
@@ -674,6 +961,7 @@ small {
   }
 }
 
+/* ---- 手机端（≤600px）---- */
 @media (max-width: 600px) {
   h2 {
     font-size: 22px;
@@ -685,23 +973,13 @@ small {
     padding: 0;
   }
 
-  .card .card-content .card-title {
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  #experience span.card-title {
+  #experience span.project-title {
     text-align: center;
     display: block;
   }
 
-  #experience span.card-title a {
+  #experience span.project-title a {
     margin: 0;
-  }
-
-  i.mdi-navigation-close.right {
-    position: relative;
-    bottom: 15px;
   }
 
   #contact a:not(.btn-floating) {
@@ -720,154 +998,8 @@ small {
   #intro.section {
     background-position-x: 30%;
   }
-}
 
-
-/* 以下为添加样式 */
-
-/* ========== 作品卡片：悬停翻转 + 点击展开详情 ========== */
-
-/* 卡片容器：去掉宽度过渡 */
-.project-card-wrapper {
-  /* 不拉伸，只做显隐 */
-}
-
-/* 展开状态：直接占满整行，无过渡 */
-.project-card-wrapper.expanded {
-  width: 100% !important;
-  max-width: 100% !important;
-  flex: 0 0 100% !important;
-}
-
-/* 未展开的卡片在展开时隐藏 */
-.project-card-wrapper.hidden-by-expand {
-  display: none;
-}
-
-/* 普通卡片视图 */
-.card-normal {
-  display: block;
-}
-
-.project-card-wrapper.expanded .card-normal {
-  display: none;
-}
-
-/* ========== 详情面板：淡入 + 上浮动画 ========== */
-.project-detail-panel {
-  display: none;
-  background: #fff;
-  padding: 30px 35px;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  position: relative;
-
-  /* 初始状态：透明 + 下移 */
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.project-card-wrapper.expanded .project-detail-panel {
-  display: block;
-}
-
-/* 等浏览器渲染一帧后再触发动画 */
-.project-card-wrapper.expanded .project-detail-panel.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 详情面板内容 */
-.project-detail-panel h4 {
-  color: #004d40;
-  font-size: 22px;
-  margin-bottom: 12px;
-  padding-right: 40px;
-}
-
-.project-detail-panel .meta {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.project-detail-panel h5 {
-  color: #008073;
-  margin: 20px 0 10px;
-  font-size: 16px;
-}
-
-.project-detail-panel p {
-  line-height: 1.8;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-/* 关闭按钮 */
-.project-detail-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  color: #999;
-  cursor: pointer;
-  border: none;
-  background: none;
-  line-height: 1;
-}
-
-.project-detail-close:hover {
-  color: #333;
-}
-
-/* ========== 悬停自动翻转 ========== */
-.project-card-wrapper .card.hoverable-card .card-reveal {
-  transition: top 0.35s ease;
-}
-
-.project-card-wrapper .card.hoverable-card:hover .card-reveal {
-  top: 0 !important;
-}
-
-
-/* 作品卡片按钮组 */
-.project-card-btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 4px;
-}
-
-/* 中间圆形按钮呼吸效果 */
-.btn-round-home {
-  animation: breathe 2.5s ease-in-out infinite;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-round-home:hover {
-  animation: none;
-  transform: scale(1.1);
-  box-shadow: 0 3px 10px rgba(0, 150, 136, 0.8);
-}
-
-@keyframes breathe {
-
-  0%,
-  100% {
-    box-shadow: 0 4px 15px rgba(0, 150, 136, 0.4);
-  }
-
-  50% {
-    box-shadow: 0 6px 25px rgba(0, 150, 136, 0.7);
-  }
-}
-
-/* 手机端：三个按钮各占一行 */
-@media only screen and (max-width: 600px) {
+  /* 作品卡片按钮在手机端各占一行 */
   .project-card-btns {
     flex-wrap: wrap;
     gap: 8px;
