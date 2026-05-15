@@ -135,10 +135,10 @@ main {
 
 /* 区块标题样式 */
 h3 {
-  font-weight: 200;
+  font-weight: 100;
   margin-bottom: 60px;
   margin-top: 0;
-  padding: 30px 40px;
+  padding: 20px 70px;
   text-transform: uppercase;
 }
 
@@ -424,9 +424,15 @@ nav .name-title {
 }
 
 .card .card-content .project-title {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.card .card-content .project-subhead {
+  font-size: 20px;
+  color: #999;
+  margin-top: 5px;
 }
 
 /* 证书标题 */
@@ -574,10 +580,14 @@ a.hoverline:hover {
  * 十六、联系区域样式
  * ============================================================ */
 
+.contact-info {
+  color: #333;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
 #contact a:not(.btn-floating) {
-  bottom: 6px;
-  left: 20px;
-  position: relative;
+  margin-left: 20px;
 }
 
 
@@ -627,6 +637,74 @@ dt {
  * 二十、作品卡片交互样式
  *      包含：悬停翻转 + 点击展开详情面板
  * ============================================================ */
+
+/* ---------- 悬停自动翻转 ---------- */
+
+/* 卡片容器自动隐藏 */
+.card.hoverable-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 翻转层默认隐藏，在卡片底部之外 */
+.card.hoverable-card .card-reveal {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 2;
+  overflow-y: auto;
+  transition: top 0.3s ease;
+  padding: 20px;
+  display: block !important;
+  /* 覆盖 Materialize 默认的 display: none */
+}
+
+.card.hoverable-card:hover .card-reveal {
+  top: 0;
+}
+
+/* ---------- 作品卡片翻转后的3个按钮 ---------- */
+
+/* 按钮组容器 */
+.project-card-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 4px;
+  margin-top: 20px;
+}
+
+/* 通用矩形按钮（完整介绍、源码链接） */
+.project-btn {
+  border-radius: 10px;
+  padding: 0 15px;
+  margin: 15px;
+  font-size: 18px;
+}
+
+/* 中间圆形演示按钮 */
+.btn-round-home {
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  margin: 0 8px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 150, 136, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 圆形按钮悬停（呼吸动画在二十一单独定义） */
+.btn-round-home:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 10px rgba(0, 150, 136, 0.8);
+}
 
 /* ---------- 卡片容器 ---------- */
 
@@ -714,15 +792,6 @@ dt {
 
 .project-detail-close:hover {
   color: #333;
-}
-
-/* ---------- 悬停自动翻转 ---------- */
-.project-card-wrapper .card.hoverable-card .card-reveal {
-  transition: top 0.5s ease;
-}
-
-.project-card-wrapper .card.hoverable-card:hover .card-reveal {
-  top: 0 !important;
 }
 
 /* ---------- 作品卡片按钮组 ---------- */
