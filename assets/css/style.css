@@ -437,6 +437,20 @@ nav .name-title {
   margin-top: 5px;
 }
 
+/* 简介区域卡片等高 */
+#about .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#about .row .col {
+  display: flex;
+}
+
+#about .row .col .card {
+  width: 100%;
+}
+
 /* 证书标题 */
 .card .certificate-title {
   display: block;
@@ -458,15 +472,15 @@ nav .name-title {
 
 /* 卡片内 h5 / h6 */
 .card h5 {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 600;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .card h6 {
   font-weight: 600;
   letter-spacing: 1px;
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-transform: uppercase;
 }
 
