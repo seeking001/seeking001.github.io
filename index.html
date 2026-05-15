@@ -132,14 +132,14 @@
           <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
             <div class="caption">
               <!-- 标题 -->
-              <h2>你好，我叫 <span class="teal">孙平</span></h2>
+              <h2>你好，我叫<span class="teal">孙平</span></h2>
               <!-- 动态打字效果，通过下面的Typed.js实现 -->
               <h5 style="color:#fff">我是一名 <span class="typing" style="font-weight: 300; color:#004d40"></span></h5>
               <!-- 副标题 -->
               <h5>
-                专注于<b style="background-color: #007d70;"> GIS开发 </b>与<b style="background-color: #007d70;"> 城市规划
+                专注于<b style="color: #004d40;"> GIS开发 </b>与<b style="color: #004d40;"> 城市规划
                 </b>领域，拥有3年GIS开发实战经验与13年城市规划积淀。<br>
-                致力于构建业务与技术之间的<b style="background-color: #007d70;"> 转化桥梁 </b>，通过技术杠杆撬动城市规划模式创新。
+                致力于构建业务与技术之间的<b style="color: #004d40;"> 转化桥梁 </b>，通过技术杠杆撬动城市规划模式创新。
               </h5>
             </div>
 
@@ -150,23 +150,24 @@
                   <i class="fa fa-github"></i>
                 </button>
               </a>
+              <span class="objective">
+                求职意向：GIS开发工程师、智慧城市规划师、数字城市开发者等。
+              </span>
             </div>
 
             <!-- 求职意向：可以写明你期望的GIS开发职位类型 -->
-            <h5 style="font-size: 20px;">
-              <b
-                style="color: #007d70; background-color: white; padding: 3px 5px; border-radius: 5px; border: 1px solid white;">求职意向：GIS开发工程师、数字城市开发者、智慧城市规划师等。</b>
-            </h5>
+
 
             <!-- 按钮：引导访客阅读更多或联系你 -->
             <div class='buttons'>
-              <a href="#about" class="readme">了解更多</a>
-              <a href="#contact" class="contactme">请联系我</a>
+              <a href="#about" class="intro-btn">了解更多</a>
+              <a href="#contact" class="intro-btn">请联系我</a>
               <!-- 简历下载链接 -->
-              <a href="https://seeking001.github.io/assets/resume/Varad_Bhogayata_Resume.pdf" target="_blank"
-                class="contactme">下载简历</a>
+              <a href="https://seeking001.github.io/assets/resume/孙平_个人简历.pdf" target="_blank"
+                class="intro-btn">下载简历</a>
               <!-- 作品集下载链接 -->
-              <a href="https://seeking001.github.io/assets/resume/个人作品集.pdf" target="_blank" class="contactme">下载作品</a>
+              <a href="https://seeking001.github.io/assets/resume/孙平_个人作品集.pdf" target="_blank"
+                class="intro-btn">下载作品</a>
 
             </div>
 
@@ -381,8 +382,7 @@
                     </div>
                     <!-- 标题 -->
                     <div class="card-content">
-                      <div class="project-title teal-text">宝安区域环评“智能选址”项目的核心逻辑复现<i
-                          class="material-icons right activator">more_vert</i></div>
+                      <div class="project-title teal-text">宝安区域环评“智能选址”项目的核心逻辑复现</div>
                       <div class="project-subhead">基于参与项目的个人研究复现</div>
                     </div>
 
@@ -449,8 +449,7 @@
                       <img alt="cover" src="/assets/img/projects/个人复现_龙华公共设施_cover.png" />
                     </div>
                     <div class="card-content">
-                      <div class="project-title teal-text">龙华区公共服务设施规划管理系统的技术转化复现<i
-                          class="fa fa-ellipsis-v right activator"></i></div>
+                      <div class="project-title teal-text">龙华区公共设施规划管理系统的技术转化复现</div>
                       <div class="project-subhead">基于城市规划项目的技术转化复现</div>
                     </div>
                     <!-- 卡片翻转后显示的内容 -->
@@ -482,7 +481,7 @@
                   <!-- 查看完整介绍_展开详情 -->
                   <div class="project-detail-panel row">
                     <button class="project-detail-close">&times;</button>
-                    <h4>龙华区公共服务设施规划管理系统的技术转化复现</h4>
+                    <h4>龙华区公共设施规划管理系统的技术转化复现</h4>
                     <div class="meta">
                       <b>制作时间：</b>2025-2026年 &nbsp;|&nbsp;
                       <b>制作目的：</b>探索新型工具，提高工作效率 &nbsp;|&nbsp;
@@ -745,7 +744,6 @@
                     <div class="card-content">
                       <div class="project-title teal-text">
                         龙华区公共设施专项规划
-                        <i class="fa fa-ellipsis-v right activator"></i>
                       </div>
                       <div class="project-subhead">2016-2018年 &nbsp;|&nbsp; 经费230万元</div>
                     </div>
@@ -985,7 +983,7 @@
       // 初始化滚动监听
       var scrollspyElems = document.querySelectorAll('.scrollspy');
       M.ScrollSpy.init(scrollspyElems, {
-        scrollOffset: 0
+        scrollOffset: 3
       });
 
       // 初始化提示工具

@@ -295,6 +295,17 @@ nav .name-title {
   padding: 0 10px;
 }
 
+.objective {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: fit-content;
+  margin-top: 20px;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 22px;
+  color: #004d40;
+  /* border: 1px solid white; */
+}
+
 /* 首页半透明遮罩层 */
 .overlay {
   background-color: rgba(0, 0, 0, 0.4);
@@ -312,7 +323,7 @@ nav .name-title {
 
 /* 社交图标容器 */
 .social {
-  margin: 0 auto;
+  margin-top: 100px;
   width: auto;
   text-align: inherit;
 }
@@ -366,26 +377,10 @@ nav .name-title {
 
 
 /* ============================================================
- * 十、操作按钮（了解更多 / 联系我 / 下载等）
+ * 十、操作按钮（了解更多 / 请联系我 / 下载简历 / 下载作品）
  * ============================================================ */
 
-/* "了解更多" 按钮：白底青绿字 */
-.readme {
-  position: relative;
-  padding: 11px 35px;
-  background: #fff;
-  color: #00796b;
-  border: 2px solid #fff;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 1px;
-  display: inline-block;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-}
-
-/* "联系我" / "下载" 按钮：透明底白字 */
-.contactme {
+.intro-btn {
   position: relative;
   padding: 11px 35px;
   background: none;
@@ -401,7 +396,7 @@ nav .name-title {
 }
 
 /* "联系我" 按钮悬停：白底青绿字 */
-.contactme:hover {
+.intro-btn:hover {
   color: #00796b;
   background-color: white;
 }
