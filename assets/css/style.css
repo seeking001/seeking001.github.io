@@ -381,24 +381,35 @@ nav .name-title {
  * ============================================================ */
 
 .intro-btn {
-  position: relative;
-  padding: 11px 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
   background: none;
   color: #fff;
-  border: 2px solid #fff;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 1px;
-  display: inline-block;
-  margin-top: 1.5em;
+  border: 1px solid #fff;
+  font-size: 18px;
+  margin-top: 1em;
+  padding-bottom: 3px;
   border-radius: 5px;
-  -webkit-border-radius: 5px;
 }
 
 /* "联系我" 按钮悬停：白底青绿字 */
 .intro-btn:hover {
   color: #00796b;
   background-color: white;
+}
+
+.intro-btn .material-icons {
+  position: relative;
+  vertical-align: middle;
+  top: 1px;
+  margin-right: 5px;
+  font-size: 20px;
 }
 
 
