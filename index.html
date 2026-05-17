@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <!-- 视口设置，让页面在移动设备上能自适应缩放 -->
-  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- 针对旧版IE浏览器的兼容性设置 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -57,7 +57,7 @@
 
   <!-- ==================== 导航区域 ==================== -->
 
-  <!-- 导航栏 类型1: 桌面端固定侧边导航 -->
+  <!-- 桌面端固定侧边导航 -->
   <ul id="desktop-nav" class="sidenav sidenav-fixed section table-of-contents hide-on-small-only">
 
     <!-- Logo/个人头像 -->
@@ -91,35 +91,20 @@
     </li>
   </ul>
 
-  <!-- 导航栏 类型2: 在小屏幕（手机）上显示的上方固定导航条 -->
-  <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-target="slide-out" class="sidenav-trigger"><i
-        class="fa fa-bars"></i></a>
-    <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">孙平</a><span
-        class="black-text">数字城市开发者</span>
+  <!-- 手机端顶部导航 -->
+  <nav id="mobile-nav" class="hide-on-large-only">
+    <div class="nav-wrapper">
+      <a id="mobile-avatar" href="#intro">
+        <img src="/assets/img/personal_icon.png" class="circle" alt="孙平">
+      </a>
+      <ul id="mobile-links">
+        <li><a href="#about">简介</a></li>
+        <li><a href="#certificates">证书</a></li>
+        <li><a href="#projects">作品</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
     </div>
   </nav>
-
-  <!-- 导航栏 类型3: 小屏幕点击按钮后，从侧边滑出的菜单 -->
-  <ul id="slide-out" class="sidenav">
-    <li class="bold">
-      <a aria-label="Navigate to the About section" href="#about" class="waves-effect teal-text"><i
-          class="fa fa-user small"></i><span>About</span></a>
-    </li>
-    <li class="bold">
-      <a aria-label="Navigate to the Certificates section" href="#Certificates" class="waves-effect teal-text"><i
-          class="fa fa-graduation-cap small"></i><span>Certificates</span></a>
-    </li>
-    <li class="bold">
-      <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect teal-text"><i
-          class="fa fa-book small"></i><span>Projects</span></a>
-    </li>
-    <li class="bold">
-      <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect teal-text"><i
-          class="fa fa-envelope small"></i><span>Contact</span></a>
-    </li>
-  </ul>
 
   <!-- ==================== 主内容区 ==================== -->
   <main>
@@ -129,7 +114,7 @@
       <div class="overlay"></div>
       <div class="container">
         <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
+          <div class="content section-padding valign hero-content">
             <div class="caption">
               <!-- 标题 -->
               <h2>你好，我叫<span class="teal">孙平</span></h2>
@@ -244,7 +229,7 @@
                     主攻区域环评改革、智慧平台研发、全过程咨询、低空经济研究等新型业务，兼顾城市规划、工程咨询等传统业务。
                   </li>
                 </ul>
-                <img class="right" style="width: 15%;" src="/assets/img/about/职务聘任_主任工程师.png" alt="主任工程师">
+                <img class="right work-exp-img" src="/assets/img/about/职务聘任_主任工程师.png" alt="主任工程师">
               </div>
             </div>
           </div>
@@ -266,19 +251,19 @@
                 <div class="card-header">
                   <h4 class="teal-text center-align">职业资格</h4>
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">注册规划师</span>
                   <img alt="" src="/assets/img/certificates/注册规划师.jpg" class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">注册咨询工程师</span>
                   <img alt="" src="/assets/img/certificates/注册咨询工程师.jpg" class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">GIS工程师</span>
                   <img alt="" src="/assets/img/certificates/GIS工程师.jpg" class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">中级职业资格</span>
                   <img alt="" src="/assets/img/certificates/中级职业资格.jpg" class="responsive-img" />
                 </div>
@@ -293,56 +278,56 @@
                 <div class="card-header">
                   <h4 class="teal-text center-align">获奖证书</h4>
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">深圳市城乡规划二等奖</span>
                   <span class="certificate-name">《沙井街道“5333”严管示范区工程整治项目规划》</span>
                   <img alt="" src="/assets/img/certificates/沙井街道“5333”严管示范区工程整治项目规划(二等奖).jpg" class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">深圳市城乡规划三等奖</span>
                   <span class="certificate-name">《龙华新区近期建设和土地利用规划2016年度实施计划》</span>
                   <img alt="" src="/assets/img/certificates/龙华新区近期建设和土地利用规划2016年度实施计划(三等奖).jpg"
                     class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">深圳市城乡规划三等奖</span>
                   <span class="certificate-name">《宝安区湿地资源保护和建设规划》</span>
                   <img alt="" src="/assets/img/certificates/宝安区湿地资源保护和建设规划(三等奖).jpg" class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">深圳市城乡规划三等奖</span>
                   <span class="certificate-name">《宝安区“十三五”人才住房和保障性住房筹集实施规划》</span>
                   <img alt="" src="/assets/img/certificates/宝安区“十三五”人才住房和保障性住房筹集实施规划研究(三等奖).jpg"
                     class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">深圳市城乡规划三等奖</span>
                   <span class="certificate-name">《燕罗国际智能制造生态城历史保护与古村活化利用专题》</span>
                   <img alt="" src="/assets/img/certificates/燕罗国际智能制造生态城历史保护与古村活化利用专题研究(三等奖).jpg"
                     class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">深圳市城乡规划三等奖</span>
                   <span class="certificate-name">《妈湾电厂产业提容项目规划设计》</span>
                   <img alt="" src="/assets/img/certificates/妈湾电厂产业提容项目规划设计(三等奖).jpg" class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">深圳市城乡规划三等奖</span>
                   <span class="certificate-name">《福永街道龙王庙工业区整治提升方案》</span>
                   <img alt="" src="/assets/img/certificates/福永街道龙王庙工业区整治提升方案(三等奖).jpg" class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">深圳市城乡规划三等奖</span>
                   <span class="certificate-name">《新桥东片区更新单元周边交通及配套设施规划研究》</span>
                   <img alt="" src="/assets/img/certificates/新桥东片区更新单元周边交通及配套设施规划研究(表扬奖).jpg" class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">广东省城市规划三等奖<br>深圳市城乡规划二等奖</span>
                   <span class="certificate-name">《宝安区黄田社区土地整备利益统筹项目（二期）》</span>
                   <img alt="" src="/assets/img/certificates/个人-宝安区黄田社区土地整备利益统筹项目（二期）土地整备规划研究.jpg"
                     class="responsive-img" />
                 </div>
-                <div class="col s12 m3">
+                <div class="col s6 m3">
                   <span class="certificate-title">数据要素X大赛<br>广东赛区优秀奖</span>
                   <span class="certificate-name">《区域空间生态环境评价赋能绿色发展》</span>
                   <img alt="" src="/assets/img/certificates/公司-数据要素X荣誉证书.jpg" class="responsive-img" />
@@ -927,22 +912,21 @@
       <h3 class="page-title white-text teal">联系</h3>
       <div class="container">
         <div class="contact-info">
-          <a aria-label="Call Varad" data-position="top" data-tooltip="Call Varad"
+          <a aria-label="Call Varad" data-position="top" data-tooltip="电话"
             class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i><a
               aria-label="Call Varad">13424191550</a></a>
         </div>
         <div class="contact-info">
           <a aria-label="Email Varad" href="mailto:vbhogayata@gmail.com" target="_blank" data-position="top"
-            data-tooltip="Email Varad" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+            data-tooltip="邮箱" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
               class="fa fa-envelope"></i><a aria-label="Email Varad" href="mailto:313185240@qq.com"
               class="hoverline">313185240@qq.com</a></a>
         </div>
         <div class="contact-info">
           <a aria-label="View Varad on GitHub" href="http://github.com/seeking001" target="_blank" data-position="top"
-            data-tooltip="View Varad on GitHub"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
-              aria-label="Varad on Github" href="http://github.com/seeking001" class="hoverline"
-              target="_blank">github.com/seeking001</a></a>
+            data-tooltip="GitHub" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+              class="fa fa-github"></i><a aria-label="Varad on Github" href="http://github.com/seeking001"
+              class="hoverline" target="_blank">github.com/seeking001</a></a>
         </div>
       </div>
     </section>
@@ -968,19 +952,10 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // 初始化移动端侧边栏
-      var mobileSidenav = document.querySelector('#slide-out');
-      if (mobileSidenav) {
-        M.Sidenav.init(mobileSidenav, {
-          edge: 'left',
-          draggable: false
-        });
-      }
-
       // 初始化滚动监听
       var scrollspyElems = document.querySelectorAll('.scrollspy');
       M.ScrollSpy.init(scrollspyElems, {
-        scrollOffset: 3
+        scrollOffset: window.innerWidth <= 992 ? 56 : 1
       });
 
       // 初始化提示工具
@@ -1057,6 +1032,16 @@
               sib.classList.remove('hidden-by-expand');
             });
           }, 300); // 与 CSS transition 时间一致
+        });
+      });
+
+      // 移动端触摸翻转卡片
+      document.querySelectorAll('.hoverable-card').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+          if (e.target.closest('a') || e.target.closest('button')) return;
+          if (window.innerWidth <= 992) {
+            this.classList.toggle('touch-active');
+          }
         });
       });
     });

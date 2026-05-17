@@ -146,33 +146,6 @@ h3 {
 
 
 /* ============================================================
- * 五、顶部导航栏（桌面端隐藏，移动端显示）
- * ============================================================ */
-
-nav {
-  background: white;
-  box-shadow: none;
-  height: 0;
-}
-
-nav i {
-  padding: 0 15px;
-  position: relative;
-  top: 5px;
-}
-
-/* 兼容 Materialize 1.0.0 移动端导航 */
-nav .name-title {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  line-height: 64px;
-  font-size: 1.2rem;
-}
-
-
-/* ============================================================
  * 六、固定侧边导航栏（桌面端）
  * ============================================================ */
 
@@ -258,6 +231,21 @@ nav .name-title {
   height: auto;
 }
 
+/* 工作经历配图响应式 */
+.work-exp-img {
+  width: 15%;
+}
+
+@media (max-width: 600px) {
+  .work-exp-img {
+    float: none !important;
+    display: block;
+    width: 60%;
+    margin: 15px auto 0;
+  }
+}
+
+
 
 /* ============================================================
  * 八、Hero 首页区域
@@ -314,6 +302,22 @@ nav .name-title {
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.hero-content {
+  margin-left: 10%;
+  margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+  .hero-content {
+    margin-left: 0;
+    margin-top: 80px;
+  }
+
+  .social {
+    margin-top: 30px;
+  }
 }
 
 
@@ -884,80 +888,83 @@ dt {
 
 /* ---- 平板及以下（≤992px）：侧边导航变为顶部导航 ---- */
 @media (max-width: 992px) {
+
+  /* --- 移动端顶部导航条 --- */
+  #mobile-nav {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+  }
+
+  /* 头像 */
+  #mobile-avatar {
+    line-height: 0;
+    padding-left: 10px;
+  }
+
+  #mobile-avatar img {
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(0, 100, 64, 0.8);
+  }
+
+  /* 链接列表：占满剩余宽度，均匀分布 */
+  #mobile-links {
+    display: flex;
+    flex: 1;
+    margin-left: 10px;
+    height: 40px;
+  }
+
+  #mobile-links li {
+    flex: 1;
+    text-align: center;
+    /* background-color: red; */
+  }
+
+  #mobile-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #008073;
+    font-weight: 100;
+    font-size: 18px;
+    border-top: 2px solid transparent;
+    /* background-color: yellow; */
+  }
+
+  #mobile-links a.active {
+    background-color: #eee;
+    border-top-color: #008073;
+  }
+
   main {
-    padding-left: 0px;
-    padding-top: 64px;
+    padding: 0px;
   }
 
-  ul.sidenav a {
-    line-height: 100%;
-    padding: 0;
-    width: 100%;
+  h2 {
+    padding: 30px;
+    margin-bottom: 40px;
   }
 
-  nav {
-    background: #fff;
-    height: 64px;
-    position: absolute;
-  }
-
-  nav a.sidenav-trigger,
-  nav a.sidenav-trigger i {
-    color: #009688;
-    height: 56px;
-    line-height: 56px;
-  }
-
-  h3 {
-    padding: 20px 30px;
+  h5 {
+    padding: 30px;
     margin-bottom: 40px;
   }
 
   .container {
-    margin: 0 auto;
+    margin: 5px;
   }
 
-  nav.hide-on-large.only.trigger {
-    display: block;
-    position: fixed;
-    top: 0;
-    z-index: 2;
-  }
-
-  /* 移动端顶部导航中的姓名标题 */
-  .name-title {
-    display: block;
-    height: 100%;
-    padding-top: 15px;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-  }
-
-  .name-title>span,
-  .name-title>a {
-    position: relative;
-    line-height: 20px;
-  }
-
-  .name-title a {
-    font-size: 22px;
-    display: block;
-  }
-
-  .name-title span {
-    display: block;
-    font-size: 14px;
-  }
-
-  h3,
-  .container {
-    position: relative;
+  #intro.section .container {
     top: 64px;
-  }
-
-  section#intro {
-    margin-bottom: -64px;
   }
 
   .card .role {
@@ -969,6 +976,16 @@ dt {
 
 /* ---- 手机端（≤600px）---- */
 @media (max-width: 600px) {
+
+  /* 手机端导航进一步收紧 */
+  #mobile-nav .brand-logo {
+    font-size: 1rem;
+  }
+
+  #mobile-nav ul a {
+    padding: 0 5px;
+  }
+
   h2 {
     font-size: 22px;
     line-height: 200%;
@@ -1019,5 +1036,83 @@ dt {
   .btn-round-home {
     width: 50px;
     height: 50px;
+  }
+
+  /* 字体适配 */
+  body {
+    font-size: 16px;
+  }
+
+  .card ul li {
+    font-size: 15px;
+  }
+
+  .card h5 {
+    font-size: 18px;
+  }
+
+  .card .project-title {
+    font-size: 18px;
+  }
+
+  .card .project-subhead {
+    font-size: 16px;
+  }
+
+  .objective {
+    font-size: 16px;
+  }
+
+  /* Hero按钮手机端堆叠 */
+  .intro-btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0.5em auto 0;
+    display: flex;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* 项目详情面板手机端内边距 */
+  .project-detail-panel {
+    padding: 20px 15px;
+  }
+
+  .project-detail-panel h4 {
+    font-size: 22px;
+  }
+
+  .project-detail-panel .meta {
+    font-size: 15px;
+  }
+
+  /* 移动端禁用hover翻转，改为点击 */
+  .card.hoverable-card .card-reveal {
+    top: 100% !important;
+  }
+
+  .card.hoverable-card.touch-active .card-reveal {
+    top: 0 !important;
+  }
+
+}
+
+/* ---- 超小屏（≤400px）：导航只显示图标 ---- */
+@media (max-width: 400px) {
+  #mobile-nav ul a span {
+    display: none;
+  }
+
+  #mobile-nav ul a {
+    padding: 0 7px;
+  }
+
+  #mobile-nav .brand-logo {
+    font-size: 0.9rem;
   }
 }
