@@ -114,7 +114,7 @@ blockquote * {
 
 /* 主内容区：左侧留出侧边导航的宽度（桌面端190px） */
 main {
-  background: url(../../assets/img/bg.png) repeat;
+  background: url(../../assets/img/global/bg.png) repeat;
   padding-left: 190px;
 }
 
@@ -127,7 +127,7 @@ main {
 
 /* 全屏高度区块 */
 .full-height {
-  height: 100vh;
+  height: 100dvh;
 }
 
 /* 容器宽度微调 */
@@ -316,7 +316,7 @@ h3 {
   }
 
   .social {
-    margin-top: 30px;
+    margin-top: 0;
   }
 }
 
@@ -945,6 +945,11 @@ dt {
     border-top-color: #008073;
   }
 
+  /* 锚点滚动时，为固定顶部导航栏留出空间 */
+  section.scrollspy {
+    scroll-margin-top: 70px;
+  }
+
   main {
     padding: 0px;
   }
@@ -967,6 +972,13 @@ dt {
     top: 0;
   }
 
+  #intro.section .container h5 {
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
   .social {
     margin-top: 20px;
   }
@@ -981,7 +993,6 @@ dt {
 /* ---- 手机端（≤600px）---- */
 @media (max-width: 600px) {
 
-  /* 手机端导航进一步收紧 */
   #mobile-nav .brand-logo {
     font-size: 1rem;
   }
@@ -1048,11 +1059,11 @@ dt {
   }
 
   .card ul li {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .card h5 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .card .project-title {
@@ -1069,10 +1080,11 @@ dt {
 
   /* Hero按钮手机端堆叠 */
   .intro-btn {
-    width: 100%;
-    max-width: 280px;
-    margin: 0.5em auto 0;
     display: flex;
+    width: 100%;
+    max-width: 200px;
+    margin: 0.5em auto 0;
+    font-size: 16px;
   }
 
   .buttons {
@@ -1080,12 +1092,12 @@ dt {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    gap: 8px;
+    gap: 5px;
   }
 
   /* 项目详情面板手机端内边距 */
   .project-detail-panel {
-    padding: 20px 15px;
+    padding: 10px 5px;
   }
 
   .project-detail-panel h4 {
