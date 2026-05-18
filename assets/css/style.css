@@ -246,7 +246,6 @@ h3 {
 }
 
 
-
 /* ============================================================
  * 八、Hero 首页区域
  * ============================================================ */
@@ -259,11 +258,13 @@ h3 {
 
 /* 首页文字容器定位 */
 #intro.section .container {
+  position: absolute;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
   color: white;
   font-weight: 200;
-  left: 0;
-  position: absolute;
-  top: 0;
 }
 
 /* 首页文字样式（排除 span 标签，避免影响打字效果） */
@@ -965,11 +966,26 @@ dt {
   }
 
   .container {
-    margin: 5px;
+    margin: 5px auto;
   }
 
   #intro.section .container {
     top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #intro.section .container .col-md-9 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #intro.section .container .col-md-9 .hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   #intro.section .container h5 {
@@ -1082,7 +1098,7 @@ dt {
   .intro-btn {
     display: flex;
     width: 100%;
-    max-width: 200px;
+    max-width: 220px;
     margin: 0.5em auto 0;
     font-size: 16px;
   }
@@ -1091,8 +1107,9 @@ dt {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: auto;
     gap: 5px;
+    margin-bottom: 30px;
   }
 
   /* 项目详情面板手机端内边距 */

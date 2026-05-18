@@ -1,0 +1,7 @@
+所在位置 行:1 字符: 264
++ ...  $Matches[0].Index; $sub = $Matches[0].Value; $sub powershell -Comman ...
++                                                        ~~~~~~~~~~
+表达式或语句中包含意外的标记“powershell”。
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 
