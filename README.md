@@ -1,72 +1,60 @@
-# Personal Portfolio ⚡️ 
-> A clean, beautiful, responsive portfolio template for Software Developers!
+# 个人作品集网站
 
-> https://varadbhogayata.github.io
+> 城市规划师 → GIS 开发者 · 13 年规划经验 + 3 年开发实战
 
-![GitHub stars](https://img.shields.io/github/stars/varadbhogayata/varadbhogayata.github.io) 
-![GitHub forks](https://img.shields.io/github/forks/varadbhogayata/varadbhogayata.github.io)
-[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/varadbhogayata/varadbhogayata.github.io/commits/master)
-[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](http://varadbhogayata.github.io/)
-[![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/varadbhogayata/)
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+个人简历主页，展示技能、项目作品与联系方式。
 
-### Website Preview
-<p align="center"> 
-  <kbd>
-    <a href="https://varadbhogayata.github.io" target="_blank"><img src="examples/preview.gif">
-  </a>
-  </kbd>
-</p>
+## 技术栈
 
-:star: Star me on GitHub — it helps!
+- **HTML5 / CSS3 / JavaScript** — 纯静态单页应用
+- **Materialize 1.0.0** — UI 框架（本地化托管）
+- **Typed.js** — 首页打字效果
+- **Font Awesome 4.7.0** — GitHub 图标
+- **GitHub Pages** — 部署托管
 
-## Features 📋
-⚡️ Fully Responsive\
-⚡️ Valid HTML5 & CSS3\
-⚡️ Typing animation using `Typed.js`\
-⚡️ Easy to modify
+## 特性
 
-## Installation & Deployment 📦
-- Clone the repository and modify the content of <b>index.html</b> according to your requirement.
-- Add or remove images from `varadbhogayata.github.io/assets/img/` directory as per your requirement.
-- I highly recommend to use [Github Pages](https://create-react-app.dev/docs/deployment/#github-pages) to deploy the website the EASIEST WAY.
-- To deploy your website, first you need to create github repository with name `<your-github-username>.github.io`. Please don't give any other name.
-- Push the generated code to the `master` branch of this repository.
-- <b>NOTE:</b> Make sure to set `analyticsId` from your Google Analytics account inside the Google Analytics script tag, if you want to use your own Google Analytics account.
+- 响应式设计（桌面侧边导航 / 移动端顶部导航）
+- 作品卡片悬停翻转 + 点击展开详情
+- 全资源本地化，国内网络顺畅访问
+- SEO / Open Graph / Favicon 完整配置
 
-## Sections 📚
-✔️ About me\
-✔️ Experience\
-✔️ Projects \
-✔️ Skills \
-✔️ Education\
-✔️ Contact Info\
-✔️ Resume
+## 本地开发
 
-To view a live example, **[click here](https://varadbhogayata.github.io/)**
+```bash
+# 克隆仓库
+git clone https://github.com/seeking001/seeking001.github.io.git
 
-## Tools Used 🛠️
-* [<b>GitHub Pages</b>](https://create-react-app.dev/docs/deployment/#github-pages) - To host my static website (HTML, CSS, JS).
-* [<b>Materialize</b>](https://materializecss.com/) - A CSS framework to get Google's Material Design components.
-* [<b>Typed.js</b>](https://mattboldt.com/demos/typed-js/) - JavaScript Library
+# 使用 Live Server（VS Code 插件）启动
+# 右键 index.html → Open with Live Server
+```
 
-## Contributing 💡
-#### Step 1
+也可直接用浏览器打开 `index.html`（部分功能需要 Live Server 支持）。
 
-- **Option 1**
-    - 🍴 Fork this repo!
+## 部署
 
-- **Option 2**
-    - 👯 Clone this repo to your local machine.
+本站部署于 GitHub Pages 仓库 `seeking001/seeking001.github.io`。推送 `main` 分支后自动发布：
 
+```bash
+git push origin main
+```
 
-#### Step 2
+访问 https://seeking001.github.io/
 
-- **Build your code** 🔨🔨🔨
+## 目录结构
 
-#### Step 3
+```
+├── index.html              # 主页面
+├── assets/
+│   ├── css/
+│   │   └── style.css       # 自定义样式
+│   ├── img/                # 图片资源
+│   ├── vendor/             # 第三方库（本地化）
+│   └── resume/             # 简历 PDF
+├── REASONIX.md             # 项目记忆（Reasonix 协作用）
+└── README.md
+```
 
-- 🔃 Create a new pull request.
+## 许可
 
-## License 📄
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
+MIT License
