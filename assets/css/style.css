@@ -1,12 +1,12 @@
 /* ============================================================
  * 个人简历网站 - 主样式表
- * 基于 Materialize 0.95.3 框架
+ * 基于 Materialize 1.0.0 框架
  * 作者：孙平
  * 描述：整理归类的样式文件，按功能模块分组，便于阅读和维护
  * ============================================================ */
 
 /* ============================================================
- * 一、materialize样式
+ * 一、Materialize 字体图标
  * ============================================================ */
 
 @font-face {
@@ -35,7 +35,7 @@
 }
 
 /* ============================================================
- * 一、全局基础样式
+ * 二、全局基础样式
  * ============================================================ */
 
 /* 页面主体：文字颜色和字号 */
@@ -65,19 +65,9 @@ blockquote * {
   line-height: inherit;
 }
 
-/* 隐藏所有 <small> 标签（全局性较强，请注意影响范围） */
-/* small {
-  display: none;
-} */
-
 /* 文字居中工具类 */
 .text-center {
   text-align: center;
-}
-
-/* 灰色文字工具类 */
-.grey-text {
-  color: #666 !important;
 }
 
 /* 图片标题：跟随图片，背景色与图两端对齐，文字居中 */
@@ -146,26 +136,18 @@ h3 {
 
 
 /* ============================================================
- * 六、固定侧边导航栏（桌面端）
+ * 五、固定侧边导航栏（桌面端）
  * ============================================================ */
 
 /* 容器 */
 #desktop-nav.sidenav {
   width: 190px;
   height: 100%;
-  /* top: 0; */
-  /* left: 0; */
-  /* padding-bottom: 0; */
-  /* box-shadow: none; */
-  /* background-color: #eee; */
-  /* display: block; */
 }
 
 /* 菜单项 */
 #desktop-nav.sidenav li {
   padding: 0;
-  /* line-height: normal; */
-  /* height: auto; */
 }
 
 #desktop-nav.sidenav li>a {
@@ -182,9 +164,7 @@ h3 {
   width: 24px;
   margin-right: 8px;
   text-align: center;
-  /* vertical-align: middle; */
   color: inherit;
-  /* line-height: 1; */
 }
 
 /* 悬停和激活 */
@@ -198,9 +178,7 @@ h3 {
 /* Logo 区域 */
 #desktop-nav.sidenav li.logo {
   background-color: #eee;
-  /* border-bottom: 1px solid #eee; */
   height: auto;
-  /* min-height: 140px; */
   padding: 22px 0 8px;
   text-align: center;
   margin-bottom: 40px;
@@ -214,7 +192,7 @@ h3 {
 
 
 /* ============================================================
- * 七、个人头像
+ * 六、个人头像
  * ============================================================ */
 .profile-pic {
   max-width: 150px;
@@ -246,9 +224,8 @@ h3 {
 }
 
 
-
 /* ============================================================
- * 八、Hero 首页区域
+ * 七、Hero 首页区域
  * ============================================================ */
 
 /* 首页背景（纯色替代了原来的背景图） */
@@ -259,11 +236,13 @@ h3 {
 
 /* 首页文字容器定位 */
 #intro.section .container {
+  position: absolute;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
   color: white;
   font-weight: 200;
-  left: 0;
-  position: absolute;
-  top: 0;
 }
 
 /* 首页文字样式（排除 span 标签，避免影响打字效果） */
@@ -271,11 +250,6 @@ h3 {
   font-weight: 300;
   line-height: 150%;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* 首页下划线装饰 */
-#intro.section .underline {
-  border-bottom: 5px solid #24305e;
 }
 
 /* 首页 teal 高亮文字的内边距 */
@@ -291,7 +265,6 @@ h3 {
   border-radius: 5px;
   font-size: 22px;
   color: #004d40;
-  /* border: 1px solid white; */
 }
 
 /* 首页半透明遮罩层 */
@@ -305,7 +278,6 @@ h3 {
 }
 
 .hero-content {
-  margin-left: 10%;
   margin-top: 50px;
 }
 
@@ -322,7 +294,7 @@ h3 {
 
 
 /* ============================================================
- * 九、社交图标按钮
+ * 八、社交图标按钮
  * ============================================================ */
 
 /* 社交图标容器 */
@@ -347,17 +319,9 @@ h3 {
   margin: 4px;
 }
 
-/* 各平台默认颜色 */
+/* GitHub 图标默认颜色 */
 .github {
   color: black;
-}
-
-.linkedin {
-  color: #0077b5;
-}
-
-.angellist {
-  color: grey;
 }
 
 /* 图标按钮悬停：放大 + 变白 */
@@ -366,22 +330,13 @@ h3 {
   color: #FFFFFF;
 }
 
-/* 各平台悬停背景色 */
-.linkedin:hover {
-  background-color: #0077b5;
-}
-
-.angellist:hover {
-  background-color: grey;
-}
-
 .github:hover {
   background-color: black;
 }
 
 
 /* ============================================================
- * 十、操作按钮（了解更多 / 请联系我 / 下载简历 / 下载作品）
+ * 九、操作按钮（了解更多 / 请联系我 / 下载简历 / 下载作品）
  * ============================================================ */
 
 .intro-btn {
@@ -418,7 +373,7 @@ h3 {
 
 
 /* ============================================================
- * 十一、Materialize 波纹效果微调
+ * 十、Materialize 波纹效果微调
  * ============================================================ */
 
 .waves-effect.waves-blue .waves-ripple {
@@ -427,7 +382,7 @@ h3 {
 
 
 /* ============================================================
- * 十二、卡片通用样式
+ * 十一、卡片通用样式
  * ============================================================ */
 
 /* 卡片底部外边距 */
@@ -499,6 +454,11 @@ h3 {
   padding-bottom: 20px;
 }
 
+.card .card-work-exp {
+  width: 85%;
+  float: left;
+}
+
 /* 清除卡片内部浮动，防止塌陷 */
 .card .card-content::after {
   content: "";
@@ -517,43 +477,12 @@ h3 {
   border: 1px solid #eee;
 }
 
-/* 卡片内角色标签（绝对定位在右上角） */
-.card .role {
-  font-size: 1.25rem;
-  position: absolute;
-  right: 38px;
-  top: 35px;
-}
-
-/* 卡片内链接样式 */
-.card li a {
-  margin-right: 0;
-  color: #333;
-  border-bottom: 2px solid #ffab40;
-}
-
-.card li a:hover {
-  color: #333;
-  font-weight: 500;
-}
-
-/* 卡片内右箭头图标 */
-.card i.right {
-  margin-left: 10px;
-}
-
-/* 卡片内嵌套列表（更小更浅） */
+/* 卡片内列表样式 */
 .card ul li {
   color: #333;
   font-size: 18px;
   padding-top: 10px;
 }
-
-/* 卡片内嵌套列表（更小更浅） */
-/* .card ul li li {
-  color: #666;
-  font-size: 13px;
-} */
 
 /* 大卡片与中等卡片的图片高度 */
 .card.large .card-image {
@@ -574,36 +503,9 @@ h3 {
   height: 240px;
 }
 
-/* 卡片底部操作区 */
-.card-action span {
-  font-size: 85%;
-  color: #666;
-}
-
-.card-action a.btn-floating {
-  margin-bottom: 0;
-}
-
 
 /* ============================================================
- * 十三、链接下划线悬停效果
- * ============================================================ */
-
-a.hoverline {
-  border-bottom: 3px solid transparent !important;
-  padding: 3px 3px 0 3px;
-  transition: 0.25s all;
-  -moz-transition: 0.25s all;
-  -webkit-transition: 0.25s all;
-}
-
-a.hoverline:hover {
-  border-bottom: 3px solid #004d40 !important;
-}
-
-
-/* ============================================================
- * 十六、联系区域样式
+ * 十二、联系区域样式
  * ============================================================ */
 
 .contact-info {
@@ -618,7 +520,7 @@ a.hoverline:hover {
 
 
 /* ============================================================
- * 十七、外部链接图标微调
+ * 十三、外部链接图标微调
  * ============================================================ */
 
 .fa-external-link:before {
@@ -629,38 +531,7 @@ a.hoverline:hover {
 
 
 /* ============================================================
- * 十八、描述列表样式
- * ============================================================ */
-
-dl {
-  margin-top: 0.5rem;
-}
-
-dd {
-  display: inline-block;
-  font-weight: 500;
-  margin-left: 0;
-}
-
-dt {
-  display: inline-block;
-  margin-left: 0.5rem;
-}
-
-
-/* ============================================================
- * 十九、页面跟踪器（固定定位在右下角）
- * ============================================================ */
-
-.tracker {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
-
-/* ============================================================
- * 二十、作品卡片交互样式
+ * 十四、作品卡片交互样式
  *      包含：悬停翻转 + 点击展开详情面板
  * ============================================================ */
 
@@ -820,18 +691,9 @@ dt {
   color: #333;
 }
 
-/* ---------- 作品卡片按钮组 ---------- */
-.project-card-btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 4px;
-}
-
 
 /* ============================================================
- * 二十一、呼吸动画（中间圆形演示按钮）
+ * 十五、呼吸动画（中间圆形演示按钮）
  * ============================================================ */
 
 .btn-round-home {
@@ -860,29 +722,13 @@ dt {
 
 
 /* ============================================================
- * 二十二、响应式设计
+ * 十六、响应式设计
  * ============================================================ */
 
 /* ---- 宽屏优化（≥1200px）---- */
 @media (min-width: 1200px) {
   #experience .container {
     width: 860px;
-  }
-}
-
-/* ---- 中等屏幕（≤1360px）---- */
-@media (max-width: 1360px) {
-  .card ul li {
-    font-size: 14px;
-    line-height: 200%;
-    margin-left: 20px;
-  }
-}
-
-/* ---- 较小屏幕（≤1160px）---- */
-@media (max-width: 1160px) {
-  .card ul li {
-    line-height: 150%;
   }
 }
 
@@ -918,7 +764,7 @@ dt {
   #mobile-links {
     display: flex;
     flex: 1;
-    margin-left: 10px;
+    margin: 0 10px;
     height: 40px;
   }
 
@@ -960,16 +806,31 @@ dt {
   }
 
   h5 {
-    padding: 30px;
-    margin-bottom: 40px;
+    /* padding: 30px; */
+    margin-bottom: 10px;
   }
 
   .container {
-    margin: 5px;
+    margin: 5px auto;
   }
 
   #intro.section .container {
     top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #intro.section .container .col-md-9 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #intro.section .container .col-md-9 .hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   #intro.section .container h5 {
@@ -987,6 +848,15 @@ dt {
     position: relative;
     right: initial;
     top: initial;
+  }
+
+  .card .card-work-exp {
+    width: 100%;
+  }
+
+  /* 大卡片与中等卡片的图片高度 */
+  .card.medium .card-image {
+    height: 200px;
   }
 }
 
@@ -1037,15 +907,50 @@ dt {
     background-position-x: 30%;
   }
 
-  /* 作品卡片按钮在手机端各占一行 */
+  /* ---------- 作品卡片翻转后的3个按钮 ---------- */
+
+  /* 按钮组容器 */
   .project-card-btns {
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3px;
+  }
+
+  /* 通用矩形按钮（完整介绍、源码链接） */
+  .project-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0;
+  }
+
+  /* 中间圆形演示按钮 */
+  .btn-round-home {
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    margin: 0 8px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 150, 136, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .project-card-btns .btn:not(.btn-round-home) {
-    width: 100%;
-    max-width: 280px;
+    width: auto;
+    min-width: 44px;
+  }
+
+  .project-card-btns .btn:not(.btn-round-home) i {
+    float: none;
+    margin: 0;
   }
 
   .btn-round-home {
@@ -1082,7 +987,7 @@ dt {
   .intro-btn {
     display: flex;
     width: 100%;
-    max-width: 200px;
+    max-width: 220px;
     margin: 0.5em auto 0;
     font-size: 16px;
   }
@@ -1091,8 +996,9 @@ dt {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: auto;
     gap: 5px;
+    margin-bottom: 30px;
   }
 
   /* 项目详情面板手机端内边距 */
