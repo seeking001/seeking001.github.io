@@ -306,7 +306,6 @@ h3 {
 }
 
 .hero-content {
-  margin-left: 10%;
   margin-top: 50px;
 }
 
@@ -500,6 +499,11 @@ h3 {
   padding-bottom: 20px;
 }
 
+.card .card-work-exp {
+  width: 85%;
+  float: left;
+}
+
 /* 清除卡片内部浮动，防止塌陷 */
 .card .card-content::after {
   content: "";
@@ -549,12 +553,6 @@ h3 {
   font-size: 18px;
   padding-top: 10px;
 }
-
-/* 卡片内嵌套列表（更小更浅） */
-/* .card ul li li {
-  color: #666;
-  font-size: 13px;
-} */
 
 /* 大卡片与中等卡片的图片高度 */
 .card.large .card-image {
@@ -872,20 +870,20 @@ dt {
 }
 
 /* ---- 中等屏幕（≤1360px）---- */
-@media (max-width: 1360px) {
+/* @media (max-width: 1360px) {
   .card ul li {
     font-size: 14px;
-    line-height: 200%;
+    line-height: 150%;
     margin-left: 20px;
   }
-}
+} */
 
 /* ---- 较小屏幕（≤1160px）---- */
-@media (max-width: 1160px) {
+/* @media (max-width: 1160px) {
   .card ul li {
     line-height: 150%;
   }
-}
+} */
 
 /* ---- 平板及以下（≤992px）：侧边导航变为顶部导航 ---- */
 @media (max-width: 992px) {
@@ -919,7 +917,7 @@ dt {
   #mobile-links {
     display: flex;
     flex: 1;
-    margin-left: 10px;
+    margin: 0 10px;
     height: 40px;
   }
 
@@ -961,8 +959,8 @@ dt {
   }
 
   h5 {
-    padding: 30px;
-    margin-bottom: 40px;
+    /* padding: 30px; */
+    margin-bottom: 10px;
   }
 
   .container {
@@ -1003,6 +1001,15 @@ dt {
     position: relative;
     right: initial;
     top: initial;
+  }
+
+  .card .card-work-exp {
+    width: 100%;
+  }
+
+  /* 大卡片与中等卡片的图片高度 */
+  .card.medium .card-image {
+    height: 200px;
   }
 }
 
@@ -1053,15 +1060,50 @@ dt {
     background-position-x: 30%;
   }
 
-  /* 作品卡片按钮在手机端各占一行 */
+  /* ---------- 作品卡片翻转后的3个按钮 ---------- */
+
+  /* 按钮组容器 */
   .project-card-btns {
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3px;
+  }
+
+  /* 通用矩形按钮（完整介绍、源码链接） */
+  .project-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0;
+  }
+
+  /* 中间圆形演示按钮 */
+  .btn-round-home {
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    margin: 0 8px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 150, 136, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .project-card-btns .btn:not(.btn-round-home) {
-    width: 100%;
-    max-width: 280px;
+    width: auto;
+    min-width: 44px;
+  }
+
+  .project-card-btns .btn:not(.btn-round-home) i {
+    float: none;
+    margin: 0;
   }
 
   .btn-round-home {
