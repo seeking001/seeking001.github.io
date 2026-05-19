@@ -1010,7 +1010,13 @@
         card.addEventListener('click', function (e) {
           if (e.target.closest('a') || e.target.closest('button')) return;
           if (window.innerWidth <= 992) {
-            this.classList.toggle('touch-active');
+            var isActive = this.classList.contains('touch-active');
+            document.querySelectorAll('.hoverable-card').forEach(function (c) {
+              c.classList.remove('touch-active');
+            });
+            if (!isActive) {
+              this.classList.add('touch-active');
+            }
           }
         });
       });
