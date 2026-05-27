@@ -586,22 +586,22 @@ h3 {
 
 /* 中间圆形演示按钮 */
 .btn-round-home {
-  width: 54px;
-  height: 54px;
-  padding: 0;
-  margin: 0 8px;
-  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 150, 136, 0.4);
+  width: 55px;
+  height: 55px;
+  padding: 0;
+  margin: 0 15px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 150, 136, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* 圆形按钮悬停（呼吸动画在二十一单独定义） */
 .btn-round-home:hover {
   transform: scale(1.1);
-  box-shadow: 0 3px 10px rgba(0, 150, 136, 0.8);
+  box-shadow: 0 5px 10px rgba(0, 150, 136, 0.8);
 }
 
 /* ---------- 卡片容器 ---------- */
