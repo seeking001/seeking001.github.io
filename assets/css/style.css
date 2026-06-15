@@ -278,6 +278,7 @@ h3 {
 }
 
 .hero-content {
+  margin-left: 30px;
   margin-top: 50px;
 }
 
@@ -512,6 +513,7 @@ h3 {
   color: #333;
   font-size: 18px;
   margin-top: 30px;
+  margin-left: 30px;
 }
 
 #contact a:not(.btn-floating) {
@@ -563,6 +565,12 @@ h3 {
   top: 0;
 }
 
+.card-reveal h5 {
+  /* text-align: center; */
+  font-size: 24px;
+  color: #008073;
+}
+
 /* ---------- 作品卡片翻转后的3个按钮 ---------- */
 
 /* 按钮组容器 */
@@ -579,28 +587,27 @@ h3 {
 .project-btn {
   border-radius: 10px;
   padding: 0 15px;
-  margin: 15px;
   font-size: 18px;
 }
 
 /* 中间圆形演示按钮 */
 .btn-round-home {
-  width: 54px;
-  height: 54px;
-  padding: 0;
-  margin: 0 8px;
-  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 150, 136, 0.4);
+  width: 55px;
+  height: 55px;
+  padding: 0;
+  margin: 0 15px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 150, 136, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* 圆形按钮悬停（呼吸动画在二十一单独定义） */
 .btn-round-home:hover {
   transform: scale(1.1);
-  box-shadow: 0 3px 10px rgba(0, 150, 136, 0.8);
+  box-shadow: 0 5px 10px rgba(0, 150, 136, 0.8);
 }
 
 /* ---------- 卡片容器 ---------- */
@@ -1021,6 +1028,10 @@ h3 {
 
   .card.hoverable-card.touch-active .card-reveal {
     top: 0 !important;
+  }
+
+  .contact-info {
+    margin-left: 0;
   }
 
 }
